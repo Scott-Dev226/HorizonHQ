@@ -38,7 +38,7 @@ function App() {
           <Switch>
             <Route
               exact
-              path="/"
+              path="/HorizonHQ"
               exact
               render={() => <Home darkModeProp={isDarkMode} />}
             />
