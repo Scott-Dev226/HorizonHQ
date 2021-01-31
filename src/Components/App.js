@@ -36,11 +36,7 @@ function App() {
             <Nav darkModeProp={isDarkMode} />
           </div>
           <Switch>
-            <Route
-              exact
-              path="/"
-              render={() => <Home darkModeProp={isDarkMode} />}
-            />
+            <Route path="/" exact component={Home} />
             <Route path="/Guitars" component={Guitars} />
             <Route path="/weather" component={weather} />
             <Route path="/About" component={About} />
