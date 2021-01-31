@@ -14,13 +14,6 @@ const FrontPageNewsStories = (props) => {
       Description2:
         "The earliest the money could start flowing? Maybe mid- to late February, said Kevin Kosar, resident scholar at the right-leaning American Enterprise Institute and co-editor of the book 'Congress Overwhelmed.'",
       Image: BidenImage,
-
-      HeadlineTech: "Tiny quantum computer solves real optimization problem",
-      DescriptionTech:
-        "Quantum computers have already managed to surpass ordinary computers in solving certain tasks - unfortunately, totally useless ones. The next milestone is to get them to do useful things. Researchers have now shown that they can solve a small part of a real logistics problem with their small, but well-functioning quantum computer. ",
-      DescriptionTech2:
-        "Interest in building quantum computers has gained considerable momentum in recent years, and feverish work is underway in many parts of the world.",
-      ImageTech: TechImage,
     },
     {
       Name: "1",
@@ -42,16 +35,12 @@ const FrontPageNewsStories = (props) => {
       {storyArray.map((story) => (
         <FrontPageNewsStory
           darkModeProp={props.darkModeProp}
-          Headline={isDarkMode ? story.HeadlineTech : story.Headline}
-          Description={isDarkMode ? story.DescriptionTech : story.Description}
-          Description2={
-            isDarkMode ? story.DescriptionTech2 : story.Description2
-          }
-          Image={isDarkMode ? story.ImageTech : story.Image}
-          Description={isDarkMode ? story.DescriptionTech : story.Description}
-          Description2={
-            isDarkMode ? story.DescriptionTech2 : story.Description2
-          }
+          Headline={story.Headline}
+          Description={story.Description}
+          Description2={story.Description2}
+          Image={story.Image}
+          Description={story.Description}
+          Description2={story.Description2}
         />
       ))}
     </section>

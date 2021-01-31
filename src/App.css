@@ -550,10 +550,21 @@ p {
   color: white;
 }
 
-#stockParentDiv {
+.stockParentDiv-Light {
   display: block;
   justify-content: center;
   background-color: white;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+.stockParentDiv-Dark {
+  display: block;
+  justify-content: center;
+  background-color: black;
 
   background-size: contain;
   background-repeat: no-repeat;
@@ -629,6 +640,8 @@ select {
 }
 
 button {
+  margin-left: 2%;
+  margin-right: 2%;
   display: flex;
   justify-content: center;
   align-items: center;

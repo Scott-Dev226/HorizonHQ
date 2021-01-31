@@ -13,6 +13,7 @@ const Home = (props) => {
   });
 
   let isDarkMode = props.darkModeProp;
+  let toolsEnabled = props.toolsProp;
 
   return (
     <animated.div
@@ -36,8 +37,7 @@ const Home = (props) => {
           isDarkMode ? "Dark-Mode-rightWidget" : "Light-Mode-rightWidget"
         }
       >
-        {!isDarkMode && <BigShort />}
-        {isDarkMode && <YouTubeTech darkModeProp={isDarkMode} />}
+        {toolsEnabled && <BigShort darkModeProp={isDarkMode} />}
       </div>
     </animated.div>
   );

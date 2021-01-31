@@ -7,7 +7,10 @@ import labelz from "chartjs-plugin-labels";
 import useApiFetch from "./api_fetch";
 import arrow from "../right-arrow.png";
 
-export default () => {
+const BigShort = (props) => {
+  let isDarkMode = props.darkModeProp;
+  let toolsEnabled = props.toolsProp;
+
   const {
     symbol1,
     symbol2,
@@ -65,7 +68,7 @@ export default () => {
     }
   }, [stock1Change, stock2Change, stock3Change]);
 
-  const props = useSpring({
+  const props2 = useSpring({
     config: { duration: 1500 },
     from: { opacity: 0, width: "0%", height: "0%" },
     to: { opacity: 0.9, width: "100%", height: "100%" },
@@ -75,18 +78,20 @@ export default () => {
     <animated.div
       id="stockBackgroundDiv"
       style={{
-        transform: props.transform,
-        opacity: props.opacity,
-        width: props.width,
-        height: props.height,
+        transform: props2.transform,
+        opacity: props2.opacity,
+        width: props2.width,
+        height: props2.height,
       }}
     >
-      <div id="stockParentDiv">
+      <div
+        className={isDarkMode ? "stockParentDiv-Dark" : "stockParentDiv-Light"}
+      >
         <p id="faq"> Select Three(3) Companies from the Drop-Down:</p>
 
         <animated.div
           id="vs_back"
-          style={{ transform: props.transform, x: props.x }}
+          style={{ transform: props2.transform, x: props2.x }}
         >
           <select name="selectStock" id="input3" ref={inputRef2}>
             <option value="AAPL">Apple</option>
@@ -236,3 +241,5 @@ export default () => {
     </animated.div>
   );
 };
+
+export default BigShort;

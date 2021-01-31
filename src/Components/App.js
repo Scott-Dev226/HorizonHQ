@@ -12,6 +12,7 @@ import React, { useState, useEffect, useRef, useReducer } from "react";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [toolsEnabled, setToolsEnabled] = useState(false);
 
   return (
     <div id="motherShip" style={{ backgroundColor: "black" }}>
@@ -28,8 +29,14 @@ function App() {
             >
               <button onClick={() => setIsDarkMode((prevMode) => !prevMode)}>
                 {isDarkMode
-                  ? "CLICK TO ENABLE FINANCE MODE"
-                  : "CLICK TO ENABLE TECH MODE"}
+                  ? "CLICK TO DISABLE DARK MODE"
+                  : "CLICK TO ENABLE DARK MODE"}
+              </button>
+
+              <button onClick={() => setToolsEnabled((prevMode) => !prevMode)}>
+                {toolsEnabled
+                  ? "CLICK TO CLOSE FINANCE TOOLS"
+                  : "CLICK TO OPEN FINANCE TOOLS"}
               </button>
             </div>
 
@@ -40,7 +47,9 @@ function App() {
               exact
               path="/HorizonHQ"
               exact
-              render={() => <Home darkModeProp={isDarkMode} />}
+              render={() => (
+                <Home darkModeProp={isDarkMode} toolsProp={toolsEnabled} />
+              )}
             />
             <Route path="/Home" component={Home} />
             <Route path="/Guitars" component={Guitars} />
