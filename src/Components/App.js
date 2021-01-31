@@ -39,6 +39,7 @@ function App() {
             <Route
               exact
               path="/"
+              exact
               render={() => <Home darkModeProp={isDarkMode} />}
             />
             <Route path="/Guitars" component={Guitars} />
