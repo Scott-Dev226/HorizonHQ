@@ -20,7 +20,7 @@ function Nav(props) {
   return (
     <div className={isDarkMode ? "Dark-Mode" : "Light-Mode"} id="nav-div">
       <ul>
-        <NavLink id="linkster" to="/">
+        <NavLink id="linkster" to="/HorizonHQ">
           <li className={isDarkMode ? "Dark-Mode" : "Light-Mode"}>HOME</li>
         </NavLink>
         <NavLink

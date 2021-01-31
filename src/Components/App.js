@@ -42,6 +42,7 @@ function App() {
               exact
               render={() => <Home darkModeProp={isDarkMode} />}
             />
+            <Route path="/Home" component={Home} />
             <Route path="/Guitars" component={Guitars} />
             <Route path="/weather" component={weather} />
             <Route path="/About" component={About} />
