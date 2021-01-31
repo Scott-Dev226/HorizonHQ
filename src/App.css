@@ -6,7 +6,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:ital,wght@1,300&family=Share+Tech&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Blinker:wght@600&family=Roboto:wght@900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
 
 .App {
   text-align: center;
@@ -49,6 +49,7 @@
 
 #motherShip {
   width: 100%;
+  zoom: 55%;
 }
 
 ul {
@@ -58,7 +59,6 @@ ul {
   margin-top: 5px;
   width: 97%;
   justify-content: flex-end;
-
 }
 
 ul li {
@@ -95,28 +95,25 @@ ul li:hover {
   color: white;
   font-size: 1.75em;
   font-weight: bold;
-  width:700px;
+  width: 700px;
   font-family: "Open Sans Condensed", sans-serif;
-  border-radius:9999px;
-  justify-content:center;
+  border-radius: 9999px;
+  justify-content: center;
 }
 
 #quickNewsDescription {
   font-size: 1.2em;
-width:65%;
+  width: 65%;
   border: 4px groove rgb(110, 9, 9);
   font-family: "Open Sans Condensed", sans-serif;
-  display:block;
-  margin-left:17%;
+  display: block;
+  margin-left: 17%;
   margin-top: 5px;
-
-  
 }
 
 #storyHolderDiv {
   justify-content: center;
   background-repeat: no-repeat;
- 
 }
 
 .Light-Mode {
@@ -218,9 +215,9 @@ width:65%;
 
 #home-left-content {
   display: flex;
-  flex-basis: 40%;
+  flex-basis: 50%;
   margin-top: 0em;
- 
+
   height: 100%;
   justify-content: cover;
   background-repeat: no-repeat;
@@ -235,7 +232,7 @@ width:65%;
 
 #home-right-content {
   flex-basis: 60%;
- 
+
   padding-right: 10px;
   height: 100%;
 }
@@ -263,10 +260,10 @@ width:65%;
   color: white;
   background-color: black;
   width: 10em;
-font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   opacity: 0.75;
-  border-radius:9999px;
-  font-size:5em;
+  border-radius: 9999px;
+  font-size: 5em;
 }
 
 .App {
@@ -385,24 +382,18 @@ p {
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: ease-in-out;
-  
 }
 
-
-#newsHeadlineCenterDiv{
-  display:flex;
-  justify-content:center;
+#newsHeadlineCenterDiv {
+  display: flex;
+  justify-content: center;
 }
 
-
-
-#newsDescriptionCenterDiv{
-  
-  justify-content:center;
-  display:block;
-  width:100%;
+#newsDescriptionCenterDiv {
+  justify-content: center;
+  display: block;
+  width: 100%;
 }
-
 
 .outerStockDiv {
   color: white;
@@ -727,6 +718,10 @@ button:hover {
 }
 
 @media only screen and (max-width: 1000px) {
+  #motherShip {
+    width: 100%;
+    zoom: 70%;
+  }
   .home-div {
     display: block;
   }
@@ -829,7 +824,7 @@ button:hover {
   }
 
   #news-headlines {
-    width: 17em;
+    width: 35em;
     font-size: 1em;
   }
 
