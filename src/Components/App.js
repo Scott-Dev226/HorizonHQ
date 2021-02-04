@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import React, { useState, useEffect, useRef, useReducer } from "react";
 import { Canvas, useFrame } from "react-three-fiber";
+import { Sky } from "@react-three/drei";
 
 function Box(props) {
   // This reference will give us direct access to the mesh
@@ -18,14 +19,15 @@ function Box(props) {
 
   // Rotate mesh every frame, this is outside of React without overhead
   useFrame(() => {
-    mesh.current.rotation.y += 0.01;
+    mesh.current.rotation.x += 0.01;
   });
 
   return (
     <mesh {...props} ref={mesh}>
-      <boxBufferGeometry attach="geometry" args={[4, 4, 4]} />
-      <meshStandardMaterial
-        metalness={0.1}
+      <tetrahedronGeometry attach="geometry" args={[3, 0]} />
+      <meshBasicMaterial
+        wireframe={true}
+        metalness={1}
         attach="material"
         color={isDarkMode ? "blue" : "red"}
       />
@@ -51,7 +53,9 @@ function App() {
                 <spotLight position={[10, 10, 10]} angle={0.15} />
                 <Box position={[-1.2, 0, 0]} darkModeProp={isDarkMode} />
               </Canvas>
-              <h1>HORIZON HQ</h1>
+              <h1 className={isDarkMode ? "Dark-Mode" : "Light-Mode"}>
+                THE PHEONIX PROJECT
+              </h1>
             </>
             <div
               id="button-holder"

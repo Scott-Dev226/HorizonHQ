@@ -12,6 +12,11 @@
   text-align: center;
 }
 
+#forNavCenter h1 {
+  font-family: "Blinker", sans-serif;
+  font-size: 3em;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -120,6 +125,9 @@ ul li:hover {
   background-color: white;
   color: black;
   font-weight: bold;
+  transition-property: all;
+  transition-duration: 1000ms;
+  transition-timing-function: ease-in-out;
 }
 
 .Light-Mode-leftWidget {
@@ -129,7 +137,7 @@ ul li:hover {
   background-image: url("city-day.jpeg");
   background-size: cover;
   transition-property: all;
-  transition-duration: 500ms;
+  transition-duration: 1000ms;
   transition-timing-function: ease-in-out;
 }
 
@@ -139,13 +147,16 @@ ul li:hover {
   font-weight: bold;
   background-size: cover;
   transition-property: all;
-  transition-duration: 500ms;
+  transition-duration: 1000ms;
   transition-timing-function: ease-in-out;
 }
 
 .Dark-Mode {
   background-color: black;
   color: white;
+  transition-property: all;
+  transition-duration: 1000ms;
+  transition-timing-function: ease-in-out;
 }
 
 .Dark-Mode-leftWidget {
@@ -559,6 +570,9 @@ p {
   background-repeat: no-repeat;
   margin-bottom: 100px;
   width: 100%;
+  transition-property: all;
+  transition-duration: 1000ms;
+  transition-timing-function: ease-in-out;
 }
 
 .stockParentDiv-Dark {
@@ -570,6 +584,9 @@ p {
   background-repeat: no-repeat;
   margin-bottom: 100px;
   width: 100%;
+  transition-property: all;
+  transition-duration: 1000ms;
+  transition-timing-function: ease-in-out;
 }
 
 #stockBackgroundDiv {
@@ -617,10 +634,10 @@ select {
 }
 
 .Light-Mode-buttonHolder {
-  background-image: url("light-mode.jpeg");
+  background-image: url("light-mode.jpg");
   background-size: cover;
   transition-property: all;
-  transition-duration: 500ms;
+  transition-duration: 1000ms;
   transition-timing-function: ease-in-out;
 }
 
@@ -628,7 +645,7 @@ select {
   background-image: url("dark-mode-sky.jpeg");
   background-size: cover;
   transition-property: all;
-  transition-duration: 500ms;
+  transition-duration: 1000ms;
   transition-timing-function: ease-in-out;
 }
 

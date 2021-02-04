@@ -2,7 +2,7 @@ import { useSpring, animated } from "react-spring";
 import gsap from "gsap";
 import FrontPageNews from "./frontPageNews";
 import BigShort from "./bigshort";
-import threeDimensions from "./cubeTestComponent";
+import Guitars from "./Guitars";
 import YouTubeTech from "./YouTubeTech";
 import React, { useState, useEffect, useRef, useReducer } from "react";
 
@@ -21,7 +21,6 @@ const Home = (props) => {
       className="home-div"
       style={{ transform: props2.transform, opacity: props2.opacity }}
     >
-      <threeDimensions />
       <div
         id="home-left-content"
         className={
@@ -40,6 +39,7 @@ const Home = (props) => {
         }
       >
         {toolsEnabled && <BigShort darkModeProp={isDarkMode} />}
+        {!toolsEnabled && <YouTubeTech darkModeProp={isDarkMode} />}
       </div>
     </animated.div>
   );
