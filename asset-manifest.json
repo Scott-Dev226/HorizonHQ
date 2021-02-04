@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/HorizonHQ/static/css/main.a932d458.chunk.css",
-    "main.js": "/HorizonHQ/static/js/main.5dd1ce30.chunk.js",
-    "main.js.map": "/HorizonHQ/static/js/main.5dd1ce30.chunk.js.map",
-    "runtime-main.js": "/HorizonHQ/static/js/runtime-main.230df766.js",
-    "runtime-main.js.map": "/HorizonHQ/static/js/runtime-main.230df766.js.map",
-    "static/js/2.0298d3f2.chunk.js": "/HorizonHQ/static/js/2.0298d3f2.chunk.js",
-    "static/js/2.0298d3f2.chunk.js.map": "/HorizonHQ/static/js/2.0298d3f2.chunk.js.map",
-    "static/js/3.5fa5796a.chunk.js": "/HorizonHQ/static/js/3.5fa5796a.chunk.js",
-    "static/js/3.5fa5796a.chunk.js.map": "/HorizonHQ/static/js/3.5fa5796a.chunk.js.map",
+    "main.css": "/HorizonHQ/static/css/main.605dfa46.chunk.css",
+    "main.js": "/HorizonHQ/static/js/main.69cc4cc8.chunk.js",
+    "main.js.map": "/HorizonHQ/static/js/main.69cc4cc8.chunk.js.map",
+    "runtime-main.js": "/HorizonHQ/static/js/runtime-main.ed886fb0.js",
+    "runtime-main.js.map": "/HorizonHQ/static/js/runtime-main.ed886fb0.js.map",
+    "static/js/2.99186f53.chunk.js": "/HorizonHQ/static/js/2.99186f53.chunk.js",
+    "static/js/2.99186f53.chunk.js.map": "/HorizonHQ/static/js/2.99186f53.chunk.js.map",
+    "static/js/3.94dcb28a.chunk.js": "/HorizonHQ/static/js/3.94dcb28a.chunk.js",
+    "static/js/3.94dcb28a.chunk.js.map": "/HorizonHQ/static/js/3.94dcb28a.chunk.js.map",
     "index.html": "/HorizonHQ/index.html",
-    "static/css/main.a932d458.chunk.css.map": "/HorizonHQ/static/css/main.a932d458.chunk.css.map",
-    "static/js/2.0298d3f2.chunk.js.LICENSE.txt": "/HorizonHQ/static/js/2.0298d3f2.chunk.js.LICENSE.txt",
+    "static/css/main.605dfa46.chunk.css.map": "/HorizonHQ/static/css/main.605dfa46.chunk.css.map",
+    "static/js/2.99186f53.chunk.js.LICENSE.txt": "/HorizonHQ/static/js/2.99186f53.chunk.js.LICENSE.txt",
     "static/media/VS_Spinner.1a76d308.jpg": "/HorizonHQ/static/media/VS_Spinner.1a76d308.jpg",
     "static/media/aapl-back.32636139.jpg": "/HorizonHQ/static/media/aapl-back.32636139.jpg",
     "static/media/biden-cash.bf2b3050.jpg": "/HorizonHQ/static/media/biden-cash.bf2b3050.jpg",
@@ -28,9 +28,9 @@
     "static/media/right-arrow.93bc410a.png": "/HorizonHQ/static/media/right-arrow.93bc410a.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.230df766.js",
-    "static/js/2.0298d3f2.chunk.js",
-    "static/css/main.a932d458.chunk.css",
-    "static/js/main.5dd1ce30.chunk.js"
+    "static/js/runtime-main.ed886fb0.js",
+    "static/js/2.99186f53.chunk.js",
+    "static/css/main.605dfa46.chunk.css",
+    "static/js/main.69cc4cc8.chunk.js"
   ]
 }
