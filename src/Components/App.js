@@ -82,14 +82,14 @@ function App() {
             >
               <button onClick={() => setIsDarkMode((prevMode) => !prevMode)}>
                 {isDarkMode
-                  ? "CLICK TO DISABLE DARK MODE"
+                  ? "CLICK TO ENABLE LIGHT MODE"
                   : "CLICK TO ENABLE DARK MODE"}
               </button>
 
               <button onClick={() => setToolsEnabled((prevMode) => !prevMode)}>
                 {toolsEnabled
-                  ? "CLICK TO CLOSE FINANCE TOOLS"
-                  : "CLICK TO OPEN FINANCE TOOLS"}
+                  ? "CLOSE NASDAQ DATA WIDGET"
+                  : "OPEN NASDAQ DATA WIDGET"}
               </button>
             </div>
 
