@@ -24,18 +24,9 @@ const YouTubeTech = (props) => {
 
       <iframe
         id="YT-Clip"
-        width="560"
-        height="315"
+        width="700"
+        height="430"
         src="https://www.youtube.com/embed/RcYjXbSJBN8"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-      <iframe
-        id="YT-Clip"
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/T71ibcZAX3I"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
