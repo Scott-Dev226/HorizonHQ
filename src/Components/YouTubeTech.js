@@ -31,6 +31,16 @@ const YouTubeTech = (props) => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
+
+      <iframe
+        id="YT-Clip"
+        width="760"
+        height="430"
+        src="https://www.youtube.com/embed/T71ibcZAX3I"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </animated.div>
   );
 };
