@@ -34,35 +34,44 @@ const BigShort = (props) => {
     setStock2Change,
     stock3Change,
     setStock3Change,
+    stock1TodaysClose,
+    stock2TodaysClose,
+    stock3TodaysClose,
   } = useApiFetch();
 
   useEffect(() => {
     if (stock1Change < 0) {
-      document.getElementById("variance").innerHTML = "Down by";
+      document.getElementById("variance").innerHTML =
+        "$" + stock1TodaysClose + " " + "-DOWN-";
       document.getElementById("variance").style.backgroundColor = "red";
       gsap.to(".arrow1", { rotation: 90 });
     } else if (stock1Change > 0) {
-      document.getElementById("variance").innerHTML = "Up by";
+      document.getElementById("variance").innerHTML =
+        "$" + stock1TodaysClose + " " + "-UP-";
       document.getElementById("variance").style.backgroundColor = "green";
       gsap.to(".arrow1", { rotation: -90 });
     }
 
     if (stock2Change < 0) {
-      document.getElementById("variance2").innerHTML = "Down by";
+      document.getElementById("variance2").innerHTML =
+        "$" + stock2TodaysClose + " " + "-DOWN-";
       document.getElementById("variance2").style.backgroundColor = "red";
       gsap.to(".arrow2", { rotation: 90 });
     } else if (stock2Change > 0) {
-      document.getElementById("variance2").innerHTML = "Up by";
+      document.getElementById("variance2").innerHTML =
+        "$" + stock2TodaysClose + " " + "-UP-";
       document.getElementById("variance2").style.backgroundColor = "green";
       gsap.to(".arrow2", { rotation: -90 });
     }
 
     if (stock3Change < 0) {
-      document.getElementById("variance3").innerHTML = "Down by";
+      document.getElementById("variance3").innerHTML =
+        "$" + stock3TodaysClose + " " + "-DOWN-";
       document.getElementById("variance3").style.backgroundColor = "red";
       gsap.to(".arrow3", { rotation: 90 });
     } else if (stock3Change > 0) {
-      document.getElementById("variance3").innerHTML = "Up by";
+      document.getElementById("variance3").innerHTML =
+        "$" + stock3TodaysClose + " " + "-UP-";
       document.getElementById("variance3").style.backgroundColor = "green";
       gsap.to(".arrow3", { rotation: -90 });
     }

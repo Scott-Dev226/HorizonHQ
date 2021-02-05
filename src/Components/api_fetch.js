@@ -60,6 +60,10 @@ const useApiFetch = () => {
 
   let initialRender = useRef(true);
 
+  const [stock1TodaysClose, setStock1TodaysClose] = useState(null);
+  const [stock2TodaysClose, setStock2TodaysClose] = useState(null);
+  const [stock3TodaysClose, setStock3TodaysClose] = useState(null);
+
   useEffect(() => {
     if (initialRender.current) {
       initialRender.current = false;
@@ -117,6 +121,10 @@ const useApiFetch = () => {
           setStockDate(stockDate);
           setStockDate2(stockDate2);
           setStockDate3(stockDate3);
+
+          setStock1TodaysClose(stock1TodaysClose);
+          setStock2TodaysClose(stock2TodaysClose);
+          setStock3TodaysClose(stock3TodaysClose);
         });
 
       fetch(histFetchURL3)
@@ -314,6 +322,9 @@ const useApiFetch = () => {
     setStock2Change,
     stock3Change,
     setStock3Change,
+    stock1TodaysClose,
+    stock2TodaysClose,
+    stock3TodaysClose,
   };
 };
 
