@@ -69,7 +69,7 @@ function App() {
                 />
               </Canvas>
               <h1 className={isDarkMode ? "Dark-Mode" : "Light-Mode"}>
-                THE PHEONIX PROJECT
+                HORIZON HQ
               </h1>
             </>
             <div

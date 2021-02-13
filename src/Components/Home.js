@@ -4,6 +4,8 @@ import FrontPageNews from "./frontPageNews";
 import BigShort from "./bigshort";
 import Guitars from "./Guitars";
 import YouTubeTech from "./YouTubeTech";
+import ExpenseTrackerHolder from "./ExpenseTrackerHolder";
+
 import React, { useState, useEffect, useRef, useReducer } from "react";
 
 const Home = (props) => {
@@ -39,7 +41,7 @@ const Home = (props) => {
         }
       >
         {toolsEnabled && <BigShort darkModeProp={isDarkMode} />}
-        {!toolsEnabled && <YouTubeTech darkModeProp={isDarkMode} />}
+        {!toolsEnabled && <ExpenseTrackerHolder darkModeProp={isDarkMode} />}
       </div>
     </animated.div>
   );
