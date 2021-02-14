@@ -11,43 +11,89 @@ const ExpenseTrackerHolder = () => {
   let initialRender = useRef(true);
 
   useEffect(() => {
-    if (income.length < 3) {
-      let temp = 0;
-      for (let i = 0; i < income.length; i++) {
-        temp += parseInt(income[i].price);
-      }
-      setTotalIncome(temp);
-    } else {
-      let temp = 0;
+    let chartData = [];
+    let chartLables = [];
 
-      for (let i = 0; i < income.length; i++) {
-        temp += parseInt(income[i].price);
-      }
+    let temp = 0;
 
-      setTotalIncome(temp);
+    for (let i = 0; i < income.length; i++) {
+      temp += parseInt(income[i].price);
+      chartData.push(income[i].price);
+      chartLables.push(income[i].desc);
+    }
 
-      var ctx = document.getElementById("stackedBar").getContext("2d");
-      var stackedBar = new Chart(ctx, {
-        type: "bar",
-        data: {
-          labels: [income[0].desc, income[1].desc, income[2].desc],
-          datasets: [
-            {
-              label: "Your Current Costs",
-              backgroundColor: ["red", "white", "blue"],
-              data: [income[0].price, income[1].price, income[2].price],
-            },
-          ],
+    setTotalIncome(temp);
+
+    var ctx2 = document.getElementById("incomeDonut").getContext("2d");
+    var incomeDonut = new Chart(ctx2, {
+      type: "doughnut",
+
+      data: {
+        labels: chartLables,
+        datasets: [
+          {
+            data: chartData,
+            backgroundColor: [
+              "red",
+              "white",
+              "blue",
+              "green",
+              "grey",
+              "yellow",
+            ],
+            borderColor: ["white"],
+          },
+        ],
+      },
+      options: {
+        title: {
+          display: true,
+          text: "Your Current Costs",
         },
-        options: {
-          legend: { display: false },
-          title: {
+        plugins: {
+          labels: {
+            // render 'label', 'value', 'percentage', 'image' or custom function, default is 'percentage'
+            render: "value",
+            // precision for percentage, default is 0
+            precision: 0,
+            // identifies whether or not labels of value 0 are displayed, default is false
+            showZero: true,
+
+            fontSize: 14,
+            fontColor: "#fff",
+            fontStyle: "bold",
+            fontFamily: "Share-Tech, sans-serif",
+            textShadow: false,
+            shadowBlur: 0,
+            position: "outside",
+            shadowColor: "black",
+          },
+          datalabels: {
             display: true,
-            text: "Income Tracker Results",
+            backgroundColor: "red",
+            borderRadius: 3,
+            font: {
+              color: "green",
+              weight: "bold",
+            },
+          },
+          doughnutlabel: {
+            labels: [
+              {
+                text: "550",
+                font: {
+                  size: 20,
+                  weight: "bold",
+                },
+              },
+              {
+                text: "total",
+              },
+            ],
           },
         },
-      });
-    }
+      },
+    });
   }, [income]);
 
   return (
@@ -61,7 +107,7 @@ const ExpenseTrackerHolder = () => {
         />
       </div>
       <div>
-        <canvas id="stackedBar" width="800" height="500"></canvas>
+        <canvas id="incomeDonut" width="800" height="500"></canvas>
       </div>
     </div>
   );

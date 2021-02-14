@@ -39,6 +39,7 @@ export default () => {
     to: { opacity: 1 },
   });
 
+  let initialRender = useRef(true);
   useEffect(async () => {
     let lat;
     let long;
