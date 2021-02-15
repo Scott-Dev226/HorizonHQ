@@ -37,6 +37,7 @@ const BigShort = (props) => {
     stock1TodaysClose,
     stock2TodaysClose,
     stock3TodaysClose,
+    exchangeInputRef,
   } = useApiFetch();
 
   useEffect(() => {
@@ -96,41 +97,36 @@ const BigShort = (props) => {
           id="vs_back"
           style={{ transform: props2.transform, x: props2.x }}
         >
-          <select name="selectStock" id="input3" ref={inputRef2}>
-            <option value="AAPL">Apple</option>
-            <option value="AMZN">Amazon</option>
-            <option value="CRSP">Crispr Therapeutics</option>
-            <option value="FB">Facebook</option>
-            <option value="GOOG">Google</option>
-            <option value="INTC">Intel</option>
-            <option value="MSFT">Microsoft</option>
-            <option value="NFLX">Netflix</option>
-            <option value="TSLA">Tesla</option>
+          <select name="selectStock" id="exchangeInput" ref={exchangeInputRef}>
+            <option value="NASDAQ">NASDAQ</option>
+            <option value="NYSE">NYSE</option>
           </select>
 
-          <select name="selectStock2" id="input3" ref={inputRef3}>
-            <option value="AAPL">Apple</option>
-            <option value="AMZN">Amazon</option>
-            <option value="CRSP">Crispr Therapeutics</option>
-            <option value="FB">Facebook</option>
-            <option value="GOOG">Google</option>
-            <option value="INTC">Intel</option>
-            <option value="MSFT">Microsoft</option>
-            <option value="NFLX">Netflix</option>
-            <option value="TSLA">Tesla</option>
-          </select>
-
-          <select name="selectStock2" id="input3" ref={inputRef4}>
-            <option value="AAPL">Apple</option>
-            <option value="AMZN">Amazon</option>
-            <option value="CRSP">Crispr Therapeutics</option>
-            <option value="FB">Facebook</option>
-            <option value="GOOG">Google</option>
-            <option value="INTC">Intel</option>
-            <option value="MSFT">Microsoft</option>
-            <option value="NFLX">Netflix</option>
-            <option value="TSLA">Tesla</option>
-          </select>
+          <form>
+            <div className="form-inner">
+              <input
+                type="text"
+                name="desc"
+                id="desc"
+                placeholder="Enter Stock 1..."
+                ref={inputRef2}
+              />
+              <input
+                type="text"
+                name="price"
+                id="price"
+                placeholder="Enter Stock 2"
+                ref={inputRef3}
+              />
+              <input
+                type="text"
+                name="date"
+                id="date"
+                placeholder="Enter Stock 3"
+                ref={inputRef4}
+              />
+            </div>
+          </form>
 
           <div id="buttonDiv">
             <button
@@ -199,6 +195,7 @@ const BigShort = (props) => {
               alt="arrow1"
             ></img>
             <p id="variance"></p>
+            <p id="variance">Price: ${stock1TodaysClose}</p>
             <p id="stockDate">{stock1Change + "%"}</p>
           </div>
 
@@ -211,6 +208,7 @@ const BigShort = (props) => {
               alt="arrow2"
             ></img>
             <p id="variance2"></p>
+            <p id="variance2"> Price: ${stock2TodaysClose}</p>
             <p id="stockDate2">{stock2Change + "%"}</p>
           </div>
 
@@ -223,6 +221,7 @@ const BigShort = (props) => {
               alt="arrow3"
             ></img>
             <p id="variance3"></p>
+            <p>Price: ${stock3TodaysClose}</p>
             <p id="stockDate3">{stock3Change + "%"}</p>
           </div>
         </animated.div>

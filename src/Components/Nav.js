@@ -36,14 +36,7 @@ function Nav(props) {
         </NavLink>
         <animated.div
           style={{ transform: props2.transform, opacity: props2.opacity }}
-        >
-          <img
-            id="react-logo"
-            style={{ height: "50px" }}
-            src={reactSpinner}
-            alt="rrreact"
-          ></img>
-        </animated.div>
+        ></animated.div>
       </ul>
     </div>
   );

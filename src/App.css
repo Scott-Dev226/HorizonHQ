@@ -63,7 +63,13 @@
 
 #motherShip {
   width: 100%;
-  zoom: 95%;
+  zoom: 75%;
+}
+
+#guitar-logo {
+  height: 300px;
+  width: 300px;
+  opacity: 0.5;
 }
 
 ul {

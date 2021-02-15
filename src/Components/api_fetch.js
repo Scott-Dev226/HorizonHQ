@@ -60,9 +60,13 @@ const useApiFetch = () => {
 
   let initialRender = useRef(true);
 
+  var exchangeInputRef = useRef();
+
   const [stock1TodaysClose, setStock1TodaysClose] = useState(null);
   const [stock2TodaysClose, setStock2TodaysClose] = useState(null);
   const [stock3TodaysClose, setStock3TodaysClose] = useState(null);
+
+  const [exchange, setExchange] = useState(null);
 
   useEffect(() => {
     if (initialRender.current) {
@@ -75,7 +79,9 @@ const useApiFetch = () => {
       const histFetchURL3 =
         "https://api.twelvedata.com/time_series?symbol=" +
         toggle +
-        "&exchange=NASDAQ&interval=1day&start_date=2020-1-10&end_date=" +
+        "&exchange=" +
+        exchangeInputRef.current.value +
+        "&interval=1day&start_date=2020-1-10&end_date=" +
         todaysDate +
         "&apikey=8b61eafe6b2c4308aa8ebaa6799b4e59";
 
@@ -325,6 +331,7 @@ const useApiFetch = () => {
     stock1TodaysClose,
     stock2TodaysClose,
     stock3TodaysClose,
+    exchangeInputRef,
   };
 };
 
