@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import React, { useState, useEffect, useRef, useReducer } from "react";
 import { Canvas, useFrame } from "react-three-fiber";
-import { Stars } from "@react-three/drei";
+import { Stars, Sky } from "@react-three/drei";
 import { OrbitControls, StandardEffects, draco } from "@react-three/drei";
 
 function Box(props) {
@@ -68,10 +68,9 @@ function App() {
                   fade // Faded dots (default=false)
                 />
               </Canvas>
-              <h1 className={isDarkMode ? "Dark-Mode" : "Light-Mode"}>
-                HORIZON HQ
-              </h1>
             </>
+
+            <Nav darkModeProp={isDarkMode} />
             <div
               id="button-holder"
               className={
@@ -80,20 +79,24 @@ function App() {
                   : "Light-Mode-buttonHolder"
               }
             >
-              <button onClick={() => setIsDarkMode((prevMode) => !prevMode)}>
+              <button
+                id="Light-Button"
+                onClick={() => setIsDarkMode((prevMode) => !prevMode)}
+              >
                 {isDarkMode
                   ? "CLICK TO ENABLE LIGHT MODE"
                   : "CLICK TO ENABLE DARK MODE"}
               </button>
 
-              <button onClick={() => setToolsEnabled((prevMode) => !prevMode)}>
+              <button
+                id="Stock-Button"
+                onClick={() => setToolsEnabled((prevMode) => !prevMode)}
+              >
                 {toolsEnabled
                   ? "CLOSE NASDAQ DATA WIDGET"
                   : "OPEN NASDAQ DATA WIDGET"}
               </button>
             </div>
-
-            <Nav darkModeProp={isDarkMode} />
           </div>
           <Switch>
             <Route
