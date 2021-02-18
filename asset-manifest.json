@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/HorizonHQ/static/css/main.3bf0fa94.chunk.css",
-    "main.js": "/HorizonHQ/static/js/main.28b52597.chunk.js",
-    "main.js.map": "/HorizonHQ/static/js/main.28b52597.chunk.js.map",
+    "main.css": "/HorizonHQ/static/css/main.511dffb0.chunk.css",
+    "main.js": "/HorizonHQ/static/js/main.031ede60.chunk.js",
+    "main.js.map": "/HorizonHQ/static/js/main.031ede60.chunk.js.map",
     "runtime-main.js": "/HorizonHQ/static/js/runtime-main.bd825ad7.js",
     "runtime-main.js.map": "/HorizonHQ/static/js/runtime-main.bd825ad7.js.map",
-    "static/js/2.52b07c8e.chunk.js": "/HorizonHQ/static/js/2.52b07c8e.chunk.js",
-    "static/js/2.52b07c8e.chunk.js.map": "/HorizonHQ/static/js/2.52b07c8e.chunk.js.map",
+    "static/js/2.ce1bd0a2.chunk.js": "/HorizonHQ/static/js/2.ce1bd0a2.chunk.js",
+    "static/js/2.ce1bd0a2.chunk.js.map": "/HorizonHQ/static/js/2.ce1bd0a2.chunk.js.map",
     "static/js/3.b19422fd.chunk.js": "/HorizonHQ/static/js/3.b19422fd.chunk.js",
     "static/js/3.b19422fd.chunk.js.map": "/HorizonHQ/static/js/3.b19422fd.chunk.js.map",
     "index.html": "/HorizonHQ/index.html",
-    "static/css/main.3bf0fa94.chunk.css.map": "/HorizonHQ/static/css/main.3bf0fa94.chunk.css.map",
-    "static/js/2.52b07c8e.chunk.js.LICENSE.txt": "/HorizonHQ/static/js/2.52b07c8e.chunk.js.LICENSE.txt",
+    "static/css/main.511dffb0.chunk.css.map": "/HorizonHQ/static/css/main.511dffb0.chunk.css.map",
+    "static/js/2.ce1bd0a2.chunk.js.LICENSE.txt": "/HorizonHQ/static/js/2.ce1bd0a2.chunk.js.LICENSE.txt",
     "static/media/VS_Spinner.1a76d308.jpg": "/HorizonHQ/static/media/VS_Spinner.1a76d308.jpg",
     "static/media/aapl-back.32636139.jpg": "/HorizonHQ/static/media/aapl-back.32636139.jpg",
-    "static/media/biden-cash.bf2b3050.jpg": "/HorizonHQ/static/media/biden-cash.bf2b3050.jpg",
+    "static/media/biden-cash.0486a2bd.jpg": "/HorizonHQ/static/media/biden-cash.0486a2bd.jpg",
     "static/media/App.css": "/HorizonHQ/static/media/weather-back.1ce6cf8e.jpg",
     "static/media/cnote-logo.8cd614e9.jpg": "/HorizonHQ/static/media/cnote-logo.8cd614e9.jpg",
     "static/media/elon-tesla.853034e9.jpg": "/HorizonHQ/static/media/elon-tesla.853034e9.jpg",
@@ -29,8 +29,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.bd825ad7.js",
-    "static/js/2.52b07c8e.chunk.js",
-    "static/css/main.3bf0fa94.chunk.css",
-    "static/js/main.28b52597.chunk.js"
+    "static/js/2.ce1bd0a2.chunk.js",
+    "static/css/main.511dffb0.chunk.css",
+    "static/js/main.031ede60.chunk.js"
   ]
 }
