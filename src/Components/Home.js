@@ -5,6 +5,8 @@ import BigShort from "./bigshort";
 import Guitars from "./Guitars";
 import YouTubeTech from "./YouTubeTech";
 import ExpenseTrackerHolder from "./ExpenseTrackerHolder";
+import threeDimensions from "./cubeTestComponent";
+import IndexWidget from "./indexWidget";
 
 import React, { useState, useEffect, useRef, useReducer } from "react";
 
@@ -41,7 +43,9 @@ const Home = (props) => {
         }
       >
         {toolsEnabled && <BigShort darkModeProp={isDarkMode} />}
-        {!toolsEnabled && <ExpenseTrackerHolder darkModeProp={isDarkMode} />}
+        {!toolsEnabled && (
+          <IndexWidget darkModeProp={isDarkMode} toolsProp={toolsEnabled} />
+        )}
       </div>
     </animated.div>
   );

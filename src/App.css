@@ -567,6 +567,7 @@ p {
 .chartDisplay {
   opacity: 1;
   justify-content: center;
+  background-color: white;
 }
 
 #weather-holder {
