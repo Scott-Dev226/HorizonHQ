@@ -128,7 +128,7 @@ ul li:hover {
   border: 4px groove rgb(110, 9, 9);
   font-family: "Open Sans Condensed", sans-serif;
   display: block;
-  margin-left: 17%;
+  margin-left: 15%;
   margin-top: 5px;
 }
 
@@ -903,10 +903,6 @@ select {
   #news-headlines {
     width: 35em;
     font-size: 1em;
-  }
-
-  #home-left-content {
-    margin-left: 10%;
   }
 
   #input3 {
