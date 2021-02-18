@@ -799,10 +799,6 @@ select {
 }
 
 @media only screen and (max-width: 1000px) {
-  #motherShip {
-    width: 100%;
-    zoom: 90%;
-  }
   .home-div {
     display: block;
   }
