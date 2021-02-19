@@ -9,9 +9,6 @@ const FrontPageNews = (props) => {
       id="storyHolderDiv"
       className={isDarkMode ? "Dark-Mode" : "Light-Mode"}
     >
-      <h1 id="Header-Title" className={isDarkMode ? "Dark-Mode" : "Light-Mode"}>
-        Recent News
-      </h1>
       <FrontPageNewsStories darkModeProp={props.darkModeProp} />
     </div>
   );

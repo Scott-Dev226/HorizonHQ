@@ -10,15 +10,14 @@ const FrontPageNewsStory = (props) => {
       id="news-headlines"
       className={isDarkMode ? "Dark-Mode" : "Light-Mode"}
     >
-
-    <div id = "newsHeadlineCenterDiv">
-      <h1
-        id="quickNewsHeadline"
-        className={isDarkMode ? "Dark-Mode" : "Light-Mode"}
-      >
-        {" "}
-        {props.Headline}{" "}
-      </h1>
+      <div id="newsHeadlineCenterDiv">
+        <h1
+          id="quickNewsHeadline"
+          className={isDarkMode ? "Dark-Mode" : "Light-Mode"}
+        >
+          {" "}
+          {props.Headline}{" "}
+        </h1>
       </div>
       <img
         id="news-img"
@@ -28,21 +27,21 @@ const FrontPageNewsStory = (props) => {
       ></img>
 
       <div id="newsDescriptionCenterDiv">
-      <p
-        id="quickNewsDescription"
-        className={isDarkMode ? "Dark-Mode" : "Light-Mode"}
-      >
-        {" "}
-        {props.Description}{" "}
-      </p>
-      <br></br>
-      <p
-        id="quickNewsDescription"
-        className={isDarkMode ? "Dark-Mode" : "Light-Mode"}
-      >
-        {" "}
-        {props.Description2}{" "}
-      </p>
+        <p
+          id="quickNewsDescription"
+          className={isDarkMode ? "Dark-Mode" : "Light-Mode"}
+        >
+          {" "}
+          {props.Description}{" "}
+        </p>
+        <br></br>
+        <p
+          id="quickNewsDescription"
+          className={isDarkMode ? "Dark-Mode" : "Light-Mode"}
+        >
+          {" "}
+          {props.Description2}{" "}
+        </p>
       </div>
     </div>
   );

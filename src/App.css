@@ -115,6 +115,7 @@ ul li:hover {
   background-color: rgb(155, 25, 16);
   color: white;
   font-size: 1.75em;
+
   font-weight: bold;
   width: 700px;
   font-family: "Open Sans Condensed", sans-serif;
@@ -124,16 +125,18 @@ ul li:hover {
 
 #quickNewsDescription {
   font-size: 1.2em;
-  width: 65%;
+  width: 100%;
   border: 4px groove rgb(110, 9, 9);
   font-family: "Open Sans Condensed", sans-serif;
-  display: block;
-
+  display: flex;
   margin-top: 5px;
 }
 
 #storyHolderDiv {
   justify-content: center;
+  display: block;
+
+  flex-wrap: nowrap;
   background-repeat: no-repeat;
 }
 
@@ -257,6 +260,7 @@ ul li:hover {
 
 #leftContentCenter {
   display: flex;
+  width: 90%;
 }
 
 #home-right-content {
@@ -288,13 +292,15 @@ ul li:hover {
 
 #Header-Title {
   justify-content: center;
+  display: block;
   color: white;
   background-color: black;
-  width: 15em;
+  width: 30%;
   font-family: "Open Sans Condensed", sans-serif;
   opacity: 0.75;
   border-radius: 9999px;
   font-size: 3.5em;
+  height: 10px;
 }
 
 .App {
@@ -417,12 +423,13 @@ p {
 #newsHeadlineCenterDiv {
   display: flex;
   justify-content: center;
+
+  width: 100%;
 }
 
 #newsDescriptionCenterDiv {
-  justify-content: center;
-  display: block;
-  width: 100%;
+  display: inline-block;
+  width: 90%;
 }
 
 .outerStockDiv {
@@ -883,10 +890,11 @@ select {
 
   #home-left-content {
     margin-bottom: 50px;
+    margin-left: 10%;
   }
 
   #news-img {
-    width: 200px;
+    width: 350px;
   }
 }
 
