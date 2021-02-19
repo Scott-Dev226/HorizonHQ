@@ -577,6 +577,18 @@ p {
   background-color: white;
 }
 
+.dowChartDisplay {
+  opacity: 1;
+  justify-content: center;
+  background-color: white;
+}
+
+.dowChartDisplay-Light {
+  opacity: 1;
+  justify-content: center;
+  background-color: white;
+}
+
 #weather-holder {
   background-image: url("weather-back.jpg");
 }

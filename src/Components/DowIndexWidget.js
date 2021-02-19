@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useReducer } from "react";
 import Chart from "chart.js";
 
-const IndexWidget = () => {
+const DowIndexWidget = () => {
   const [dowIndexValue, setDowIndexValue] = useState(null);
   const [dowCascadeClose, setDowCascadeClose] = useState(null);
   const [dowCascadeDate, setDowCascadeDate] = useState(null);
@@ -65,9 +65,10 @@ const IndexWidget = () => {
           options: {
             title: {
               display: true,
-              text: "STOCK PRICE" + " $" + data.values[0].close + "    (USD/$)",
+              text:
+                "CURRENT VALUE" + " $" + data.values[0].close + "    (USD/$)",
             },
-            responsive: true,
+            responsive: false,
             maintainAspectRatio: true,
 
             scales: {
@@ -89,7 +90,7 @@ const IndexWidget = () => {
       <div>
         <canvas
           id="dowChart"
-          className="chartDisplay"
+          className="dowChartDisplay"
           width="800"
           height="500"
         ></canvas>
@@ -99,4 +100,4 @@ const IndexWidget = () => {
   );
 };
 
-export default IndexWidget;
+export default DowIndexWidget;
