@@ -10,6 +10,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Titillium+Web:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap");
 
 #income-submit {
   display: block;
@@ -73,7 +74,7 @@
   opacity: 0.5;
 }
 
-ul {
+#nav-link-style {
   display: flex;
   align-items: center;
   padding-top: 5px;
@@ -82,14 +83,14 @@ ul {
   justify-content: flex-end;
 }
 
-ul li {
+#nav-link-style li {
   display: flex;
   margin-right: 40px;
   width: 95%;
   list-style: none;
   font-family: "Blinker", sans-serif;
   font-size: 1.5em;
-  color: white;
+
   text-decoration: none;
   font-weight: bold;
   opacity: 0.8;
@@ -99,12 +100,28 @@ ul li {
   border-right: 0.5px solid white;
 }
 
-ul li:hover {
+#nav-link-style li:hover {
   font-size: 1.5em;
   background-color: rgb(216, 6, 6);
   border-radius: 5px;
   border: 2px dotted white;
   text-decoration: underline;
+}
+
+.site-logo-Dark {
+  color: white;
+  font-family: "Syne Mono", monospace;
+  font-size: 4rem;
+  display: inline;
+  margin-right: 58%;
+}
+
+.site-logo-Light {
+  color: black;
+  font-family: "Syne Mono", monospace;
+  font-size: 4rem;
+  display: inline;
+  margin-right: 58%;
 }
 
 #linkster {
@@ -231,6 +248,7 @@ ul li:hover {
   padding-top: 0px;
   height: 70px;
   background-size: contain;
+  display: inline;
 }
 
 .home-div {
@@ -820,6 +838,16 @@ select {
 @media only screen and (max-width: 1000px) {
   .home-div {
     display: block;
+  }
+
+  .site-logo-Dark {
+    font-size: 3rem;
+    margin-right: 8%;
+  }
+
+  .site-logo-Light {
+    font-size: 3rem;
+    margin-right: 8%;
   }
 
   #news-headlines {

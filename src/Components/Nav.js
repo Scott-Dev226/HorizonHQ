@@ -18,26 +18,35 @@ function Nav(props) {
   });
 
   return (
-    <div className={isDarkMode ? "Dark-Mode" : "Light-Mode"} id="nav-div">
-      <ul>
-        <NavLink id="linkster" to="/HorizonHQ">
-          <li className={isDarkMode ? "Dark-Mode" : "Light-Mode"}>HOME</li>
-        </NavLink>
-        <NavLink
-          id="linkster"
-          to={{ pathname: "https://www.twelvedata.com" }}
-          target="_blank"
-        >
-          {" "}
-          <li className={isDarkMode ? "Dark-Mode" : "Light-Mode"}>API INFO</li>
-        </NavLink>
-        <NavLink id="linkster" to="/About">
-          <li className={isDarkMode ? "Dark-Mode" : "Light-Mode"}>ABOUT ME</li>
-        </NavLink>
-        <animated.div
-          style={{ transform: props2.transform, opacity: props2.opacity }}
-        ></animated.div>
-      </ul>
+    <div>
+      <div className={isDarkMode ? "Dark-Mode" : "Light-Mode"} id="nav-div">
+        <ul id="nav-link-style">
+          <p className={isDarkMode ? "site-logo-Dark" : "site-logo-Light"}>
+            HORIZON HQ
+          </p>
+          <NavLink id="linkster" to="/HorizonHQ">
+            <li className={isDarkMode ? "Dark-Mode" : "Light-Mode"}>HOME</li>
+          </NavLink>
+          <NavLink
+            id="linkster"
+            to={{ pathname: "https://www.twelvedata.com" }}
+            target="_blank"
+          >
+            {" "}
+            <li className={isDarkMode ? "Dark-Mode" : "Light-Mode"}>
+              API INFO
+            </li>
+          </NavLink>
+          <NavLink id="linkster" to="/About">
+            <li className={isDarkMode ? "Dark-Mode" : "Light-Mode"}>
+              ABOUT ME
+            </li>
+          </NavLink>
+          <animated.div
+            style={{ transform: props2.transform, opacity: props2.opacity }}
+          ></animated.div>
+        </ul>
+      </div>
     </div>
   );
 }
