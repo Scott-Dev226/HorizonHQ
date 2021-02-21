@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/HorizonHQ/static/css/main.db66a6c4.chunk.css",
-    "main.js": "/HorizonHQ/static/js/main.39c67fd2.chunk.js",
-    "main.js.map": "/HorizonHQ/static/js/main.39c67fd2.chunk.js.map",
+    "main.css": "/HorizonHQ/static/css/main.784bc79c.chunk.css",
+    "main.js": "/HorizonHQ/static/js/main.b6fcf7be.chunk.js",
+    "main.js.map": "/HorizonHQ/static/js/main.b6fcf7be.chunk.js.map",
     "runtime-main.js": "/HorizonHQ/static/js/runtime-main.bd825ad7.js",
     "runtime-main.js.map": "/HorizonHQ/static/js/runtime-main.bd825ad7.js.map",
-    "static/js/2.40605c22.chunk.js": "/HorizonHQ/static/js/2.40605c22.chunk.js",
-    "static/js/2.40605c22.chunk.js.map": "/HorizonHQ/static/js/2.40605c22.chunk.js.map",
+    "static/js/2.3e9acb4e.chunk.js": "/HorizonHQ/static/js/2.3e9acb4e.chunk.js",
+    "static/js/2.3e9acb4e.chunk.js.map": "/HorizonHQ/static/js/2.3e9acb4e.chunk.js.map",
     "static/js/3.b19422fd.chunk.js": "/HorizonHQ/static/js/3.b19422fd.chunk.js",
     "static/js/3.b19422fd.chunk.js.map": "/HorizonHQ/static/js/3.b19422fd.chunk.js.map",
     "index.html": "/HorizonHQ/index.html",
-    "static/css/main.db66a6c4.chunk.css.map": "/HorizonHQ/static/css/main.db66a6c4.chunk.css.map",
-    "static/js/2.40605c22.chunk.js.LICENSE.txt": "/HorizonHQ/static/js/2.40605c22.chunk.js.LICENSE.txt",
+    "static/css/main.784bc79c.chunk.css.map": "/HorizonHQ/static/css/main.784bc79c.chunk.css.map",
+    "static/js/2.3e9acb4e.chunk.js.LICENSE.txt": "/HorizonHQ/static/js/2.3e9acb4e.chunk.js.LICENSE.txt",
     "static/media/My Horizon.02b8d280.jpg": "/HorizonHQ/static/media/My Horizon.02b8d280.jpg",
     "static/media/VS_Spinner.1a76d308.jpg": "/HorizonHQ/static/media/VS_Spinner.1a76d308.jpg",
     "static/media/aapl-back.32636139.jpg": "/HorizonHQ/static/media/aapl-back.32636139.jpg",
-    "static/media/biden-cash.78647f3e.jpg": "/HorizonHQ/static/media/biden-cash.78647f3e.jpg",
+    "static/media/biden-cash.fb8c8613.jpg": "/HorizonHQ/static/media/biden-cash.fb8c8613.jpg",
     "static/media/App.css": "/HorizonHQ/static/media/weather-back.1ce6cf8e.jpg",
     "static/media/elon-tesla.853034e9.jpg": "/HorizonHQ/static/media/elon-tesla.853034e9.jpg",
     "static/media/fb-back.ccf28166.png": "/HorizonHQ/static/media/fb-back.ccf28166.png",
@@ -29,8 +29,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.bd825ad7.js",
-    "static/js/2.40605c22.chunk.js",
-    "static/css/main.db66a6c4.chunk.css",
-    "static/js/main.39c67fd2.chunk.js"
+    "static/js/2.3e9acb4e.chunk.js",
+    "static/css/main.784bc79c.chunk.css",
+    "static/js/main.b6fcf7be.chunk.js"
   ]
 }
