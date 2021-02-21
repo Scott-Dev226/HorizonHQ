@@ -57,14 +57,18 @@ const DowIndexWidget = (props) => {
 
         var ctx = document.getElementById("dowChart").getContext("2d");
 
+        /*
         if (isDarkMode) {
           Chart.defaults.global.defaultFontColor = "white";
         } else if (!isDarkMode) {
           Chart.defaults.global.defaultFontColor = "black";
         }
 
+        */
+
         Chart.defaults.global.defaultFontSize = 20;
         Chart.defaults.global.defaultFontFamily = "Arial Narrow";
+        Chart.defaults.global.defaultFontColor = "grey";
 
         var dowChart = new Chart(ctx, {
           type: "line",
@@ -101,7 +105,7 @@ const DowIndexWidget = (props) => {
           },
         });
       });
-  }, [isDarkMode]);
+  }, []);
 
   return (
     <>

@@ -57,11 +57,16 @@ const NASDAQ_IndexWidget = (props) => {
 
         var ctx = document.getElementById("SPChart").getContext("2d");
 
+        /*
         if (isDarkMode) {
           Chart.defaults.global.defaultFontColor = "white";
         } else if (!isDarkMode) {
           Chart.defaults.global.defaultFontColor = "black";
         }
+
+        */
+
+        Chart.defaults.global.defaultFontColor = "grey";
 
         var dowChart = new Chart(ctx, {
           type: "line",
@@ -98,7 +103,7 @@ const NASDAQ_IndexWidget = (props) => {
           },
         });
       });
-  }, [isDarkMode]);
+  }, []);
 
   return (
     <>
