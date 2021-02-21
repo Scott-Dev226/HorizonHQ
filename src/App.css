@@ -10,7 +10,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Titillium+Web:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap");
 
 #income-submit {
   display: block;
@@ -108,20 +108,28 @@
   text-decoration: underline;
 }
 
+#logo-pic {
+  width: 3em;
+  height: 2em;
+  border-radius: 20%;
+}
+
 .site-logo-Dark {
   color: white;
-  font-family: "Syne Mono", monospace;
-  font-size: 4rem;
+  font-family: "Nova Mono", monospace;
+  font-size: 3rem;
   display: inline;
   margin-right: 58%;
+  opacity: 0.75;
 }
 
 .site-logo-Light {
   color: black;
-  font-family: "Syne Mono", monospace;
-  font-size: 4rem;
+  font-family: "Nova Mono", monospace;
+  font-size: 3rem;
   display: inline;
   margin-right: 58%;
+  opacity: 0.75;
 }
 
 #linkster {
@@ -841,12 +849,12 @@ select {
   }
 
   .site-logo-Dark {
-    font-size: 3rem;
+    font-size: 1.75rem;
     margin-right: 8%;
   }
 
   .site-logo-Light {
-    font-size: 3rem;
+    font-size: 1.75rem;
     margin-right: 8%;
   }
 

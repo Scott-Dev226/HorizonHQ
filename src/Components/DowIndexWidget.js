@@ -38,7 +38,7 @@ const DowIndexWidget = () => {
         let dowCascadeDate = [];
 
         let i;
-        for (i = 100; i >= 0; i--) {
+        for (i = 150; i >= 0; i--) {
           dowCascadeClose.push(data.values[i].close);
           setDowCascadeClose(dowCascadeClose);
 

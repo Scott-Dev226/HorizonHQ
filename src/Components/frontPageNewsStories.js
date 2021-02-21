@@ -8,7 +8,8 @@ const FrontPageNewsStories = (props) => {
   const storyArray = [
     {
       Name: "2",
-      Headline: "Biden-Harris Administration Promises $1400 Stimulus Extension",
+      Headline:
+        "Spencer Rascoff: Investors should expect a ‘structural reset’ in tech sector",
       Description:
         "Biden's massive plan includes several immediate relief items that are popular with a wide swath of Americans, including sending another $1,400 in direct stimulus payments.",
       Description2:

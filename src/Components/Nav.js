@@ -2,7 +2,7 @@ import "../App.css";
 import { NavLink } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import reactSpinner from "../react_spinner.png";
-import siteLogo from "../cnote-logo.jpg";
+import siteLogo from "../My Horizon.jpg";
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
@@ -21,6 +21,7 @@ function Nav(props) {
     <div>
       <div className={isDarkMode ? "Dark-Mode" : "Light-Mode"} id="nav-div">
         <ul id="nav-link-style">
+          <img id="logo-pic" src={siteLogo}></img>
           <p className={isDarkMode ? "site-logo-Dark" : "site-logo-Light"}>
             HORIZON HQ
           </p>
