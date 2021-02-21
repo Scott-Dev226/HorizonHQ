@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/HorizonHQ/static/css/main.4bc2c169.chunk.css",
-    "main.js": "/HorizonHQ/static/js/main.f05d617e.chunk.js",
-    "main.js.map": "/HorizonHQ/static/js/main.f05d617e.chunk.js.map",
+    "main.css": "/HorizonHQ/static/css/main.35d6df59.chunk.css",
+    "main.js": "/HorizonHQ/static/js/main.0911693b.chunk.js",
+    "main.js.map": "/HorizonHQ/static/js/main.0911693b.chunk.js.map",
     "runtime-main.js": "/HorizonHQ/static/js/runtime-main.bd825ad7.js",
     "runtime-main.js.map": "/HorizonHQ/static/js/runtime-main.bd825ad7.js.map",
     "static/js/2.b90adb93.chunk.js": "/HorizonHQ/static/js/2.b90adb93.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.b19422fd.chunk.js": "/HorizonHQ/static/js/3.b19422fd.chunk.js",
     "static/js/3.b19422fd.chunk.js.map": "/HorizonHQ/static/js/3.b19422fd.chunk.js.map",
     "index.html": "/HorizonHQ/index.html",
-    "static/css/main.4bc2c169.chunk.css.map": "/HorizonHQ/static/css/main.4bc2c169.chunk.css.map",
+    "static/css/main.35d6df59.chunk.css.map": "/HorizonHQ/static/css/main.35d6df59.chunk.css.map",
     "static/js/2.b90adb93.chunk.js.LICENSE.txt": "/HorizonHQ/static/js/2.b90adb93.chunk.js.LICENSE.txt",
+    "static/media/My Horizon.02b8d280.jpg": "/HorizonHQ/static/media/My Horizon.02b8d280.jpg",
     "static/media/VS_Spinner.1a76d308.jpg": "/HorizonHQ/static/media/VS_Spinner.1a76d308.jpg",
     "static/media/aapl-back.32636139.jpg": "/HorizonHQ/static/media/aapl-back.32636139.jpg",
-    "static/media/biden-cash.0486a2bd.jpg": "/HorizonHQ/static/media/biden-cash.0486a2bd.jpg",
+    "static/media/biden-cash.78647f3e.jpg": "/HorizonHQ/static/media/biden-cash.78647f3e.jpg",
     "static/media/App.css": "/HorizonHQ/static/media/weather-back.1ce6cf8e.jpg",
-    "static/media/cnote-logo.8cd614e9.jpg": "/HorizonHQ/static/media/cnote-logo.8cd614e9.jpg",
     "static/media/elon-tesla.853034e9.jpg": "/HorizonHQ/static/media/elon-tesla.853034e9.jpg",
     "static/media/fb-back.ccf28166.png": "/HorizonHQ/static/media/fb-back.ccf28166.png",
     "static/media/goog-back.03a86396.jpg": "/HorizonHQ/static/media/goog-back.03a86396.jpg",
@@ -30,7 +30,7 @@
   "entrypoints": [
     "static/js/runtime-main.bd825ad7.js",
     "static/js/2.b90adb93.chunk.js",
-    "static/css/main.4bc2c169.chunk.css",
-    "static/js/main.f05d617e.chunk.js"
+    "static/css/main.35d6df59.chunk.css",
+    "static/js/main.0911693b.chunk.js"
   ]
 }
