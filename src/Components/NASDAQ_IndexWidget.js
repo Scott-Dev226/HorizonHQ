@@ -1,10 +1,19 @@
 import { useState, useEffect, useRef, useReducer } from "react";
 import Chart from "chart.js";
+import { useSpring, animated } from "react-spring";
 
-const SP500_IndexWidget = () => {
+const NASDAQ_IndexWidget = (props) => {
   const [SPIndexValue, setSPIndexValue] = useState(null);
   const [SPCascadeClose, setSPCascadeClose] = useState(null);
   const [SPCascadeDate, setSPCascadeDate] = useState(null);
+
+  const stockAnimProps = useSpring({
+    config: { duration: 2000 },
+    from: { opacity: 0, transform: "translateX(20px)" },
+    to: { opacity: 1, transform: "translateX(0px)" },
+  });
+
+  let isDarkMode = props.darkModeProp;
 
   const today = new Date();
   let dd = today.getDate() - 2;
@@ -25,7 +34,7 @@ const SP500_IndexWidget = () => {
     const SPFetchURL =
       "https://api.twelvedata.com/time_series?symbol=" +
       "IXIC" +
-      "&interval=1day&start_date=2020-1-10&end_date=" +
+      "&interval=1week&start_date=2020-1-10&end_date=" +
       todaysDate +
       "&apikey=8b61eafe6b2c4308aa8ebaa6799b4e59";
 
@@ -38,7 +47,7 @@ const SP500_IndexWidget = () => {
         let SPCascadeDate = [];
 
         let i;
-        for (i = 100; i >= 0; i--) {
+        for (i = 52; i >= 0; i--) {
           SPCascadeClose.push(data.values[i].close);
           setSPCascadeClose(SPCascadeClose);
 
@@ -47,7 +56,13 @@ const SP500_IndexWidget = () => {
         }
 
         var ctx = document.getElementById("SPChart").getContext("2d");
-        Chart.defaults.global.defaultFontColor = "black";
+
+        if (isDarkMode) {
+          Chart.defaults.global.defaultFontColor = "white";
+        } else if (!isDarkMode) {
+          Chart.defaults.global.defaultFontColor = "black";
+        }
+
         var dowChart = new Chart(ctx, {
           type: "line",
           data: {
@@ -83,21 +98,28 @@ const SP500_IndexWidget = () => {
           },
         });
       });
-  }, []);
+  }, [isDarkMode]);
 
   return (
     <>
-      <div>
+      <animated.div
+        style={{
+          opacity: stockAnimProps.opacity,
+          transform: stockAnimProps.transform,
+        }}
+      >
         <canvas
           id="SPChart"
-          className="dowChartDisplay"
+          className={
+            isDarkMode ? "dowChartDisplay-Dark" : "dowChartDisplay-Light"
+          }
           width="800"
           height="500"
         ></canvas>
-      </div>
-      <p>{SPIndexValue}</p>;
+      </animated.div>
+      <p>{SPIndexValue}</p>
     </>
   );
 };
 
-export default SP500_IndexWidget;
+export default NASDAQ_IndexWidget;

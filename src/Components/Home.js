@@ -7,7 +7,7 @@ import YouTubeTech from "./YouTubeTech";
 import ExpenseTrackerHolder from "./ExpenseTrackerHolder";
 import threeDimensions from "./cubeTestComponent";
 import DowIndexWidget from "./DowIndexWidget";
-import SP500_IndexWidget from "./SPIndexWidget";
+import NASDAQ_IndexWidget from "./NASDAQ_IndexWidget";
 
 import React, { useState, useEffect, useRef, useReducer } from "react";
 
@@ -48,7 +48,7 @@ const Home = (props) => {
           <DowIndexWidget darkModeProp={isDarkMode} toolsProp={toolsEnabled} />
         )}
         {!toolsEnabled && (
-          <SP500_IndexWidget
+          <NASDAQ_IndexWidget
             darkModeProp={isDarkMode}
             toolsProp={toolsEnabled}
           />

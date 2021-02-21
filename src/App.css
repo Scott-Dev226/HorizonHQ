@@ -603,16 +603,18 @@ p {
   background-color: white;
 }
 
-.dowChartDisplay {
+.dowChartDisplay-Dark {
   opacity: 1;
   justify-content: center;
-  background-color: white;
+  background-color: black;
+  width: 55%;
 }
 
 .dowChartDisplay-Light {
   opacity: 1;
   justify-content: center;
   background-color: white;
+  width: 55%;
 }
 
 #weather-holder {
@@ -699,7 +701,6 @@ select {
 }
 
 .Light-Mode-buttonHolder {
-  background-image: url("light-mode.jpg");
   background-size: cover;
   transition-property: all;
   transition-duration: 1000ms;
@@ -707,7 +708,6 @@ select {
 }
 
 .Dark-Mode-buttonHolder {
-  background-image: url("dark-mode-sky.jpeg");
   background-size: cover;
   transition-property: all;
   transition-duration: 1000ms;

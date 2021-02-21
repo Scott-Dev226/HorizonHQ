@@ -1,10 +1,19 @@
 import { useState, useEffect, useRef, useReducer } from "react";
 import Chart from "chart.js";
+import { useSpring, animated } from "react-spring";
 
-const DowIndexWidget = () => {
+const DowIndexWidget = (props) => {
   const [dowIndexValue, setDowIndexValue] = useState(null);
   const [dowCascadeClose, setDowCascadeClose] = useState(null);
   const [dowCascadeDate, setDowCascadeDate] = useState(null);
+
+  const stockAnimProps = useSpring({
+    config: { duration: 1500 },
+    from: { opacity: 0, transform: "translateX(20px)" },
+    to: { opacity: 1, transform: "translateX(0px)" },
+  });
+
+  let isDarkMode = props.darkModeProp;
 
   const today = new Date();
   let dd = today.getDate() - 2;
@@ -25,7 +34,7 @@ const DowIndexWidget = () => {
     const dowFetchURL =
       "https://api.twelvedata.com/time_series?symbol=" +
       "DJI" +
-      "&interval=1day&start_date=2020-1-10&end_date=" +
+      "&interval=1week&start_date=2020-1-10&end_date=" +
       todaysDate +
       "&apikey=8b61eafe6b2c4308aa8ebaa6799b4e59";
 
@@ -38,7 +47,7 @@ const DowIndexWidget = () => {
         let dowCascadeDate = [];
 
         let i;
-        for (i = 150; i >= 0; i--) {
+        for (i = 52; i >= 0; i--) {
           dowCascadeClose.push(data.values[i].close);
           setDowCascadeClose(dowCascadeClose);
 
@@ -47,7 +56,16 @@ const DowIndexWidget = () => {
         }
 
         var ctx = document.getElementById("dowChart").getContext("2d");
-        Chart.defaults.global.defaultFontColor = "black";
+
+        if (isDarkMode) {
+          Chart.defaults.global.defaultFontColor = "white";
+        } else if (!isDarkMode) {
+          Chart.defaults.global.defaultFontColor = "black";
+        }
+
+        Chart.defaults.global.defaultFontSize = 20;
+        Chart.defaults.global.defaultFontFamily = "Arial Narrow";
+
         var dowChart = new Chart(ctx, {
           type: "line",
           data: {
@@ -83,19 +101,26 @@ const DowIndexWidget = () => {
           },
         });
       });
-  }, []);
+  }, [isDarkMode]);
 
   return (
     <>
-      <div>
+      <animated.div
+        style={{
+          opacity: stockAnimProps.opacity,
+          transform: stockAnimProps.transform,
+        }}
+      >
         <canvas
           id="dowChart"
-          className="dowChartDisplay"
+          className={
+            isDarkMode ? "dowChartDisplay-Dark" : "dowChartDisplay-Light"
+          }
           width="800"
           height="500"
         ></canvas>
-      </div>
-      <p>{dowIndexValue}</p>;
+      </animated.div>
+      <p>{dowIndexValue}</p>
     </>
   );
 };
