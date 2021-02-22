@@ -117,7 +117,7 @@
 .site-logo-Dark {
   color: white;
   font-family: "Nova Mono", monospace;
-  font-size: 3rem;
+  font-size: 1.6rem;
   display: inline;
   margin-right: 58%;
   opacity: 0.75;
@@ -126,7 +126,7 @@
 .site-logo-Light {
   color: black;
   font-family: "Nova Mono", monospace;
-  font-size: 3rem;
+  font-size: 1.6rem;
   display: inline;
   margin-right: 58%;
   opacity: 0.75;
@@ -290,9 +290,8 @@
 }
 
 #home-right-content {
-  flex-basis: 60%;
+  flex-basis: 50%;
 
-  padding-right: 10px;
   height: 100%;
 }
 
@@ -607,12 +606,17 @@ p {
   opacity: 1;
   justify-content: center;
   background-color: black;
-  width: 60%;
-  margin-left: 5%;
+  width: 500px;
+
   transition-property: all;
   transition-duration: 1000ms;
   transition-timing-function: ease-in-out;
   margin-top: 40px;
+}
+
+#indexChartCenter {
+  display: flex;
+  justify-content: ;
 }
 
 .dowChartDisplay-Light {
@@ -624,7 +628,7 @@ p {
   transition-duration: 1000ms;
   transition-timing-function: ease-in-out;
   margin-top: 40px;
-  display: inline-block;
+  display: flex;
 }
 
 #weather-holder {
@@ -854,22 +858,16 @@ select {
 }
 
 @media only screen and (max-width: 1000px) {
-  .home-div {
-    display: block;
-  }
-
   .site-logo-Dark {
     font-size: 1.75rem;
-    margin-right: 8%;
   }
 
   .site-logo-Light {
     font-size: 1.75rem;
-    margin-right: 8%;
   }
 
   #news-headlines {
-    width: 35em;
+    width: 50em;
   }
 
   #news-img {
@@ -907,7 +905,21 @@ select {
   }
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 700px) {
+  .site-logo-Dark {
+    margin-right: 20%;
+  }
+
+  .site-logo-Light {
+    margin-right: 20%;
+  }
+
+  #nav-link-style li {
+    font-size: 1rem;
+  }
+  .home-div {
+    display: block;
+  }
   ul li {
     font-size: 1em;
   }
@@ -943,20 +955,26 @@ select {
   }
 
   #news-headlines {
-    width: 25em;
+    width: 35em;
   }
 
   #home-left-content {
     margin-bottom: 50px;
-    margin-left: 10%;
   }
 
   #news-img {
-    width: 350px;
+    width: 500px;
   }
 }
 
 @media only screen and (max-width: 450px) {
+  .dowChartDisplay-Dark {
+    width: 250px;
+  }
+
+  .dowChartDisplay-Dark {
+    width: 250px;
+  }
   #Header-Title {
     width: 15em;
     font-size: 1em;
@@ -967,7 +985,7 @@ select {
   }
 
   #news-headlines {
-    width: 35em;
+    width: 15em;
   }
 
   #input3 {
