@@ -12,10 +12,12 @@ import React, { useState, useEffect, useRef, useReducer } from "react";
 import { Canvas, useFrame } from "react-three-fiber";
 import { Stars, Sky } from "@react-three/drei";
 import { OrbitControls, StandardEffects, draco } from "@react-three/drei";
+import DowIndexWidget from "./DowIndexWidget";
+import NASDAQ_IndexWidget from "./NASDAQ_IndexWidget";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [toolsEnabled, setToolsEnabled] = useState(false);
+  const [toolsEnabled, setToolsEnabled] = useState(true);
 
   return (
     <div
@@ -26,6 +28,7 @@ function App() {
         <div className="App">
           <div id="forNavCenter">
             <Nav darkModeProp={isDarkMode} />
+
             <div
               id="button-holder"
               className={
@@ -42,15 +45,18 @@ function App() {
                   ? "CLICK TO ENABLE LIGHT MODE"
                   : "CLICK TO ENABLE DARK MODE"}
               </button>
+            </div>
 
-              <button
-                id="Stock-Button"
-                onClick={() => setToolsEnabled((prevMode) => !prevMode)}
-              >
-                {toolsEnabled
-                  ? "CLOSE NASDAQ DATA WIDGET"
-                  : "OPEN NASDAQ DATA WIDGET"}
-              </button>
+            <div id="indexChartCenter">
+              <DowIndexWidget
+                darkModeProp={isDarkMode}
+                toolsProp={toolsEnabled}
+              />
+
+              <NASDAQ_IndexWidget
+                darkModeProp={isDarkMode}
+                toolsProp={toolsEnabled}
+              />
             </div>
           </div>
           <Switch>

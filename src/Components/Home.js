@@ -44,15 +44,6 @@ const Home = (props) => {
         }
       >
         {toolsEnabled && <BigShort darkModeProp={isDarkMode} />}
-        {!toolsEnabled && (
-          <DowIndexWidget darkModeProp={isDarkMode} toolsProp={toolsEnabled} />
-        )}
-        {!toolsEnabled && (
-          <NASDAQ_IndexWidget
-            darkModeProp={isDarkMode}
-            toolsProp={toolsEnabled}
-          />
-        )}
       </div>
     </animated.div>
   );

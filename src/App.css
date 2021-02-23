@@ -607,16 +607,17 @@ p {
   justify-content: center;
   background-color: black;
   width: 500px;
-
+  flex-wrap: wrap;
   transition-property: all;
   transition-duration: 1000ms;
   transition-timing-function: ease-in-out;
   margin-top: 40px;
+  margin-bottom: 50px;
 }
 
 #indexChartCenter {
   display: flex;
-  justify-content: ;
+  justify-content: center;
 }
 
 .dowChartDisplay-Light {
@@ -629,6 +630,7 @@ p {
   transition-timing-function: ease-in-out;
   margin-top: 40px;
   display: flex;
+  margin-bottom: 50px;
 }
 
 #weather-holder {
@@ -968,6 +970,10 @@ select {
 }
 
 @media only screen and (max-width: 450px) {
+  #indexChartCenter {
+    display: block;
+    justify-content: center;
+  }
   .dowChartDisplay-Dark {
     width: 250px;
   }
@@ -982,10 +988,6 @@ select {
 
   ul {
     justify-content: center;
-  }
-
-  #news-headlines {
-    width: 25em;
   }
 
   #input3 {

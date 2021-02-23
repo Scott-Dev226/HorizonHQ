@@ -108,6 +108,7 @@ const NASDAQ_IndexWidget = (props) => {
   return (
     <>
       <animated.div
+        id="indexChartCenter"
         style={{
           opacity: stockAnimProps.opacity,
           transform: stockAnimProps.transform,
