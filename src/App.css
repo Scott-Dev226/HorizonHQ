@@ -969,13 +969,13 @@ select {
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 550px) {
   #indexChartCenter {
     display: block;
     justify-content: center;
   }
   .dowChartDisplay-Dark {
-    width: 250px;
+    width: 400px;
   }
 
   #news-headlines {
@@ -983,7 +983,7 @@ select {
   }
 
   .dowChartDisplay-Light {
-    width: 250px;
+    width: 400px;
   }
   #Header-Title {
     width: 15em;
