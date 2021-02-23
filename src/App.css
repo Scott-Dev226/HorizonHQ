@@ -975,7 +975,7 @@ select {
     justify-content: center;
   }
   .dowChartDisplay-Dark {
-    width: 450px;
+    width: 250px;
   }
 
   #news-headlines {
@@ -983,7 +983,7 @@ select {
   }
 
   .dowChartDisplay-Light {
-    width: 450px;
+    width: 250px;
   }
   #Header-Title {
     width: 15em;
@@ -992,6 +992,7 @@ select {
 
   ul {
     justify-content: center;
+    color: rgb(252, 233, 231);
   }
 
   #input3 {
