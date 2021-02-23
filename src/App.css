@@ -624,7 +624,7 @@ p {
   opacity: 1;
   justify-content: center;
   background-color: white;
-  width: 500px;
+  width: 350px;
   transition-property: all;
   transition-duration: 1000ms;
   transition-timing-function: ease-in-out;
@@ -975,7 +975,6 @@ select {
     justify-content: center;
   }
   .dowChartDisplay-Dark {
-    width: 50%;
   }
 
   #news-headlines {
@@ -983,7 +982,6 @@ select {
   }
 
   .dowChartDisplay-Light {
-    width: 50%;
   }
   #Header-Title {
     width: 15em;
