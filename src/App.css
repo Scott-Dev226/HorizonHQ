@@ -975,11 +975,15 @@ select {
     justify-content: center;
   }
   .dowChartDisplay-Dark {
-    width: 250px;
+    width: 450px;
   }
 
-  .dowChartDisplay-Dark {
-    width: 250px;
+  #news-headlines {
+    width: 30em;
+  }
+
+  .dowChartDisplay-Light {
+    width: 450px;
   }
   #Header-Title {
     width: 15em;

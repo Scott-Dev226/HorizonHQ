@@ -78,7 +78,7 @@ const DowIndexWidget = (props) => {
               {
                 label: "DOW JONES INDUSTRIAL AVG",
                 data: dowCascadeClose,
-
+                fill: false,
                 borderColor: ["blue"],
                 borderWidth: 1,
               },
@@ -110,6 +110,7 @@ const DowIndexWidget = (props) => {
   return (
     <>
       <animated.div
+        id="indexChartCenter"
         style={{
           opacity: stockAnimProps.opacity,
           transform: stockAnimProps.transform,

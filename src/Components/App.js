@@ -14,6 +14,7 @@ import { Stars, Sky } from "@react-three/drei";
 import { OrbitControls, StandardEffects, draco } from "@react-three/drei";
 import DowIndexWidget from "./DowIndexWidget";
 import NASDAQ_IndexWidget from "./NASDAQ_IndexWidget";
+import BTC_IndexWidget from "./BTC_IndexWidget";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -54,6 +55,10 @@ function App() {
               />
 
               <NASDAQ_IndexWidget
+                darkModeProp={isDarkMode}
+                toolsProp={toolsEnabled}
+              />
+              <BTC_IndexWidget
                 darkModeProp={isDarkMode}
                 toolsProp={toolsEnabled}
               />

@@ -2,10 +2,10 @@ import { useState, useEffect, useRef, useReducer } from "react";
 import Chart from "chart.js";
 import { useSpring, animated } from "react-spring";
 
-const NASDAQ_IndexWidget = (props) => {
-  const [SPIndexValue, setSPIndexValue] = useState(null);
-  const [SPCascadeClose, setSPCascadeClose] = useState(null);
-  const [SPCascadeDate, setSPCascadeDate] = useState(null);
+const BTC_IndexWidget = (props) => {
+  const [BTCIndexValue, setBTCIndexValue] = useState(null);
+  const [BTCCascadeClose, setBTCCascadeClose] = useState(null);
+  const [BTCCascadeDate, setBTCCascadeDate] = useState(null);
 
   const stockAnimProps = useSpring({
     config: { duration: 2000 },
@@ -31,31 +31,32 @@ const NASDAQ_IndexWidget = (props) => {
   const todaysDate = yyyy + "-" + mm + "-" + dd;
 
   useEffect(() => {
-    const SPFetchURL =
+    const BTCFetchURL =
       "https://api.twelvedata.com/time_series?symbol=" +
-      "IXIC" +
+      "BTC/USD" +
+      "&exchange=Binance" +
       "&interval=1week&start_date=2020-1-10&end_date=" +
       todaysDate +
       "&apikey=8b61eafe6b2c4308aa8ebaa6799b4e59";
 
-    fetch(SPFetchURL)
+    fetch(BTCFetchURL)
       .then(function (resp) {
         return resp.json();
       }) // Convert data to json
       .then(function (data) {
-        let SPCascadeClose = [];
-        let SPCascadeDate = [];
+        let BTCCascadeClose = [];
+        let BTCCascadeDate = [];
 
         let i;
         for (i = 52; i >= 0; i--) {
-          SPCascadeClose.push(data.values[i].close);
-          setSPCascadeClose(SPCascadeClose);
+          BTCCascadeClose.push(data.values[i].close);
+          setBTCCascadeClose(BTCCascadeClose);
 
-          SPCascadeDate.push(data.values[i].datetime);
-          setSPCascadeDate(SPCascadeDate);
+          BTCCascadeDate.push(data.values[i].datetime);
+          setBTCCascadeDate(BTCCascadeDate);
         }
 
-        var ctx = document.getElementById("SPChart").getContext("2d");
+        var ctx = document.getElementById("BTCChart").getContext("2d");
 
         /*
         if (isDarkMode) {
@@ -71,14 +72,14 @@ const NASDAQ_IndexWidget = (props) => {
         var dowChart = new Chart(ctx, {
           type: "line",
           data: {
-            labels: SPCascadeDate,
+            labels: BTCCascadeDate,
             datasets: [
               {
-                label: "NASDAQ",
-                data: SPCascadeClose,
+                label: "BITCOIN",
+                data: BTCCascadeClose,
                 fill: false,
-                borderColor: ["red"],
-                backgroundColor: ["rgb(252, 233, 231)"],
+                borderColor: ["green"],
+                backgroundColor: ["rgb(189, 218, 189)"],
                 borderWidth: 1,
               },
             ],
@@ -116,7 +117,7 @@ const NASDAQ_IndexWidget = (props) => {
         }}
       >
         <canvas
-          id="SPChart"
+          id="BTCChart"
           className={
             isDarkMode ? "dowChartDisplay-Dark" : "dowChartDisplay-Light"
           }
@@ -124,9 +125,9 @@ const NASDAQ_IndexWidget = (props) => {
           height="500"
         ></canvas>
       </animated.div>
-      <p>{SPIndexValue}</p>
+      <p>{BTCIndexValue}</p>
     </>
   );
 };
 
-export default NASDAQ_IndexWidget;
+export default BTC_IndexWidget;
