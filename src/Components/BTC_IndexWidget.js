@@ -91,7 +91,7 @@ const BTC_IndexWidget = (props) => {
                 "CURRENT VALUE" + " $" + data.values[0].close + "    (USD/$)",
             },
             responsive: false,
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
 
             scales: {
               yAxes: [
