@@ -618,6 +618,7 @@ p {
 #indexChartCenter {
   display: flex;
   justify-content: center;
+  width: 50%;
 }
 
 .dowChartDisplay-Light {
