@@ -121,8 +121,6 @@ const DowIndexWidget = (props) => {
           className={
             isDarkMode ? "dowChartDisplay-Dark" : "dowChartDisplay-Light"
           }
-          width="500"
-          height="300"
         ></canvas>
       </animated.div>
       <p>{dowIndexValue}</p>
