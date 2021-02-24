@@ -120,8 +120,8 @@ const NASDAQ_IndexWidget = (props) => {
           className={
             isDarkMode ? "dowChartDisplay-Dark" : "dowChartDisplay-Light"
           }
-          width="800"
-          height="500"
+          width="500"
+          height="300"
         ></canvas>
       </animated.div>
       <p>{SPIndexValue}</p>
