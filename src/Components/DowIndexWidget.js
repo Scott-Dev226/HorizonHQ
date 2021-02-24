@@ -66,7 +66,7 @@ const DowIndexWidget = (props) => {
 
         */
 
-        Chart.defaults.global.defaultFontSize = 20;
+        Chart.defaults.global.defaultFontSize = 10;
         Chart.defaults.global.defaultFontFamily = "Arial Narrow";
         Chart.defaults.global.defaultFontColor = "grey";
 
@@ -121,8 +121,8 @@ const DowIndexWidget = (props) => {
           className={
             isDarkMode ? "dowChartDisplay-Dark" : "dowChartDisplay-Light"
           }
-          width="800"
-          height="500"
+          width="300"
+          height="200"
         ></canvas>
       </animated.div>
       <p>{dowIndexValue}</p>
