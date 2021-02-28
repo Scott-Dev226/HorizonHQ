@@ -66,6 +66,7 @@ const NASDAQ_IndexWidget = (props) => {
 
         */
 
+        Chart.defaults.global.defaultFontFamily = "Arial Narrow";
         Chart.defaults.global.defaultFontColor = "grey";
 
         var dowChart = new Chart(ctx, {

@@ -63,8 +63,6 @@ const useApiFetch = () => {
   var exchangeInputRef = useRef();
 
   const [stock1TodaysClose, setStock1TodaysClose] = useState(null);
-  const [stock2TodaysClose, setStock2TodaysClose] = useState(null);
-  const [stock3TodaysClose, setStock3TodaysClose] = useState(null);
 
   const [exchange, setExchange] = useState(null);
 
@@ -80,7 +78,7 @@ const useApiFetch = () => {
         "https://api.twelvedata.com/time_series?symbol=" +
         toggle +
         "&exchange=" +
-        exchangeInputRef.current.value +
+        exchange +
         "&interval=1day&start_date=2020-1-10&end_date=" +
         todaysDate +
         "&apikey=8b61eafe6b2c4308aa8ebaa6799b4e59";
@@ -90,47 +88,17 @@ const useApiFetch = () => {
           return resp.json();
         }) // Convert data to json
         .then(function (data) {
-          const stock1TodaysClose =
-            data[inputRef2.current.value].values[0].close;
-          const stock1YesterdaysClose =
-            data[inputRef2.current.value].values[1].close;
-          const stockDate = data[inputRef2.current.value].values[0].datetime;
+          const stock1TodaysClose = data.values[0].close;
+          const stock1YesterdaysClose = data.values[1].close;
+          const stockDate = data.values[0].datetime;
           let stock1Change =
             (100 * (stock1TodaysClose - stock1YesterdaysClose)) /
             stock1YesterdaysClose;
           stock1Change = stock1Change.toFixed(2);
 
-          const stock2TodaysClose =
-            data[inputRef3.current.value].values[0].close;
-          const stock2YesterdaysClose =
-            data[inputRef3.current.value].values[1].close;
-          const stockDate2 = data[inputRef3.current.value].values[0].datetime;
-          let stock2Change =
-            (100 * (stock2TodaysClose - stock2YesterdaysClose)) /
-            stock2YesterdaysClose;
-          stock2Change = stock2Change.toFixed(2);
-
-          const stock3TodaysClose =
-            data[inputRef4.current.value].values[0].close;
-          const stock3YesterdaysClose =
-            data[inputRef4.current.value].values[1].close;
-          const stockDate3 = data[inputRef4.current.value].values[0].datetime;
-          let stock3Change =
-            (100 * (stock3TodaysClose - stock3YesterdaysClose)) /
-            stock3YesterdaysClose;
-          stock3Change = stock3Change.toFixed(2);
-
-          setStock1Change(stock1Change);
-          setStock2Change(stock2Change);
-          setStock3Change(stock3Change);
-
           setStockDate(stockDate);
-          setStockDate2(stockDate2);
-          setStockDate3(stockDate3);
 
           setStock1TodaysClose(stock1TodaysClose);
-          setStock2TodaysClose(stock2TodaysClose);
-          setStock3TodaysClose(stock3TodaysClose);
         });
 
       fetch(histFetchURL3)
@@ -141,50 +109,27 @@ const useApiFetch = () => {
           setData(data);
 
           let stockCascadeClose = [];
-          let stockCascadeClose2 = [];
-          let stockCascadeClose3 = [];
+
           let stockCascadeDate = [];
 
           let i;
           for (i = 100; i >= 0; i--) {
-            stockCascadeClose.push(
-              data[inputRef2.current.value].values[i].close
-            );
-            stockCascadeDate.push(
-              data[inputRef2.current.value].values[i].datetime
-            );
-            stockCascadeClose2.push(
-              data[inputRef3.current.value].values[i].close
-            );
-            stockCascadeClose3.push(
-              data[inputRef4.current.value].values[i].close
-            );
+            stockCascadeClose.push(data.values[i].close);
+            stockCascadeDate.push(data.values[i].datetime);
           }
 
-          const stockVol1 =
-            data[inputRef2.current.value].values[0].volume / 1000000;
-          const stockVol2 =
-            data[inputRef3.current.value].values[0].volume / 1000000;
-          const stockVol3 =
-            data[inputRef4.current.value].values[0].volume / 1000000;
+          const stockVol1 = data.values[0].volume / 1000000;
 
-          const symbol1 = data[inputRef2.current.value].meta.symbol;
-          const symbol2 = data[inputRef3.current.value].meta.symbol;
-          const symbol3 = data[inputRef4.current.value].meta.symbol;
+          const symbol1 = data.meta.symbol;
 
           setSymbol1(symbol1);
-          setSymbol2(symbol2);
-          setSymbol3(symbol3);
+
           setToggle(toggle);
 
           setStockVol1(stockVol1);
-          setStockVol2(stockVol2);
-          setStockVol3(stockVol3);
 
           setStockCascadeDate(stockCascadeDate);
           setStockCascadeClose(stockCascadeClose);
-          setStockCascadeClose2(stockCascadeClose2);
-          setStockCascadeClose3(stockCascadeClose3);
 
           var ctx = document.getElementById("myChart2").getContext("2d");
           Chart.defaults.global.defaultFontColor = "white";
@@ -200,28 +145,12 @@ const useApiFetch = () => {
                   borderColor: ["blue"],
                   borderWidth: 1,
                 },
-
-                {
-                  label: symbol2,
-                  data: stockCascadeClose2,
-
-                  borderColor: ["white"],
-                  borderWidth: 1,
-                },
-
-                {
-                  label: symbol3,
-                  data: stockCascadeClose3,
-
-                  borderColor: ["grey"],
-                  borderWidth: 1,
-                },
               ],
             },
             options: {
               title: {
                 display: true,
-                text: "DAILY CLOSING STOCK PRICE (USD/$)",
+                text: "STOCK PRICE: " + stock1Change + "(USD/$)",
               },
               responsive: true,
               maintainAspectRatio: true,
@@ -243,11 +172,11 @@ const useApiFetch = () => {
             type: "doughnut",
 
             data: {
-              labels: [symbol1, symbol2, symbol3],
+              labels: [symbol1],
               datasets: [
                 {
-                  data: [stockVol1, stockVol2, stockVol3],
-                  backgroundColor: ["blue", "white", "grey"],
+                  data: [stockVol1],
+                  backgroundColor: ["blue"],
                   borderColor: ["white"],
                 },
               ],
@@ -319,18 +248,14 @@ const useApiFetch = () => {
     setToggle,
     toggle,
     stockCascadeClose,
-    stockCascadeClose2,
-    stockCascadeClose3,
+
     stockCascadeDate,
     stock1Change,
     setStock1Change,
-    stock2Change,
-    setStock2Change,
-    stock3Change,
-    setStock3Change,
+
     stock1TodaysClose,
-    stock2TodaysClose,
-    stock3TodaysClose,
+    exchange,
+    setExchange,
     exchangeInputRef,
   };
 };

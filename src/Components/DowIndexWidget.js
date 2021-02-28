@@ -66,7 +66,6 @@ const DowIndexWidget = (props) => {
 
         */
 
-        Chart.defaults.global.defaultFontSize = 10;
         Chart.defaults.global.defaultFontFamily = "Arial Narrow";
         Chart.defaults.global.defaultFontColor = "grey";
 

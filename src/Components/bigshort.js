@@ -37,6 +37,8 @@ const BigShort = (props) => {
     stock1TodaysClose,
     stock2TodaysClose,
     stock3TodaysClose,
+    exchange,
+    setExchange,
     exchangeInputRef,
   } = useApiFetch();
 
@@ -50,27 +52,7 @@ const BigShort = (props) => {
       document.getElementById("variance").style.backgroundColor = "green";
       gsap.to(".arrow1", { rotation: -90 });
     }
-
-    if (stock2Change < 0) {
-      document.getElementById("variance2").innerHTML = "-DOWN-";
-      document.getElementById("variance2").style.backgroundColor = "red";
-      gsap.to(".arrow2", { rotation: 90 });
-    } else if (stock2Change > 0) {
-      document.getElementById("variance2").innerHTML = "-UP-";
-      document.getElementById("variance2").style.backgroundColor = "green";
-      gsap.to(".arrow2", { rotation: -90 });
-    }
-
-    if (stock3Change < 0) {
-      document.getElementById("variance3").innerHTML = "-DOWN-";
-      document.getElementById("variance3").style.backgroundColor = "red";
-      gsap.to(".arrow3", { rotation: 90 });
-    } else if (stock3Change > 0) {
-      document.getElementById("variance3").innerHTML = "-UP-";
-      document.getElementById("variance3").style.backgroundColor = "green";
-      gsap.to(".arrow3", { rotation: -90 });
-    }
-  }, [stock1Change, stock2Change, stock3Change]);
+  }, [stock1Change]);
 
   const props2 = useSpring({
     config: { duration: 1500 },
@@ -111,20 +93,6 @@ const BigShort = (props) => {
                 placeholder="Enter Stock 1..."
                 ref={inputRef2}
               />
-              <input
-                type="text"
-                name="price"
-                id="price"
-                placeholder="Enter Stock 2"
-                ref={inputRef3}
-              />
-              <input
-                type="text"
-                name="date"
-                id="date"
-                placeholder="Enter Stock 3"
-                ref={inputRef4}
-              />
             </div>
           </form>
 
@@ -132,14 +100,8 @@ const BigShort = (props) => {
             <button
               id="btn"
               onClick={() => {
-                setToggle(
-                  inputRef2.current.value +
-                    "," +
-                    inputRef3.current.value +
-                    "," +
-                    inputRef4.current.value
-                );
-
+                setToggle(inputRef2.current.value);
+                setExchange(exchangeInputRef.current.value);
                 gsap.to(".chartDisplay", {
                   opacity: 1,
                   duration: 2,
@@ -151,39 +113,24 @@ const BigShort = (props) => {
                   opacity: 0.5,
                   delay: 1,
                 });
-                gsap.to(".stockHolder2", {
-                  border: "1px solid white",
-                  opacity: 0.5,
-                  delay: 1,
-                });
-                gsap.to(".stockHolder3", {
-                  border: "1px solid white",
-                  opacity: 0.5,
-                  delay: 1,
-                });
-                gsap.from(".dynamicBackClass", { opacity: 0, duration: 3 });
-                gsap.from(".stockDataSlide", {
-                  x: -1000,
-                  y: 500,
-                  stagger: 0.5,
-                  duration: 3,
-                });
-                gsap.from(".stockDataSlide2", {
-                  y: 1000,
-                  stagger: 0.5,
-                  duration: 3,
-                });
-                gsap.from(".stockDataSlide3", {
-                  x: 1000,
-                  y: 500,
-                  stagger: 0.5,
-                  duration: 3,
-                });
+
                 gsap.to(".newsOpacity", { opacity: 0.75 });
               }}
             >
               CLICK FOR LIVE DATA
             </button>
+          </div>
+        </animated.div>
+
+        <p id="stockName"> </p>
+
+        <div id="chartCenterDiv">
+          <div id="chartHolder2" className="chartDisplay">
+            <canvas id="myChart2" width="800" height="500"></canvas>
+          </div>
+
+          <div id="chartHolder3" className="chartDisplay">
+            <canvas id="myDoughChart" width="800" height="500"></canvas>
           </div>
 
           <div className="stockHolder">
@@ -197,44 +144,6 @@ const BigShort = (props) => {
             <p id="variance"></p>
             <p id="variance">Price: ${stock1TodaysClose}</p>
             <p id="stockDate">{stock1Change + "%"}</p>
-          </div>
-
-          <div className="stockHolder2">
-            <p id="stockDate2">{symbol2 + " " + stockDate}</p>
-            <img
-              className="arrow2"
-              style={{ height: "50px" }}
-              src={arrow}
-              alt="arrow2"
-            ></img>
-            <p id="variance2"></p>
-            <p id="variance2"> Price: ${stock2TodaysClose}</p>
-            <p id="stockDate2">{stock2Change + "%"}</p>
-          </div>
-
-          <div className="stockHolder3">
-            <p id="stockDate3">{symbol3 + " " + stockDate}</p>
-            <img
-              className="arrow3"
-              style={{ height: "50px" }}
-              src={arrow}
-              alt="arrow3"
-            ></img>
-            <p id="variance3"></p>
-            <p>Price: ${stock3TodaysClose}</p>
-            <p id="stockDate3">{stock3Change + "%"}</p>
-          </div>
-        </animated.div>
-
-        <p id="stockName"> </p>
-
-        <div id="chartCenterDiv">
-          <div id="chartHolder2" className="chartDisplay">
-            <canvas id="myChart2" width="800" height="500"></canvas>
-          </div>
-
-          <div id="chartHolder3" className="chartDisplay">
-            <canvas id="myDoughChart" width="800" height="500"></canvas>
           </div>
         </div>
 

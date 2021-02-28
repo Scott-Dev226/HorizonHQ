@@ -46,6 +46,15 @@ function App() {
                   ? "CLICK TO ENABLE LIGHT MODE"
                   : "CLICK TO ENABLE DARK MODE"}
               </button>
+
+              <button
+                id="Light-Button"
+                onClick={() => setToolsEnabled((prevMode) => !prevMode)}
+              >
+                {isDarkMode
+                  ? "CLICK TO DISABLE TTOL MODE"
+                  : "CLICK TO ENABLE TTOL MODE"}
+              </button>
             </div>
 
             <div id="indexChartCenter">
