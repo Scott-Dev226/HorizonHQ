@@ -1,8 +1,15 @@
-import React, { useState, useEffect, useRef, useReducer } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import Chart from "chart.js";
 import useApiFetchSetup from "./apiFetchSetup.js";
+import { PriceContext } from "./PriceContext";
+import { PriceVarianceContext } from "./PriceVarianceContext";
 
 const useApiFetch = () => {
+  const { displayPrice, setDisplayPrice } = useContext(PriceContext);
+  const { displayVariance, setDisplayVariance } = useContext(
+    PriceVarianceContext
+  );
+
   const {
     todaysDate,
     inputRef2,
@@ -99,6 +106,8 @@ const useApiFetch = () => {
           setStockDate(stockDate);
 
           setStock1TodaysClose(stock1TodaysClose);
+          setDisplayPrice(stock1TodaysClose);
+          setDisplayVariance(stock1Change);
         });
 
       fetch(histFetchURL3)
@@ -150,7 +159,7 @@ const useApiFetch = () => {
             options: {
               title: {
                 display: true,
-                text: "STOCK PRICE: " + stock1Change + "(USD/$)",
+                text: "",
               },
               responsive: true,
               maintainAspectRatio: true,

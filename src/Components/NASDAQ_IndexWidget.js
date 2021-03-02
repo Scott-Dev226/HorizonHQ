@@ -16,7 +16,7 @@ const NASDAQ_IndexWidget = (props) => {
   let isDarkMode = props.darkModeProp;
 
   const today = new Date();
-  let dd = today.getDate() - 2;
+  let dd = today.getDate();
   let mm = today.getMonth() + 1;
   let yyyy = today.getFullYear();
 
@@ -47,7 +47,7 @@ const NASDAQ_IndexWidget = (props) => {
         let SPCascadeDate = [];
 
         let i;
-        for (i = 52; i >= 0; i--) {
+        for (i = 50; i >= 0; i--) {
           SPCascadeClose.push(data.values[i].close);
           setSPCascadeClose(SPCascadeClose);
 

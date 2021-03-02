@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useReducer } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { useSpring, animated } from "react-spring";
 import gsap from "gsap";
 import Hendrix from "../VS_Spinner.jpg";
@@ -6,10 +6,17 @@ import Chart from "chart.js";
 import labelz from "chartjs-plugin-labels";
 import useApiFetch from "./api_fetch";
 import arrow from "../right-arrow.png";
+import { PriceContext } from "./PriceContext";
+import { PriceVarianceContext } from "./PriceVarianceContext";
 
 const BigShort = (props) => {
   let isDarkMode = props.darkModeProp;
   let toolsEnabled = props.toolsProp;
+
+  const { displayPrice, setDisplayPrice } = useContext(PriceContext);
+  const { displayVariance, setDisplayVariance } = useContext(
+    PriceVarianceContext
+  );
 
   const {
     symbol1,
@@ -43,16 +50,16 @@ const BigShort = (props) => {
   } = useApiFetch();
 
   useEffect(() => {
-    if (stock1Change < 0) {
+    if (displayVariance < 0) {
       document.getElementById("variance").innerHTML = "-DOWN-";
       document.getElementById("variance").style.backgroundColor = "red";
       gsap.to(".arrow1", { rotation: 90 });
-    } else if (stock1Change > 0) {
+    } else if (displayVariance > 0) {
       document.getElementById("variance").innerHTML = "-UP-";
       document.getElementById("variance").style.backgroundColor = "green";
       gsap.to(".arrow1", { rotation: -90 });
     }
-  }, [stock1Change]);
+  }, [displayVariance]);
 
   const props2 = useSpring({
     config: { duration: 1500 },
@@ -123,6 +130,18 @@ const BigShort = (props) => {
         </animated.div>
 
         <p id="stockName"> </p>
+        <div className="stockHolder">
+          <p id="stockDate">{symbol1 + " " + stockDate}</p>
+          <img
+            className="arrow1"
+            style={{ height: "50px" }}
+            src={arrow}
+            alt="arrow1"
+          ></img>
+          <p id="variance"></p>
+          <p id="variance">Price: ${displayPrice}</p>
+          <p id="stockDate">{displayVariance + "%"}</p>
+        </div>
 
         <div id="chartCenterDiv">
           <div id="chartHolder2" className="chartDisplay">
@@ -131,19 +150,6 @@ const BigShort = (props) => {
 
           <div id="chartHolder3" className="chartDisplay">
             <canvas id="myDoughChart" width="800" height="500"></canvas>
-          </div>
-
-          <div className="stockHolder">
-            <p id="stockDate">{symbol1 + " " + stockDate}</p>
-            <img
-              className="arrow1"
-              style={{ height: "50px" }}
-              src={arrow}
-              alt="arrow1"
-            ></img>
-            <p id="variance"></p>
-            <p id="variance">Price: ${stock1TodaysClose}</p>
-            <p id="stockDate">{stock1Change + "%"}</p>
           </div>
         </div>
 

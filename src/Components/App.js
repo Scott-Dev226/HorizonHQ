@@ -15,10 +15,15 @@ import { OrbitControls, StandardEffects, draco } from "@react-three/drei";
 import DowIndexWidget from "./DowIndexWidget";
 import NASDAQ_IndexWidget from "./NASDAQ_IndexWidget";
 import BTC_IndexWidget from "./BTC_IndexWidget";
+import { PriceContext } from "./PriceContext";
+import { PriceVarianceContext } from "./PriceVarianceContext";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [toolsEnabled, setToolsEnabled] = useState(true);
+
+  const [displayPrice, setDisplayPrice] = useState(null);
+  const [displayVariance, setDisplayVariance] = useState(null);
 
   return (
     <div
@@ -46,15 +51,6 @@ function App() {
                   ? "CLICK TO ENABLE LIGHT MODE"
                   : "CLICK TO ENABLE DARK MODE"}
               </button>
-
-              <button
-                id="Light-Button"
-                onClick={() => setToolsEnabled((prevMode) => !prevMode)}
-              >
-                {isDarkMode
-                  ? "CLICK TO DISABLE TTOL MODE"
-                  : "CLICK TO ENABLE TTOL MODE"}
-              </button>
             </div>
 
             <div id="indexChartCenter">
@@ -74,19 +70,25 @@ function App() {
             </div>
           </div>
           <Switch>
-            <Route
-              exact
-              path="/HorizonHQ"
-              exact
-              render={() => (
-                <Home darkModeProp={isDarkMode} toolsProp={toolsEnabled} />
-              )}
-            />
-            <Route path="/Home" component={Home} />
-            <Route path="/Guitars" component={Guitars} />
-            <Route path="/weather" component={weather} />
-            <Route path="/About" component={About} />
-            <Route path="/bigshort" component={BigShort} />
+            <PriceVarianceContext.Provider
+              value={{ displayVariance, setDisplayVariance }}
+            >
+              <PriceContext.Provider value={{ displayPrice, setDisplayPrice }}>
+                <Route
+                  exact
+                  path="/HorizonHQ"
+                  exact
+                  render={() => (
+                    <Home darkModeProp={isDarkMode} toolsProp={toolsEnabled} />
+                  )}
+                />
+                <Route path="/Home" component={Home} />
+                <Route path="/Guitars" component={Guitars} />
+                <Route path="/weather" component={weather} />
+                <Route path="/About" component={About} />
+                <Route path="/bigshort" component={BigShort} />
+              </PriceContext.Provider>
+            </PriceVarianceContext.Provider>
           </Switch>
         </div>
       </Router>

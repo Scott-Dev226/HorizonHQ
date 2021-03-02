@@ -6,6 +6,8 @@ import AmazonLogo from "../amazon-LOGO.jpg";
 import FBLogo from "../facebook-LOGO.png";
 import TeslaLogo from "../tesla-LOGO.jpg";
 import NetflixLogo from "../netflix-LOGO.png";
+import AirBNBLogo from "../airbnb-LOGO.jpg";
+import MSFTLogo from "../msft-LOGO.png";
 
 const FrontPageNewsStories = (props) => {
   const storyArray = [
@@ -51,6 +53,14 @@ const FrontPageNewsStories = (props) => {
       Description: "",
       Description2: "NFLX",
       Image: NetflixLogo,
+    },
+
+    {
+      Name: "7",
+      Headline: "Microsoft Inc",
+      Description: "",
+      Description2: "MSFT",
+      Image: MSFTLogo,
     },
   ];
   let isDarkMode = props.darkModeProp;

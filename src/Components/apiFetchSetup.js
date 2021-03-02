@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useReducer } from "react";
 
 const useApiFetchSetup = () => {
   const today = new Date();
-  let dd = today.getDate() - 2;
+  let dd = today.getDate();
   let mm = today.getMonth() + 1;
   let yyyy = today.getFullYear();
 

@@ -1,13 +1,15 @@
-import React, { useState, useEffect, useRef, useReducer } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { StreamCopyUsage } from "three";
 import AppleImage from "../aapl-back.jpg";
 import GoogleImage from "../goog-back.jpg";
 import isDarkMode from "./Home";
 import useApiFetch from "./api_fetch";
 import gsap from "gsap";
+import { PriceContext } from "./PriceContext";
 
 const FrontPageNewsStory = (props) => {
   let isDarkMode = props.darkModeProp;
+  const { displayPrice, setDisplayPrice } = useContext(PriceContext);
 
   const {
     symbol1,
@@ -74,7 +76,7 @@ const FrontPageNewsStory = (props) => {
         onClick={() => {
           setToggle(props.Description2);
           setExchange("NASDAQ");
-          setStock1Change(stock1Change);
+
           gsap.to(".chartDisplay", {
             opacity: 1,
             duration: 2,

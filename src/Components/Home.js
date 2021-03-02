@@ -9,7 +9,8 @@ import threeDimensions from "./cubeTestComponent";
 import DowIndexWidget from "./DowIndexWidget";
 import NASDAQ_IndexWidget from "./NASDAQ_IndexWidget";
 
-import React, { useState, useEffect, useRef, useReducer } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
+import { PriceContext } from "./PriceContext";
 
 const Home = (props) => {
   const props2 = useSpring({
