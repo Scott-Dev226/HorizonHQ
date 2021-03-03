@@ -18,6 +18,10 @@
   margin-top: 10px;
 }
 
+#Cube-3D-Container {
+  margin-right: 63%;
+}
+
 .App {
   text-align: center;
 }
@@ -986,6 +990,9 @@ select {
 }
 
 @media only screen and (max-width: 700px) {
+  #Cube-3D-Container {
+    margin-right: 45%;
+  }
   #indexChartCenter {
     display: block;
     justify-content: center;
