@@ -47,7 +47,7 @@ const NASDAQ_IndexWidget = (props) => {
         let SPCascadeDate = [];
 
         let i;
-        for (i = 50; i >= 0; i--) {
+        for (i = 60; i >= 0; i--) {
           SPCascadeClose.push(data.values[i].close);
           setSPCascadeClose(SPCascadeClose);
 
@@ -67,9 +67,9 @@ const NASDAQ_IndexWidget = (props) => {
         */
 
         Chart.defaults.global.defaultFontFamily = "Arial Narrow";
-        Chart.defaults.global.defaultFontColor = "grey";
+        Chart.defaults.global.defaultFontColor = "rgb(219, 235, 129)";
 
-        var dowChart = new Chart(ctx, {
+        var SPChart = new Chart(ctx, {
           type: "line",
           data: {
             labels: SPCascadeDate,

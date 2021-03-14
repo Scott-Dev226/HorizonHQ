@@ -86,7 +86,7 @@ const FrontPageNewsStory = (props) => {
 
           gsap.to(".stockHolder", {
             border: "1px solid white",
-            opacity: 0.5,
+            opacity: 1,
             delay: 1,
           });
         }}

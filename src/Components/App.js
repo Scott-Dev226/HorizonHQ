@@ -24,9 +24,9 @@ function Box(props) {
   const mesh = useRef();
   let isDarkMode = props.darkModeProp;
 
-  let rotationSpeed = 0.015;
+  let rotationSpeed = 0.01;
   if (!isDarkMode) {
-    rotationSpeed = 0.015;
+    rotationSpeed = 0.01;
   }
 
   // Rotate mesh every frame, this is outside of React without overhead
@@ -49,7 +49,7 @@ function Box(props) {
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const [toolsEnabled, setToolsEnabled] = useState(true);
+  const [toolsEnabled, setToolsEnabled] = useState(false);
 
   const [displayPrice, setDisplayPrice] = useState(null);
   const [displayVariance, setDisplayVariance] = useState(null);
@@ -62,22 +62,6 @@ function App() {
       <Router>
         <div className="App">
           <div id="forNavCenter">
-            <div id="Cube-3D-Container">
-              <Canvas>
-                <ambientLight intensity={1} />
-                <spotLight position={[10, 10, 10]} angle={0.15} />
-                <Box position={[-1.2, 0, 0]} darkModeProp={isDarkMode} />
-                <OrbitControls />
-                <Stars
-                  radius={100} // Radius of the inner sphere (default=100)
-                  depth={50} // Depth of area where stars should fit (default=50)
-                  count={777} // Amount of stars (default=5000)
-                  factor={4} // Size factor (default=4)
-                  saturation={0} // Saturation 0-1 (default=0)
-                  fade // Faded dots (default=false)
-                />
-              </Canvas>
-            </div>
             <Nav darkModeProp={isDarkMode} />
 
             <div
@@ -90,28 +74,34 @@ function App() {
             >
               <button
                 id="Light-Button"
-                onClick={() => setIsDarkMode((prevMode) => !prevMode)}
+                onClick={() => setToolsEnabled((prevMode) => !prevMode)}
               >
-                {isDarkMode
-                  ? "CLICK TO ENABLE LIGHT MODE"
-                  : "CLICK TO ENABLE DARK MODE"}
+                {toolsEnabled
+                  ? "CLICK TO HIDE INDEX DATA"
+                  : "CLICK TO VIEW INDEX DATA"}
               </button>
             </div>
 
-            <div id="indexChartCenter">
-              <DowIndexWidget
-                darkModeProp={isDarkMode}
-                toolsProp={toolsEnabled}
-              />
+            <div id="indexChartContainer">
+              {toolsEnabled && (
+                <DowIndexWidget
+                  darkModeProp={isDarkMode}
+                  toolsProp={toolsEnabled}
+                />
+              )}
 
-              <NASDAQ_IndexWidget
-                darkModeProp={isDarkMode}
-                toolsProp={toolsEnabled}
-              />
-              <BTC_IndexWidget
-                darkModeProp={isDarkMode}
-                toolsProp={toolsEnabled}
-              />
+              {toolsEnabled && (
+                <NASDAQ_IndexWidget
+                  darkModeProp={isDarkMode}
+                  toolsProp={toolsEnabled}
+                />
+              )}
+              {toolsEnabled && (
+                <BTC_IndexWidget
+                  darkModeProp={isDarkMode}
+                  toolsProp={toolsEnabled}
+                />
+              )}
             </div>
           </div>
           <Switch>

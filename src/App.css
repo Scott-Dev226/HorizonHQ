@@ -20,6 +20,9 @@
 
 #Cube-3D-Container {
   margin-right: 63%;
+
+  justify-content: center;
+  width: 100%;
 }
 
 .App {
@@ -363,43 +366,17 @@
 
 .stockHolder {
   font-size: 25px;
-  background-color: blue;
+  background-color: black;
   display: inline-block;
   background-size: contain;
   background-repeat: no-repeat;
-  width: 25%;
+  width: 40%;
   height: 30%;
   opacity: 0;
-  margin-bottom: 1em;
-  border-radius: 20%;
+  margin-bottom: 2em;
+  margin-top: 2em;
+
   margin-right: 0.5em;
-}
-
-.stockHolder2 {
-  font-size: 25px;
-  background-color: white;
-  display: inline-block;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 25%;
-  height: 30%;
-  opacity: 0;
-  margin-bottom: 1em;
-  border-radius: 20%;
-}
-
-.stockHolder3 {
-  font-size: 25px;
-  background-color: grey;
-  display: inline-block;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 25%;
-  height: 30%;
-  opacity: 0;
-  margin-bottom: 1em;
-  border-radius: 20%;
-  margin-left: 0.5em;
 }
 
 a {
@@ -421,6 +398,7 @@ p {
   text-decoration: underline;
   text-decoration-color: white;
   text-decoration-style: double;
+  font-family: "Share Tech", sans-serif;
 }
 
 #stockDate2 {
@@ -439,6 +417,7 @@ p {
 
 #variance {
   color: white;
+  font-family: "Share Tech", sans-serif;
 }
 
 #variance2 {
@@ -634,9 +613,15 @@ p {
 }
 
 #indexChartCenter {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
-  width: 100%;
+  width: 50%;
+}
+
+#indexChartContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .dowChartDisplay-Light {
@@ -929,6 +914,10 @@ select {
 }
 
 @media only screen and (max-width: 700px) {
+  #indexChartContainer {
+    display: block;
+  }
+
   .site-logo-Dark {
     margin-right: 20%;
   }
@@ -992,6 +981,7 @@ select {
 @media only screen and (max-width: 700px) {
   #Cube-3D-Container {
     margin-right: 45%;
+    opacity: 0.65;
   }
   #indexChartCenter {
     display: block;

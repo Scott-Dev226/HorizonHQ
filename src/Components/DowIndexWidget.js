@@ -47,7 +47,7 @@ const DowIndexWidget = (props) => {
         let dowCascadeDate = [];
 
         let i;
-        for (i = 50; i >= 0; i--) {
+        for (i = 60; i >= 0; i--) {
           dowCascadeClose.push(data.values[i].close);
           setDowCascadeClose(dowCascadeClose);
 
@@ -67,7 +67,8 @@ const DowIndexWidget = (props) => {
         */
 
         Chart.defaults.global.defaultFontFamily = "Arial Narrow";
-        Chart.defaults.global.defaultFontColor = "grey";
+
+        Chart.defaults.global.defaultFontColor = "rgb(238, 140, 59)";
 
         var dowChart = new Chart(ctx, {
           type: "line",

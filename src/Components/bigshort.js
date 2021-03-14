@@ -8,6 +8,38 @@ import useApiFetch from "./api_fetch";
 import arrow from "../right-arrow.png";
 import { PriceContext } from "./PriceContext";
 import { PriceVarianceContext } from "./PriceVarianceContext";
+import { Canvas, useFrame } from "react-three-fiber";
+import { Stars, Sky } from "@react-three/drei";
+import { OrbitControls, StandardEffects, draco } from "@react-three/drei";
+
+function Box(props) {
+  // This reference will give us direct access to the mesh
+  const mesh = useRef();
+  let isDarkMode = props.darkModeProp;
+  let arrowUpPosition = props.arrowProp;
+  let rotationSpeed = 0.01;
+  if (!isDarkMode) {
+    rotationSpeed = 0.01;
+  }
+
+  // Rotate mesh every frame, this is outside of React without overhead
+
+  useFrame(() => {
+    mesh.current.rotation.y += rotationSpeed;
+  });
+
+  return (
+    <mesh {...props} ref={mesh}>
+      <coneGeometry attach="geometry" args={[2, 4, 5]} />
+      <meshBasicMaterial
+        wireframe={true}
+        metalness={1}
+        attach="material"
+        color={arrowUpPosition ? "green" : "red"}
+      />
+    </mesh>
+  );
+}
 
 const BigShort = (props) => {
   let isDarkMode = props.darkModeProp;
@@ -49,15 +81,19 @@ const BigShort = (props) => {
     exchangeInputRef,
   } = useApiFetch();
 
+  const [arrowUpPosition, setArrowUpPosition] = useState(false);
+
   useEffect(() => {
     if (displayVariance < 0) {
       document.getElementById("variance").innerHTML = "-DOWN-";
       document.getElementById("variance").style.backgroundColor = "red";
-      gsap.to(".arrow1", { rotation: 90 });
+      gsap.to(".Pyramid-Arrow", { rotation: 180 });
+      setArrowUpPosition(false);
     } else if (displayVariance > 0) {
       document.getElementById("variance").innerHTML = "-UP-";
       document.getElementById("variance").style.backgroundColor = "green";
-      gsap.to(".arrow1", { rotation: -90 });
+      gsap.to(".Pyramid-Arrow", { rotation: 0 });
+      setArrowUpPosition(true);
     }
   }, [displayVariance]);
 
@@ -116,8 +152,7 @@ const BigShort = (props) => {
                   delay: 0,
                 });
                 gsap.to(".stockHolder", {
-                  border: "1px solid white",
-                  opacity: 0.5,
+                  opacity: 1,
                   delay: 1,
                 });
 
@@ -131,16 +166,29 @@ const BigShort = (props) => {
 
         <p id="stockName"> </p>
         <div className="stockHolder">
-          <p id="stockDate">{symbol1 + " " + stockDate}</p>
-          <img
-            className="arrow1"
-            style={{ height: "50px" }}
-            src={arrow}
-            alt="arrow1"
-          ></img>
+          <div id="Cube-3D-Container" className="Pyramid-Arrow">
+            <Canvas>
+              <ambientLight intensity={1} />
+              <spotLight position={[0, 0, 0]} angle={0} />
+              <Box
+                position={[0, 0, 0]}
+                darkModeProp={isDarkMode}
+                arrowProp={arrowUpPosition}
+              />
+
+              <Stars
+                radius={100} // Radius of the inner sphere (default=100)
+                depth={50} // Depth of area where stars should fit (default=50)
+                count={777} // Amount of stars (default=5000)
+                factor={4} // Size factor (default=4)
+                saturation={0} // Saturation 0-1 (default=0)
+                fade // Faded dots (default=false)
+              />
+            </Canvas>
+          </div>
           <p id="variance"></p>
-          <p id="variance">Price: ${displayPrice}</p>
-          <p id="stockDate">{displayVariance + "%"}</p>
+          <p id="variance"> Current Stock Price: ${displayPrice}</p>
+          <p id="variance">Variance: {displayVariance + "%"}</p>
         </div>
 
         <div id="chartCenterDiv">

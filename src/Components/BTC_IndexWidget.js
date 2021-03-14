@@ -68,9 +68,9 @@ const BTC_IndexWidget = (props) => {
         */
 
         Chart.defaults.global.defaultFontFamily = "Arial Narrow";
-        Chart.defaults.global.defaultFontColor = "grey";
+        Chart.defaults.global.defaultFontColor = "rgb(232, 101, 236)";
 
-        var dowChart = new Chart(ctx, {
+        var BTCChart = new Chart(ctx, {
           type: "line",
           data: {
             labels: BTCCascadeDate,

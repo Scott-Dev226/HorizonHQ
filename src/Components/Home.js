@@ -44,7 +44,7 @@ const Home = (props) => {
           isDarkMode ? "Dark-Mode-rightWidget" : "Light-Mode-rightWidget"
         }
       >
-        {toolsEnabled && <BigShort darkModeProp={isDarkMode} />}
+        <BigShort darkModeProp={isDarkMode} />
       </div>
     </animated.div>
   );
