@@ -68,12 +68,12 @@ const DowIndexWidget = (props) => {
 
         Chart.defaults.global.defaultFontFamily = "Arial Narrow";
 
-        Chart.defaults.global.defaultFontColor = "rgb(238, 140, 59)";
-
         var dowChart = new Chart(ctx, {
           type: "line",
+          fontColor: "rgb(238, 140, 59)",
           data: {
             labels: dowCascadeDate,
+
             datasets: [
               {
                 label: "DOW JONES INDUSTRIAL AVG",
@@ -85,7 +85,14 @@ const DowIndexWidget = (props) => {
             ],
           },
           options: {
+            legend: {
+              labels: {
+                fontColor: "rgb(238, 140, 59)",
+                fontSize: 15,
+              },
+            },
             title: {
+              fontColor: "rgb(238, 140, 59)",
               display: true,
               text:
                 "CURRENT VALUE" + " $" + data.values[0].close + "    (USD/$)",
@@ -98,6 +105,15 @@ const DowIndexWidget = (props) => {
                 {
                   ticks: {
                     beginAtZero: false,
+                    fontColor: "rgb(238, 140, 59)",
+                  },
+                },
+              ],
+              xAxes: [
+                {
+                  ticks: {
+                    beginAtZero: false,
+                    fontColor: "rgb(238, 140, 59)",
                   },
                 },
               ],

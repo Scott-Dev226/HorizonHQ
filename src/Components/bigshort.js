@@ -116,7 +116,11 @@ const BigShort = (props) => {
       <div
         className={isDarkMode ? "stockParentDiv-Dark" : "stockParentDiv-Light"}
       >
-        <p id="faq"> Select Three(3) Companies from the Drop-Down:</p>
+        <p id="faq2">
+          {" "}
+          For Custom Data, enter a valid Stock Symbol and Index Combination
+          below (example: "GME" for the Stock Symbol, and "NYSE" for the Index):
+        </p>
 
         <animated.div
           id="vs_back"
@@ -133,7 +137,7 @@ const BigShort = (props) => {
                 type="text"
                 name="desc"
                 id="desc"
-                placeholder="Enter Stock 1..."
+                placeholder="Enter Stock Symbol..."
                 ref={inputRef2}
               />
             </div>

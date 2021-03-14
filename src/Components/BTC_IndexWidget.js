@@ -56,7 +56,7 @@ const BTC_IndexWidget = (props) => {
           setBTCCascadeDate(BTCCascadeDate);
         }
 
-        var ctx = document.getElementById("BTCChart").getContext("2d");
+        var ctx3 = document.getElementById("BTCChart").getContext("2d");
 
         /*
         if (isDarkMode) {
@@ -68,12 +68,13 @@ const BTC_IndexWidget = (props) => {
         */
 
         Chart.defaults.global.defaultFontFamily = "Arial Narrow";
-        Chart.defaults.global.defaultFontColor = "rgb(232, 101, 236)";
 
-        var BTCChart = new Chart(ctx, {
+        var BTCChart = new Chart(ctx3, {
           type: "line",
+
           data: {
             labels: BTCCascadeDate,
+
             datasets: [
               {
                 label: "BITCOIN",
@@ -86,7 +87,14 @@ const BTC_IndexWidget = (props) => {
             ],
           },
           options: {
+            legend: {
+              labels: {
+                fontColor: "rgb(215, 154, 243)",
+                fontSize: 15,
+              },
+            },
             title: {
+              fontColor: "rgb(215, 154, 243)",
               display: true,
               text:
                 "CURRENT VALUE" + " $" + data.values[0].close + "    (USD/$)",
@@ -99,6 +107,15 @@ const BTC_IndexWidget = (props) => {
                 {
                   ticks: {
                     beginAtZero: false,
+                    fontColor: "rgb(215, 154, 243)",
+                  },
+                },
+              ],
+              xAxes: [
+                {
+                  ticks: {
+                    beginAtZero: false,
+                    fontColor: "rgb(215, 154, 243)",
                   },
                 },
               ],

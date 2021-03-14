@@ -11,6 +11,7 @@ const FrontPageNews = (props) => {
       id="storyHolderDiv"
       className={isDarkMode ? "Dark-Mode" : "Light-Mode"}
     >
+      <p id="faq"> Click a Company Logo from the Quick List:</p>
       <FrontPageNewsStories darkModeProp={props.darkModeProp} />
       {toolsEnabled && <BigShort darkModeProp={isDarkMode} />}
     </div>

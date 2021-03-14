@@ -55,7 +55,7 @@ const NASDAQ_IndexWidget = (props) => {
           setSPCascadeDate(SPCascadeDate);
         }
 
-        var ctx = document.getElementById("SPChart").getContext("2d");
+        var ctx2 = document.getElementById("SPChart").getContext("2d");
 
         /*
         if (isDarkMode) {
@@ -67,9 +67,8 @@ const NASDAQ_IndexWidget = (props) => {
         */
 
         Chart.defaults.global.defaultFontFamily = "Arial Narrow";
-        Chart.defaults.global.defaultFontColor = "rgb(219, 235, 129)";
 
-        var SPChart = new Chart(ctx, {
+        var SPChart = new Chart(ctx2, {
           type: "line",
           data: {
             labels: SPCascadeDate,
@@ -81,11 +80,19 @@ const NASDAQ_IndexWidget = (props) => {
                 borderColor: ["red"],
                 backgroundColor: ["rgb(252, 233, 231)"],
                 borderWidth: 1,
+                fontColor: "red",
               },
             ],
           },
           options: {
+            legend: {
+              labels: {
+                fontColor: "rgb(219, 235, 129)",
+                fontSize: 15,
+              },
+            },
             title: {
+              fontColor: "rgb(219, 235, 129)",
               display: true,
               text:
                 "CURRENT VALUE" + " $" + data.values[0].close + "    (USD/$)",
@@ -98,6 +105,15 @@ const NASDAQ_IndexWidget = (props) => {
                 {
                   ticks: {
                     beginAtZero: false,
+                    fontColor: "rgb(219, 235, 129)",
+                  },
+                },
+              ],
+              xAxes: [
+                {
+                  ticks: {
+                    beginAtZero: false,
+                    fontColor: "rgb(219, 235, 129)",
                   },
                 },
               ],
