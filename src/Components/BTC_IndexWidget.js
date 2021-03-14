@@ -108,6 +108,7 @@ const BTC_IndexWidget = (props) => {
                   ticks: {
                     beginAtZero: false,
                     fontColor: "rgb(215, 154, 243)",
+                    fontSize: 17,
                   },
                 },
               ],

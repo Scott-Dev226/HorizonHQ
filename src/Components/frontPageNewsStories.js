@@ -8,6 +8,8 @@ import TeslaLogo from "../tesla-LOGO.jpg";
 import NetflixLogo from "../netflix-LOGO.png";
 import AirBNBLogo from "../airbnb-LOGO.jpg";
 import MSFTLogo from "../msft-LOGO.png";
+import GMELogo from "../gamestop-LOGO.jpg";
+import TWTRLogo from "../twitter-LOGO.jpg";
 
 const FrontPageNewsStories = (props) => {
   const storyArray = [
@@ -32,23 +34,30 @@ const FrontPageNewsStories = (props) => {
       Description2: "AMZN",
       Image: AmazonLogo,
     },
-
     {
       Name: "4",
+      Headline: "GameStop Inc",
+      Description: "",
+      Description2: "GME",
+      Image: GMELogo,
+    },
+
+    {
+      Name: "5",
       Headline: "Facebook Inc",
       Description: "",
       Description2: "FB",
       Image: FBLogo,
     },
     {
-      Name: "5",
+      Name: "6",
       Headline: "Tesla Inc",
       Description: "",
       Description2: "TSLA",
       Image: TeslaLogo,
     },
     {
-      Name: "6",
+      Name: "7",
       Headline: "Netflix Inc",
       Description: "",
       Description2: "NFLX",
@@ -56,11 +65,19 @@ const FrontPageNewsStories = (props) => {
     },
 
     {
-      Name: "7",
+      Name: "8",
       Headline: "Microsoft Inc",
       Description: "",
       Description2: "MSFT",
       Image: MSFTLogo,
+    },
+
+    {
+      Name: "9",
+      Headline: "Twitter Inc",
+      Description: "",
+      Description2: "TWTR",
+      Image: TWTRLogo,
     },
   ];
   let isDarkMode = props.darkModeProp;
@@ -71,7 +88,6 @@ const FrontPageNewsStories = (props) => {
         {storyArray.map((story) => (
           <FrontPageNewsStory
             darkModeProp={props.darkModeProp}
-            Headline={story.Headline}
             Image={story.Image}
             Description2={story.Description2}
           />

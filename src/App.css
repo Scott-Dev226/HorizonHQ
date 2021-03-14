@@ -124,8 +124,8 @@
 
 .site-logo-Dark {
   color: white;
-  font-family: "Nova Mono", monospace;
-  font-size: 1.6rem;
+  font-family: "Share Tech", sans-serif;
+  font-size: 2.6rem;
   display: inline;
   margin-right: 58%;
   opacity: 0.75;
@@ -722,6 +722,7 @@ select {
   transition-property: all;
   transition-duration: 350ms;
   transition-timing-function: ease-in-out;
+  margin-bottom: 5vh;
 }
 
 .Light-Mode-buttonHolder {
@@ -861,10 +862,11 @@ select {
 }
 
 #faq {
-  font-size: 2.2em;
+  font-size: 1.75rem;
   color: white;
-  font-family: "Share Tech", sans-serif;
+
   background-color: rgb(11, 28, 83);
+  font-family: "Open Sans Condensed", sans-serif;
 }
 
 #faq2 {

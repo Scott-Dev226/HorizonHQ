@@ -106,6 +106,7 @@ const DowIndexWidget = (props) => {
                   ticks: {
                     beginAtZero: false,
                     fontColor: "rgb(238, 140, 59)",
+                    fontSize: 17,
                   },
                 },
               ],

@@ -23,7 +23,7 @@ function Nav(props) {
         <ul id="nav-link-style">
           <img id="logo-pic" src={siteLogo}></img>
           <p className={isDarkMode ? "site-logo-Dark" : "site-logo-Light"}>
-            HORIZON HQ
+            BlueStar HQ
           </p>
           <NavLink id="linkster" to="/HorizonHQ">
             <li className={isDarkMode ? "Dark-Mode" : "Light-Mode"}>HOME</li>

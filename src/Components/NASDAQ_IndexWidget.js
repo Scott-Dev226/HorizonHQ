@@ -88,7 +88,7 @@ const NASDAQ_IndexWidget = (props) => {
             legend: {
               labels: {
                 fontColor: "rgb(219, 235, 129)",
-                fontSize: 15,
+                fontSize: 17,
               },
             },
             title: {
@@ -106,6 +106,7 @@ const NASDAQ_IndexWidget = (props) => {
                   ticks: {
                     beginAtZero: false,
                     fontColor: "rgb(219, 235, 129)",
+                    fontSize: 17,
                   },
                 },
               ],

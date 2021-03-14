@@ -74,8 +74,13 @@ const FrontPageNewsStory = (props) => {
         src={props.Image}
         alt={props.Name}
         onClick={() => {
-          setToggle(props.Description2);
-          setExchange("NASDAQ");
+          if (props.Description2 !== "GME" && props.Description2 !== "TWTR") {
+            setToggle(props.Description2);
+            setExchange("NASDAQ");
+          } else {
+            setToggle(props.Description2);
+            setExchange("NYSE");
+          }
 
           gsap.to(".chartDisplay", {
             opacity: 1,
