@@ -80,6 +80,15 @@ function App() {
                   ? "CLICK TO HIDE INDEX DATA"
                   : "CLICK TO VIEW INDEX DATA"}
               </button>
+
+              <button
+                id="Light-Button"
+                onClick={() => setIsDarkMode((prevMode) => !prevMode)}
+              >
+                {isDarkMode
+                  ? "CLICK TO ENABLE LIGHT MODE "
+                  : "CLICK TO ENABLE DARK MODE"}
+              </button>
             </div>
 
             <div id="indexChartContainer">

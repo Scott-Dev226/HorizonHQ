@@ -6,6 +6,7 @@ import isDarkMode from "./Home";
 import useApiFetch from "./api_fetch";
 import gsap from "gsap";
 import { PriceContext } from "./PriceContext";
+import { motion } from "framer-motion";
 
 const FrontPageNewsStory = (props) => {
   let isDarkMode = props.darkModeProp;
@@ -68,34 +69,36 @@ const FrontPageNewsStory = (props) => {
           {props.Headline}{" "}
         </h1>
       </div>
-      <img
-        id="news-img"
-        className={isDarkMode ? "Dark-Mode" : "Light-Mode"}
-        src={props.Image}
-        alt={props.Name}
-        onClick={() => {
-          if (props.Description2 !== "GME" && props.Description2 !== "TWTR") {
-            setToggle(props.Description2);
-            setExchange("NASDAQ");
-          } else {
-            setToggle(props.Description2);
-            setExchange("NYSE");
-          }
+      <motion.div animate={{}}>
+        <img
+          id="news-img"
+          className="logo-slide"
+          src={props.Image}
+          alt={props.Name}
+          onClick={() => {
+            if (props.Description2 !== "GME" && props.Description2 !== "TWTR") {
+              setToggle(props.Description2);
+              setExchange("NASDAQ");
+            } else {
+              setToggle(props.Description2);
+              setExchange("NYSE");
+            }
 
-          gsap.to(".chartDisplay", {
-            opacity: 1,
-            duration: 2,
-            stagger: 0.5,
-            delay: 0,
-          });
+            gsap.to(".chartDisplay", {
+              opacity: 1,
+              duration: 2,
+              stagger: 0.5,
+              delay: 0,
+            });
 
-          gsap.to(".stockHolder", {
-            border: "1px solid white",
-            opacity: 1,
-            delay: 1,
-          });
-        }}
-      ></img>
+            gsap.to(".stockHolder", {
+              border: "1px solid white",
+              opacity: 1,
+              delay: 1,
+            });
+          }}
+        ></img>
+      </motion.div>
     </div>
   );
 };

@@ -72,7 +72,7 @@
 
 #motherShip {
   width: 100%;
-  zoom: 75%;
+  zoom: 100%;
   display: flex;
 }
 
@@ -244,7 +244,7 @@
 }
 #news-img:hover {
   filter: brightness(75%);
-  border: 2px groove blue;
+  border: 2px groove red;
 }
 
 .guitar-img {
@@ -629,16 +629,17 @@ p {
 .dowChartDisplay-Light {
   opacity: 1;
   justify-content: center;
-  background-color: white;
+  background-color: rgb(2, 2, 2);
   width: 600px;
   height: 300px;
   transition-property: all;
   transition-duration: 1000ms;
   transition-timing-function: ease-in-out;
   margin-top: 40px;
-
+  border: 2px dotted rgb(255, 255, 255);
   display: flex;
   margin-bottom: 50px;
+  border-radius: 50px;
 }
 
 #weather-holder {
@@ -755,11 +756,11 @@ select {
   align-items: center;
   align-content: center;
   width: 150px;
-  height: 45px;
-  background-color: rgb(3, 3, 34);
+  height: 55px;
+  background-color: rgb(134, 2, 2);
   color: white;
-  font-weight: bold;
-  font-size: 15px;
+
+  font-size: 18px;
   margin-top: 20px;
   margin-bottom: 20px;
   transition-property: all;
@@ -792,8 +793,8 @@ select {
 
 #Light-Button:hover {
   background-color: rgb(4, 53, 8);
-  width: 155px;
-  height: 50px;
+  width: 150px;
+  height: 55px;
 }
 
 #Stock-Button:hover {
@@ -874,6 +875,14 @@ select {
   color: white;
   font-family: "Share Tech", sans-serif;
   background-color: rgb(43, 9, 3);
+}
+
+@media only screen and (max-width: 1500px) {
+  #motherShip {
+    width: 100%;
+    zoom: 75%;
+    display: flex;
+  }
 }
 
 @media only screen and (max-width: 1000px) {

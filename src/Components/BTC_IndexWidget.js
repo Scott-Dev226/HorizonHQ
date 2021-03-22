@@ -30,6 +30,8 @@ const BTC_IndexWidget = (props) => {
 
   const todaysDate = yyyy + "-" + mm + "-" + dd;
 
+  useEffect(() => {}, [isDarkMode]);
+
   useEffect(() => {
     const BTCFetchURL =
       "https://api.twelvedata.com/time_series?symbol=" +
@@ -61,13 +63,11 @@ const BTC_IndexWidget = (props) => {
         /*
         if (isDarkMode) {
           Chart.defaults.global.defaultFontColor = "white";
-        } else if (!isDarkMode) {
+        } else if (!isDarkMode) 
           Chart.defaults.global.defaultFontColor = "black";
         }
 
         */
-
-        Chart.defaults.global.defaultFontFamily = "Arial Narrow";
 
         var BTCChart = new Chart(ctx3, {
           type: "line",
