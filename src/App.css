@@ -621,7 +621,7 @@ p {
 }
 
 #indexChartContainer {
-  display: flex;
+  display: block;
   flex-direction: row;
   flex-wrap: nowrap;
 }
