@@ -38,11 +38,7 @@ function Nav(props) {
               API INFO
             </li>
           </NavLink>
-          <NavLink id="linkster" to="/About">
-            <li className={isDarkMode ? "Dark-Mode" : "Light-Mode"}>
-              ABOUT ME
-            </li>
-          </NavLink>
+
           <animated.div
             style={{ transform: props2.transform, opacity: props2.opacity }}
           ></animated.div>

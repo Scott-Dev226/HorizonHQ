@@ -80,19 +80,19 @@ const DowIndexWidget = (props) => {
                 data: dowCascadeClose,
                 fill: false,
                 borderColor: ["blue"],
-                borderWidth: 1,
+                borderWidth: 3,
               },
             ],
           },
           options: {
             legend: {
               labels: {
-                fontColor: "rgb(238, 140, 59)",
+                fontColor: "black",
                 fontSize: 15,
               },
             },
             title: {
-              fontColor: "rgb(238, 140, 59)",
+              fontColor: "black",
               display: true,
               text:
                 "CURRENT VALUE" + " $" + data.values[0].close + "    (USD/$)",
@@ -105,7 +105,7 @@ const DowIndexWidget = (props) => {
                 {
                   ticks: {
                     beginAtZero: false,
-                    fontColor: "rgb(238, 140, 59)",
+                    fontColor: "black",
                     fontSize: 17,
                   },
                 },
@@ -114,7 +114,7 @@ const DowIndexWidget = (props) => {
                 {
                   ticks: {
                     beginAtZero: false,
-                    fontColor: "rgb(238, 140, 59)",
+                    fontColor: "black",
                   },
                 },
               ],

@@ -82,19 +82,19 @@ const BTC_IndexWidget = (props) => {
                 fill: false,
                 borderColor: ["green"],
                 backgroundColor: ["rgb(189, 218, 189)"],
-                borderWidth: 1,
+                borderWidth: 3,
               },
             ],
           },
           options: {
             legend: {
               labels: {
-                fontColor: "rgb(215, 154, 243)",
+                fontColor: "black",
                 fontSize: 15,
               },
             },
             title: {
-              fontColor: "rgb(215, 154, 243)",
+              fontColor: "black",
               display: true,
               text:
                 "CURRENT VALUE" + " $" + data.values[0].close + "    (USD/$)",
@@ -107,7 +107,7 @@ const BTC_IndexWidget = (props) => {
                 {
                   ticks: {
                     beginAtZero: false,
-                    fontColor: "rgb(215, 154, 243)",
+                    fontColor: "black",
                     fontSize: 17,
                   },
                 },
@@ -116,7 +116,7 @@ const BTC_IndexWidget = (props) => {
                 {
                   ticks: {
                     beginAtZero: false,
-                    fontColor: "rgb(215, 154, 243)",
+                    fontColor: "black",
                   },
                 },
               ],

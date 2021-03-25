@@ -11,7 +11,7 @@ const FrontPageNews = (props) => {
       id="storyHolderDiv"
       className={isDarkMode ? "Dark-Mode" : "Light-Mode"}
     >
-      <p id="faq">
+      <p id={isDarkMode ? "faq-light" : "faq-dark"}>
         {" "}
         For Quick Live Stock Data, Click a Logo from the Grid below:
       </p>

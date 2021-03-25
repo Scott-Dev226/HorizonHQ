@@ -79,7 +79,7 @@ const NASDAQ_IndexWidget = (props) => {
                 fill: false,
                 borderColor: ["red"],
                 backgroundColor: ["rgb(252, 233, 231)"],
-                borderWidth: 1,
+                borderWidth: 3,
                 fontColor: "red",
               },
             ],
@@ -87,12 +87,12 @@ const NASDAQ_IndexWidget = (props) => {
           options: {
             legend: {
               labels: {
-                fontColor: "rgb(219, 235, 129)",
+                fontColor: "black",
                 fontSize: 17,
               },
             },
             title: {
-              fontColor: "rgb(219, 235, 129)",
+              fontColor: "black",
               display: true,
               text:
                 "CURRENT VALUE" + " $" + data.values[0].close + "    (USD/$)",
@@ -105,7 +105,7 @@ const NASDAQ_IndexWidget = (props) => {
                 {
                   ticks: {
                     beginAtZero: false,
-                    fontColor: "rgb(219, 235, 129)",
+                    fontColor: "black",
                     fontSize: 17,
                   },
                 },
@@ -114,7 +114,7 @@ const NASDAQ_IndexWidget = (props) => {
                 {
                   ticks: {
                     beginAtZero: false,
-                    fontColor: "rgb(219, 235, 129)",
+                    fontColor: "black",
                   },
                 },
               ],

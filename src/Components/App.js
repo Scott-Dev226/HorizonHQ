@@ -16,6 +16,7 @@ import threeDimensions from "./cubeTestComponent";
 import DowIndexWidget from "./DowIndexWidget";
 import NASDAQ_IndexWidget from "./NASDAQ_IndexWidget";
 import BTC_IndexWidget from "./BTC_IndexWidget";
+import TopGainers from "./TopGainers";
 import { PriceContext } from "./PriceContext";
 import { PriceVarianceContext } from "./PriceVarianceContext";
 
@@ -48,8 +49,8 @@ function Box(props) {
 }
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
-  const [toolsEnabled, setToolsEnabled] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [toolsEnabled, setToolsEnabled] = useState(true);
 
   const [displayPrice, setDisplayPrice] = useState(null);
   const [displayVariance, setDisplayVariance] = useState(null);
@@ -71,26 +72,11 @@ function App() {
                   ? "Dark-Mode-buttonHolder"
                   : "Light-Mode-buttonHolder"
               }
-            >
-              <button
-                id="Light-Button"
-                onClick={() => setToolsEnabled((prevMode) => !prevMode)}
-              >
-                {toolsEnabled
-                  ? "CLICK TO HIDE INDEX DATA"
-                  : "CLICK TO VIEW INDEX DATA"}
-              </button>
+            ></div>
 
-              <button
-                id="Light-Button"
-                onClick={() => setIsDarkMode((prevMode) => !prevMode)}
-              >
-                {isDarkMode
-                  ? "CLICK TO ENABLE LIGHT MODE "
-                  : "CLICK TO ENABLE DARK MODE"}
-              </button>
+            <div>
+              <TopGainers />
             </div>
-
             <div id="indexChartContainer">
               {toolsEnabled && (
                 <DowIndexWidget
