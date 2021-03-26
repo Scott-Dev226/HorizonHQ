@@ -7,8 +7,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Blinker:wght@600&family=Roboto:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Titillium+Web:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap");
 
@@ -627,10 +626,16 @@ p {
 }
 
 #Top-Gainers-Header {
-  color: white;
+  color: black;
   display: block;
-  font-size: 1.5rem;
+  font-size: 2rem;
   width: 100%;
+  font-family: "Big Shoulders Display", cursive;
+  margin-left: 20%;
+  margin-right: 20%;
+  border-radius: 15%;
+  border-bottom: 2.5px solid black;
+  margin-bottom: 25px;
 }
 
 #Top-Gainers-Container {
@@ -642,13 +647,12 @@ p {
   margin-top: 10%;
   border: 3px dotted black;
   border-radius: 15%;
-  background-color: rgb(2, 2, 46);
 }
 
 #Top-Gainer-Entry {
   margin-left: 20px;
   margin-right: 20px;
-  border: 1.5px dashed white;
+
   border-radius: 15%;
   margin-bottom: 15px;
   margin-top: 15px;
@@ -659,17 +663,20 @@ p {
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 2rem;
-  font-family: "Share Tech", sans-serif;
-  color: black;
-  background-color: white;
+  font-family: "Big Shoulders Display", cursive;
+  font-weight: bold;
+  color: white;
+  background-color: black;
   border-radius: 15%;
+  font-weight: lighter;
+  border-bottom: 2.25px solid white;
 }
 
 #gainer-variance {
   margin-bottom: 5px;
   color: rgb(12, 201, 12);
-  font-size: 1.5rem;
-  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.25rem;
+  font-family: "Share Tech", sans-serif;
   font-weight: bold;
   margin-right: 5px;
   margin-left: 5px;
@@ -679,7 +686,7 @@ p {
 #gainer-price {
   margin-bottom: 5px;
   color: rgb(201, 97, 12);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-family: "Open Sans Condensed", sans-serif;
   font-weight: bold;
   margin-right: 5px;
@@ -1068,6 +1075,17 @@ select {
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 25%;
+  }
+
+  #Top-Gainers-Header {
+    color: black;
+    display: block;
+    font-size: 1.5rem;
+    width: 100%;
+    font-family: "Big Shoulders Display", cursive;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 15%;
   }
   #Cube-3D-Container {
     margin-right: 45%;

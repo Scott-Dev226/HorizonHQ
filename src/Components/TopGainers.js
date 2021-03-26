@@ -15,6 +15,21 @@ const TopGainers = () => {
   };
   */
 
+  const today = new Date();
+  let dd = today.getDate();
+  let mm = today.getMonth() + 1;
+  let yyyy = today.getFullYear();
+
+  if (dd < 10) {
+    dd = "0" + dd;
+  }
+
+  if (mm < 10) {
+    mm = "0" + mm;
+  }
+
+  const todaysGainerDate = mm + "/" + dd + "/" + yyyy;
+
   const [gainerSymbolDisplay, setGainerSymbolDisplay] = useState([]);
   const [gainerVarianceDisplay, setGainerVarianceDisplay] = useState([]);
   const [gainerPriceDisplay, setGainerPriceDisplay] = useState([]);
@@ -133,7 +148,7 @@ const TopGainers = () => {
       }) // Convert data to json
       .then(function (data) {
         for (let i = 0; i < Nasdaq100_List_1.length; i++) {
-          if (data[Nasdaq100_List_1[i]].percent_change > 2.5) {
+          if (data[Nasdaq100_List_1[i]].percent_change > 4) {
             setGainerSymbolDisplay((oldArray) => [
               ...oldArray,
               data[Nasdaq100_List_1[i]].symbol,
@@ -165,7 +180,7 @@ const TopGainers = () => {
 
   return (
     <div id="Top-Gainers-Container" class="gainer-container-fade">
-      <p id="Top-Gainers-Header">Today's Top Gaining NASDAQ 100 Stocks</p>
+      <p id="Top-Gainers-Header">{`Top Gaining NASDAQ 100 Stocks for ${todaysGainerDate}`}</p>
       <div id="Top-Gainer-Entry" class="gainer-slide">
         <p id="gainer-symbol">{gainerSymbolDisplay[0]}</p>
         <p id="gainer-price">{`$${gainerPriceDisplay[0]} `}</p>
