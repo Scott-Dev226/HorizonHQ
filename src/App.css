@@ -626,6 +626,13 @@ p {
   flex-wrap: nowrap;
 }
 
+#Top-Gainers-Header {
+  color: white;
+  display: block;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
 #Top-Gainers-Container {
   display: flex;
   justify-content: center;
@@ -641,7 +648,7 @@ p {
 #Top-Gainer-Entry {
   margin-left: 20px;
   margin-right: 20px;
-  border: 2.5px solid black;
+  border: 1.5px dashed white;
   border-radius: 15%;
   margin-bottom: 15px;
   margin-top: 15px;
@@ -651,7 +658,7 @@ p {
 #gainer-symbol {
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 3rem;
+  font-size: 2rem;
   font-family: "Share Tech", sans-serif;
   color: black;
   background-color: white;
@@ -661,7 +668,18 @@ p {
 #gainer-variance {
   margin-bottom: 5px;
   color: rgb(12, 201, 12);
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: bold;
+  margin-right: 5px;
+  margin-left: 5px;
+  background-color: black;
+}
+
+#gainer-price {
+  margin-bottom: 5px;
+  color: rgb(201, 97, 12);
+  font-size: 1.5rem;
   font-family: "Open Sans Condensed", sans-serif;
   font-weight: bold;
   margin-right: 5px;
