@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import gsap from "gsap";
+import TopGainerEntries from "./TopGainerEntries";
 
 const TopGainers = () => {
   /*
@@ -33,6 +34,7 @@ const TopGainers = () => {
   const [gainerSymbolDisplay, setGainerSymbolDisplay] = useState([]);
   const [gainerVarianceDisplay, setGainerVarianceDisplay] = useState([]);
   const [gainerPriceDisplay, setGainerPriceDisplay] = useState([]);
+  const [gainerObjects, setGainerObjects] = useState([]);
 
   const [gainerListCount, setGainerListCount] = useState(0);
 
@@ -141,14 +143,16 @@ const TopGainers = () => {
 
   const gainerURL = `https://api.twelvedata.com/quote?symbol=${Nasdaq100_List_1}&apikey=8b61eafe6b2c4308aa8ebaa6799b4e59`;
 
-  const topGainersFunction = (gainerSymbolDisplay, gainerVarianceDisplay) => {
+  const topGainersFunction = (gainerSymbolDisplay, gainerVarianceDisplay) => {};
+
+  useEffect(() => {
     fetch(gainerURL)
       .then(function (resp) {
         return resp.json();
       }) // Convert data to json
       .then(function (data) {
         for (let i = 0; i < Nasdaq100_List_1.length; i++) {
-          if (data[Nasdaq100_List_1[i]].percent_change > 4) {
+          if (data[Nasdaq100_List_1[i]].percent_change > 5) {
             setGainerSymbolDisplay((oldArray) => [
               ...oldArray,
               data[Nasdaq100_List_1[i]].symbol,
@@ -163,83 +167,33 @@ const TopGainers = () => {
             ]);
           }
         }
+        let testObjects = gainerSymbolDisplay.map((symbol, index) => {
+          return {
+            Symbol: symbol,
+            Variance: gainerVarianceDisplay[index],
+            Price: gainerPriceDisplay[index],
+          };
+        });
+        setGainerObjects(testObjects);
       });
-  };
-
-  useEffect(() => {
-    topGainersFunction();
-    gsap.from(".gainer-container-fade", { opacity: 0, duration: 7 });
-    gsap.from(".gainer-slide", {
-      x: 1500,
-      stagger: 0.5,
-      delay: 1.25,
-      duration: 2,
-      opacity: 0,
-    });
   }, [gainerListCount]);
+
+  setTimeout(() => {
+    setGainerListCount(2);
+    gsap.to(".gainer-container-fade", { opacity: 1, duration: 3.5 });
+  }, 2000);
 
   return (
     <div id="Top-Gainers-Container" class="gainer-container-fade">
       <p id="Top-Gainers-Header">{`Top Gaining NASDAQ 100 Stocks for ${todaysGainerDate}`}</p>
-      <div id="Top-Gainer-Entry" class="gainer-slide">
-        <p id="gainer-symbol">{gainerSymbolDisplay[0]}</p>
-        <p id="gainer-price">{`$${gainerPriceDisplay[0]} `}</p>
-        <p id="gainer-variance">{`+ ${gainerVarianceDisplay[0]}%`}</p>
-      </div>
 
-      <div id="Top-Gainer-Entry" class="gainer-slide">
-        <p id="gainer-symbol">{gainerSymbolDisplay[1]}</p>
-        <p id="gainer-price">{`$${gainerPriceDisplay[1]} `}</p>
-        <p id="gainer-variance">{`+ ${gainerVarianceDisplay[1]}%`}</p>
-      </div>
-
-      <div id="Top-Gainer-Entry" class="gainer-slide">
-        <p id="gainer-symbol">{gainerSymbolDisplay[2]}</p>
-        <p id="gainer-price">{`$${gainerPriceDisplay[2]} `}</p>
-        <p id="gainer-variance">{`+ ${gainerVarianceDisplay[2]}%`}</p>
-      </div>
-
-      <div id="Top-Gainer-Entry" class="gainer-slide">
-        <p id="gainer-symbol">{gainerSymbolDisplay[3]}</p>
-        <p id="gainer-price">{`$${gainerPriceDisplay[3]} `}</p>
-        <p id="gainer-variance">{`+ ${gainerVarianceDisplay[3]}%`}</p>
-      </div>
-
-      <div id="Top-Gainer-Entry" class="gainer-slide">
-        <p id="gainer-symbol">{gainerSymbolDisplay[4]}</p>
-        <p id="gainer-price">{`$${gainerPriceDisplay[4]} `}</p>
-        <p id="gainer-variance">{`+ ${gainerVarianceDisplay[4]}%`}</p>
-      </div>
-
-      <div id="Top-Gainer-Entry" class="gainer-slide">
-        <p id="gainer-symbol">{gainerSymbolDisplay[5]}</p>
-        <p id="gainer-price">{`$${gainerPriceDisplay[5]} `}</p>
-        <p id="gainer-variance">{`+ ${gainerVarianceDisplay[5]}%`}</p>
-      </div>
-
-      <div id="Top-Gainer-Entry" class="gainer-slide">
-        <p id="gainer-symbol">{gainerSymbolDisplay[6]}</p>
-        <p id="gainer-price">{`$${gainerPriceDisplay[6]} `}</p>
-        <p id="gainer-variance">{`+ ${gainerVarianceDisplay[6]}%`}</p>
-      </div>
-
-      <div id="Top-Gainer-Entry" class="gainer-slide">
-        <p id="gainer-symbol">{gainerSymbolDisplay[7]}</p>
-        <p id="gainer-price">{`$${gainerPriceDisplay[7]} `}</p>
-        <p id="gainer-variance">{`+ ${gainerVarianceDisplay[7]}%`}</p>
-      </div>
-
-      <div id="Top-Gainer-Entry" class="gainer-slide">
-        <p id="gainer-symbol">{gainerSymbolDisplay[8]}</p>
-        <p id="gainer-price">{`$${gainerPriceDisplay[8]} `}</p>
-        <p id="gainer-variance">{`+ ${gainerVarianceDisplay[8]}%`}</p>
-      </div>
-
-      <div id="Top-Gainer-Entry" class="gainer-slide">
-        <p id="gainer-symbol">{gainerSymbolDisplay[9]}</p>
-        <p id="gainer-price">{`$${gainerPriceDisplay[9]} `}</p>
-        <p id="gainer-variance">{`+ ${gainerVarianceDisplay[9]}%`}</p>
-      </div>
+      {gainerObjects.map((entry) => (
+        <TopGainerEntries
+          symbolProp={entry.Symbol}
+          varianceProp={entry.Variance}
+          priceProp={entry.Price}
+        />
+      ))}
     </div>
   );
 };

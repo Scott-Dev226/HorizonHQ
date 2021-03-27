@@ -647,6 +647,8 @@ p {
   margin-top: 10%;
   border: 3px dotted black;
   border-radius: 15%;
+  opacity: 0;
+  margin-bottom: 75px;
 }
 
 #Top-Gainer-Entry {
@@ -945,7 +947,7 @@ select {
 
 #faq2 {
   font-size: 1.5em;
-  color: white;
+  color: rgb(201, 2, 2);
   font-family: "Share Tech", sans-serif;
 }
 
