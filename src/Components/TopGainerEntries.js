@@ -7,10 +7,15 @@ const TopGainerEntries = (props) => {
   let Price = props.priceProp;
 
   return (
-    <div id="Top-Gainer-Entry" class="gainer-slide">
-      <p id="gainer-symbol">{stockSymbol}</p>
-      <p id="gainer-price">{`$${Price} `}</p>
-      <p id="gainer-variance">{`+ ${Variance}%`}</p>
+    <div id="Top-Gainer-Entry" className="gainer-slide">
+      <p id="gainer-symbol" class="gainer-symbol-slide">
+        {stockSymbol}
+      </p>
+      <p id="gainer-price" class="gainer-price-slide">{`$${Price} `}</p>
+      <p
+        id="gainer-variance"
+        class="gainer-variance-slide"
+      >{`+ ${Variance}%`}</p>
     </div>
   );
 };

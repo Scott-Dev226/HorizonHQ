@@ -80,7 +80,7 @@ const useApiFetch = () => {
       const fetchURL3 =
         "https://api.twelvedata.com/time_series?symbol=" +
         toggle +
-        "&interval=1day&apikey=8b61eafe6b2c4308aa8ebaa6799b4e59";
+        "&interval=1day&apikey=f12c3d6e34d241178fae0bd392e18b07";
       const histFetchURL3 =
         "https://api.twelvedata.com/time_series?symbol=" +
         toggle +
@@ -88,7 +88,7 @@ const useApiFetch = () => {
         exchange +
         "&interval=1day&start_date=2020-1-10&end_date=" +
         todaysDate +
-        "&apikey=8b61eafe6b2c4308aa8ebaa6799b4e59";
+        "&apikey=f12c3d6e34d241178fae0bd392e18b07";
 
       fetch(fetchURL3)
         .then(function (resp) {

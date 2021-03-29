@@ -141,7 +141,7 @@ const TopGainers = () => {
     "XLNX",
   ];
 
-  const gainerURL = `https://api.twelvedata.com/quote?symbol=${Nasdaq100_List_1}&apikey=8b61eafe6b2c4308aa8ebaa6799b4e59`;
+  const gainerURL = `https://api.twelvedata.com/quote?symbol=${Nasdaq100_List_1}&apikey=f12c3d6e34d241178fae0bd392e18b07`;
 
   const topGainersFunction = (gainerSymbolDisplay, gainerVarianceDisplay) => {};
 
@@ -152,7 +152,7 @@ const TopGainers = () => {
       }) // Convert data to json
       .then(function (data) {
         for (let i = 0; i < Nasdaq100_List_1.length; i++) {
-          if (data[Nasdaq100_List_1[i]].percent_change > 5) {
+          if (data[Nasdaq100_List_1[i]].percent_change > 0) {
             setGainerSymbolDisplay((oldArray) => [
               ...oldArray,
               data[Nasdaq100_List_1[i]].symbol,
@@ -181,6 +181,7 @@ const TopGainers = () => {
   setTimeout(() => {
     setGainerListCount(2);
     gsap.to(".gainer-container-fade", { opacity: 1, duration: 3.5 });
+    gsap.to(".gainer-slide", { opacity: 1, duration: 3.5 });
   }, 2000);
 
   return (

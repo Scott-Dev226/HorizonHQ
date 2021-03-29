@@ -39,7 +39,7 @@ const BTC_IndexWidget = (props) => {
       "&exchange=Binance" +
       "&interval=1week&start_date=2020-1-10&end_date=" +
       todaysDate +
-      "&apikey=8b61eafe6b2c4308aa8ebaa6799b4e59";
+      "&apikey=f12c3d6e34d241178fae0bd392e18b07";
 
     fetch(BTCFetchURL)
       .then(function (resp) {
