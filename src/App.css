@@ -631,19 +631,18 @@ p {
   font-size: 2rem;
   width: 100%;
   font-family: "Big Shoulders Display", cursive;
-
+  margin-top: 100px;
   border-radius: 15%;
   border-bottom: 2.5px solid black;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
 }
 
 #Top-Gainers-Container {
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-top: 10%;
+
+  margin-top: 5%;
   border: 3px dotted black;
   background-color: black;
   border-radius: 15%;
@@ -655,6 +654,8 @@ p {
 
 #Marquee-Center-Container {
   justify-content: center;
+
+  display: inline-block;
 }
 
 #Top-Gainer-Entry {
@@ -684,18 +685,20 @@ p {
 
 #gainer-variance {
   margin-bottom: 5px;
-  color: rgb(12, 201, 12);
+
   font-size: 1.25rem;
   font-family: "Share Tech", sans-serif;
   font-weight: bold;
   margin-right: 5px;
   margin-left: 5px;
   background-color: black;
+  color: rgb(1, 132, 255);
 }
 
 #gainer-price {
   margin-bottom: 5px;
-  color: rgb(201, 97, 12);
+  color: rgb(12, 201, 12);
+
   font-size: 1.25rem;
   font-family: "Open Sans Condensed", sans-serif;
   font-weight: bold;
@@ -1086,7 +1089,7 @@ select {
     margin-left: 0%;
     margin-right: 0%;
 
-    margin-top: 25%;
+    margin-top: 15%;
   }
 
   #Top-Gainers-Header {
@@ -1095,8 +1098,7 @@ select {
     font-size: 1.5rem;
     width: 100%;
     font-family: "Big Shoulders Display", cursive;
-    margin-left: 20%;
-    margin-right: 20%;
+
     border-radius: 15%;
   }
   #Cube-3D-Container {
