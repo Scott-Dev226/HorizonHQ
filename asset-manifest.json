@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/HorizonHQ/static/css/main.3134f0d6.chunk.css",
-    "main.js": "/HorizonHQ/static/js/main.c752190d.chunk.js",
-    "main.js.map": "/HorizonHQ/static/js/main.c752190d.chunk.js.map",
-    "runtime-main.js": "/HorizonHQ/static/js/runtime-main.0fcc3a76.js",
-    "runtime-main.js.map": "/HorizonHQ/static/js/runtime-main.0fcc3a76.js.map",
-    "static/js/2.1f52ee9d.chunk.js": "/HorizonHQ/static/js/2.1f52ee9d.chunk.js",
-    "static/js/2.1f52ee9d.chunk.js.map": "/HorizonHQ/static/js/2.1f52ee9d.chunk.js.map",
-    "static/js/3.166fb8b1.chunk.js": "/HorizonHQ/static/js/3.166fb8b1.chunk.js",
-    "static/js/3.166fb8b1.chunk.js.map": "/HorizonHQ/static/js/3.166fb8b1.chunk.js.map",
+    "main.css": "/HorizonHQ/static/css/main.6a36eeed.chunk.css",
+    "main.js": "/HorizonHQ/static/js/main.9069e313.chunk.js",
+    "main.js.map": "/HorizonHQ/static/js/main.9069e313.chunk.js.map",
+    "runtime-main.js": "/HorizonHQ/static/js/runtime-main.c123d044.js",
+    "runtime-main.js.map": "/HorizonHQ/static/js/runtime-main.c123d044.js.map",
+    "static/js/2.5ab76591.chunk.js": "/HorizonHQ/static/js/2.5ab76591.chunk.js",
+    "static/js/2.5ab76591.chunk.js.map": "/HorizonHQ/static/js/2.5ab76591.chunk.js.map",
+    "static/js/3.5048b8d3.chunk.js": "/HorizonHQ/static/js/3.5048b8d3.chunk.js",
+    "static/js/3.5048b8d3.chunk.js.map": "/HorizonHQ/static/js/3.5048b8d3.chunk.js.map",
     "index.html": "/HorizonHQ/index.html",
-    "static/css/main.3134f0d6.chunk.css.map": "/HorizonHQ/static/css/main.3134f0d6.chunk.css.map",
-    "static/js/2.1f52ee9d.chunk.js.LICENSE.txt": "/HorizonHQ/static/js/2.1f52ee9d.chunk.js.LICENSE.txt",
+    "static/css/main.6a36eeed.chunk.css.map": "/HorizonHQ/static/css/main.6a36eeed.chunk.css.map",
+    "static/js/2.5ab76591.chunk.js.LICENSE.txt": "/HorizonHQ/static/js/2.5ab76591.chunk.js.LICENSE.txt",
     "static/media/My Horizon.02b8d280.jpg": "/HorizonHQ/static/media/My Horizon.02b8d280.jpg",
     "static/media/VS_Spinner.1a76d308.jpg": "/HorizonHQ/static/media/VS_Spinner.1a76d308.jpg",
     "static/media/aapl-back.32636139.jpg": "/HorizonHQ/static/media/aapl-back.32636139.jpg",
@@ -32,9 +32,9 @@
     "static/media/twitter-LOGO.38dc1ae7.jpg": "/HorizonHQ/static/media/twitter-LOGO.38dc1ae7.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0fcc3a76.js",
-    "static/js/2.1f52ee9d.chunk.js",
-    "static/css/main.3134f0d6.chunk.css",
-    "static/js/main.c752190d.chunk.js"
+    "static/js/runtime-main.c123d044.js",
+    "static/js/2.5ab76591.chunk.js",
+    "static/css/main.6a36eeed.chunk.css",
+    "static/js/main.9069e313.chunk.js"
   ]
 }
