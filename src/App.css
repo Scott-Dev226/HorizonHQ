@@ -631,8 +631,7 @@ p {
   font-size: 2rem;
   width: 100%;
   font-family: "Big Shoulders Display", cursive;
-  margin-left: 20%;
-  margin-right: 20%;
+
   border-radius: 15%;
   border-bottom: 2.5px solid black;
   margin-bottom: 25px;
@@ -641,24 +640,29 @@ p {
 #Top-Gainers-Container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-left: 20%;
   margin-right: 20%;
   margin-top: 10%;
   border: 3px dotted black;
+  background-color: black;
   border-radius: 15%;
   opacity: 1;
   margin-bottom: 75px;
+  overflow: hidden;
+  width: 800px;
 }
 
 #Top-Gainer-Entry {
-  margin-left: 20px;
-  margin-right: 20px;
-  opacity: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  opacity: 1;
   border-radius: 15%;
   margin-bottom: 15px;
   margin-top: 15px;
-  background-color: rgb(26, 25, 25);
+  background-color: rgb(37, 37, 37);
+  transform: translateX(1200px);
+  transition-timing-function: ease-in-out;
 }
 
 #gainer-symbol {

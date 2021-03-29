@@ -19,6 +19,7 @@ import BTC_IndexWidget from "./BTC_IndexWidget";
 import TopGainers from "./TopGainers";
 import { PriceContext } from "./PriceContext";
 import { PriceVarianceContext } from "./PriceVarianceContext";
+import Marquee from "react-fast-marquee";
 
 function Box(props) {
   // This reference will give us direct access to the mesh

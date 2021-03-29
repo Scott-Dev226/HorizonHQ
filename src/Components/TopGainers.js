@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import gsap from "gsap";
 import TopGainerEntries from "./TopGainerEntries";
+import Marquee from "react-fast-marquee";
 
 const TopGainers = () => {
   /*
@@ -152,7 +153,7 @@ const TopGainers = () => {
       }) // Convert data to json
       .then(function (data) {
         for (let i = 0; i < Nasdaq100_List_1.length; i++) {
-          if (data[Nasdaq100_List_1[i]].percent_change > 0) {
+          if (data[Nasdaq100_List_1[i]].percent_change > 1) {
             setGainerSymbolDisplay((oldArray) => [
               ...oldArray,
               data[Nasdaq100_List_1[i]].symbol,
@@ -180,22 +181,28 @@ const TopGainers = () => {
 
   setTimeout(() => {
     setGainerListCount(2);
-    gsap.to(".gainer-container-fade", { opacity: 1, duration: 3.5 });
-    gsap.to(".gainer-slide", { opacity: 1, duration: 3.5 });
+
+    gsap.to(".gainer-container-fade", {
+      opacity: 1,
+    });
+    gsap.to(".gainer-slide", { opacity: 1, x: -10000, duration: 1000 });
   }, 2000);
 
-  return (
-    <div id="Top-Gainers-Container" class="gainer-container-fade">
-      <p id="Top-Gainers-Header">{`Top Gaining NASDAQ 100 Stocks for ${todaysGainerDate}`}</p>
+  setInterval(() => {}, 60000);
 
-      {gainerObjects.map((entry) => (
-        <TopGainerEntries
-          symbolProp={entry.Symbol}
-          varianceProp={entry.Variance}
-          priceProp={entry.Price}
-        />
-      ))}
-    </div>
+  return (
+    <>
+      <p id="Top-Gainers-Header">{`Top Gaining NASDAQ 100 Stocks for ${todaysGainerDate}`}</p>
+      <div id="Top-Gainers-Container" class="gainer-container-fade">
+        {gainerObjects.map((entry) => (
+          <TopGainerEntries
+            symbolProp={entry.Symbol}
+            varianceProp={entry.Variance}
+            priceProp={entry.Price}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 

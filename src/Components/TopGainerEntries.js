@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useReducer } from "react";
 import { useSpring, animated } from "react-spring";
+import Marquee from "react-fast-marquee";
 
 const TopGainerEntries = (props) => {
   let stockSymbol = props.symbolProp;
