@@ -653,6 +653,10 @@ p {
   width: 800px;
 }
 
+#Marquee-Center-Container {
+  justify-content: center;
+}
+
 #Top-Gainer-Entry {
   margin-left: 10px;
   margin-right: 10px;

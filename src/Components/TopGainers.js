@@ -191,7 +191,7 @@ const TopGainers = () => {
   setInterval(() => {}, 60000);
 
   return (
-    <>
+    <div id="Marquee-Center-Container">
       <p id="Top-Gainers-Header">{`Top Gaining NASDAQ 100 Stocks for ${todaysGainerDate}`}</p>
       <div id="Top-Gainers-Container" class="gainer-container-fade">
         {gainerObjects.map((entry) => (
@@ -202,7 +202,7 @@ const TopGainers = () => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
