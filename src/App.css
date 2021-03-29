@@ -1079,6 +1079,8 @@ select {
 @media only screen and (max-width: 700px) {
   #Top-Gainers-Container {
     width: 450px;
+    margin-left: 0%;
+    margin-right: 0%;
 
     margin-top: 25%;
   }
