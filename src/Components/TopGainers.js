@@ -153,7 +153,7 @@ const TopGainers = () => {
       }) // Convert data to json
       .then(function (data) {
         for (let i = 0; i < Nasdaq100_List_1.length; i++) {
-          if (data[Nasdaq100_List_1[i]].percent_change > -2) {
+          if (data[Nasdaq100_List_1[i]].percent_change > -0.5) {
             setGainerSymbolDisplay((oldArray) => [
               ...oldArray,
               data[Nasdaq100_List_1[i]].symbol,
