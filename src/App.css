@@ -88,6 +88,7 @@
   margin-top: 5px;
   width: 97%;
   justify-content: flex-end;
+  background-color: black;
 }
 
 #nav-link-style li {
@@ -97,7 +98,7 @@
   list-style: none;
   font-family: "Blinker", sans-serif;
   font-size: 1.5em;
-
+  color: white;
   text-decoration: none;
   font-weight: bold;
   opacity: 0.8;
@@ -105,6 +106,7 @@
   transition-duration: 1000ms;
   transition-timing-function: ease-in-out;
   border-right: 0.5px solid white;
+  background-color: black;
 }
 
 #nav-link-style li:hover {
@@ -121,6 +123,39 @@
   border-radius: 20%;
 }
 
+#BlueStar-Logo-Canvas {
+  background-color: black;
+
+  transition-property: all;
+  transition-duration: 1000ms;
+  transition-timing-function: ease-in-out;
+  border-right: 0.5px solid white;
+  border-left: 0.5px solid white;
+}
+
+#BlueStar-Logo-Text {
+  background-color: black;
+  color: white;
+  transition-property: all;
+  transition-duration: 1000ms;
+  transition-timing-function: ease-in-out;
+}
+
+#BlueStar-Logo-Sizer {
+  width: 65px;
+  height: 65px;
+  transition-property: all;
+  transition-duration: 1000ms;
+  transition-timing-function: ease-in-out;
+}
+
+#BlueStar-Logo-Canvas {
+  background-color: black;
+  transition-property: all;
+  transition-duration: 1000ms;
+  transition-timing-function: ease-in-out;
+}
+
 .site-logo-Dark {
   color: white;
   font-family: "Share Tech", sans-serif;
@@ -131,12 +166,16 @@
 }
 
 .site-logo-Light {
-  color: black;
-  font-family: "Nova Mono", monospace;
+  color: white;
+  font-family: "Share Tech", sans-serif;
   font-size: 1.6rem;
   display: inline;
-  margin-right: 58%;
+  margin-right: 69%;
+  margin-left: 10px;
   opacity: 0.75;
+  transition-property: all;
+  transition-duration: 1000ms;
+  transition-timing-function: ease-in-out;
 }
 
 #linkster {
@@ -772,7 +811,7 @@ p {
   font-size: 25px;
   font-family: "Share Tech", sans-serif;
   background-color: black;
-  color: white;
+  color: rgb(0, 58, 248);
 }
 
 #Color-Toggle {
