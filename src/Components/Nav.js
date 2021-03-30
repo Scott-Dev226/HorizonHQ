@@ -29,9 +29,12 @@ function Box(props) {
     mesh.current.rotation.y += rotationSpeed;
   });
 
+  /*
   setTimeout(() => {
     setStarCoolDown(true);
   }, 3000);
+
+  */
 
   return (
     <mesh {...props} ref={mesh}>
@@ -41,7 +44,7 @@ function Box(props) {
         reflectivity={0.5}
         metalness={1}
         attach="material"
-        color={starCoolDown ? "rgb(0, 58, 248)" : "red"}
+        color={"rgb(1, 132, 255)"}
       />
     </mesh>
   );
