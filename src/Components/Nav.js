@@ -61,21 +61,7 @@ function Nav(props) {
       <div className={isDarkMode ? "Dark-Mode" : "Light-Mode"} id="nav-div">
         <ul id="nav-link-style">
           <div id="BlueStar-Logo-Sizer">
-            <Canvas id="BlueStar-Logo-Canvas">
-              <ambientLight intensity={1} />
-              <spotLight position={[0, 0, 0]} angle={0} />
-              <Box position={[0, 0, 0]} darkModeProp={isDarkMode} />
-
-              <Stars
-                radius={100} // Radius of the inner sphere (default=100)
-                depth={50} // Depth of area where stars should fit (default=50)
-                count={777} // Amount of stars (default=5000)
-                color={"blue"}
-                factor={4} // Size factor (default=4)
-                saturation={0} // Saturation 0-1 (default=0)
-                fade // Faded dots (default=false)
-              />
-            </Canvas>
+            <img id="logo-pic" src={siteLogo}></img>
           </div>
           <p className={isDarkMode ? "site-logo-Dark" : "site-logo-Light"}>
             BlueStar HQ
