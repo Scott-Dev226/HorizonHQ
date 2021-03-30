@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/HorizonHQ/static/css/main.8c10e65a.chunk.css",
-    "main.js": "/HorizonHQ/static/js/main.083b1003.chunk.js",
-    "main.js.map": "/HorizonHQ/static/js/main.083b1003.chunk.js.map",
+    "main.js": "/HorizonHQ/static/js/main.abb7e5cb.chunk.js",
+    "main.js.map": "/HorizonHQ/static/js/main.abb7e5cb.chunk.js.map",
     "runtime-main.js": "/HorizonHQ/static/js/runtime-main.c123d044.js",
     "runtime-main.js.map": "/HorizonHQ/static/js/runtime-main.c123d044.js.map",
     "static/js/2.43d2156b.chunk.js": "/HorizonHQ/static/js/2.43d2156b.chunk.js",
@@ -35,6 +35,6 @@
     "static/js/runtime-main.c123d044.js",
     "static/js/2.43d2156b.chunk.js",
     "static/css/main.8c10e65a.chunk.css",
-    "static/js/main.083b1003.chunk.js"
+    "static/js/main.abb7e5cb.chunk.js"
   ]
 }
