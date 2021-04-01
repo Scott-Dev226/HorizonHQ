@@ -204,8 +204,6 @@ const BigShort = (props) => {
             <canvas id="myDoughChart" width="800" height="500"></canvas>
           </div>
         </div>
-
-        <div className="outerStockDiv"></div>
       </div>
     </animated.div>
   );

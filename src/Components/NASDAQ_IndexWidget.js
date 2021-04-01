@@ -76,7 +76,7 @@ const NASDAQ_IndexWidget = (props) => {
               {
                 label: "NASDAQ",
                 data: SPCascadeClose,
-                fill: false,
+                fill: true,
                 borderColor: ["red"],
                 backgroundColor: ["rgb(252, 233, 231)"],
                 borderWidth: 3,

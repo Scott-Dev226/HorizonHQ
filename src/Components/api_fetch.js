@@ -141,7 +141,7 @@ const useApiFetch = () => {
           setStockCascadeClose(stockCascadeClose);
 
           var ctx = document.getElementById("myChart2").getContext("2d");
-          Chart.defaults.global.defaultFontColor = "white";
+          Chart.defaults.global.defaultFontColor = "black";
           var myChart2 = new Chart(ctx, {
             type: "line",
             data: {

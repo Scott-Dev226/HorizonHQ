@@ -78,7 +78,7 @@ const DowIndexWidget = (props) => {
               {
                 label: "DOW JONES INDUSTRIAL AVG",
                 data: dowCascadeClose,
-                fill: false,
+                fill: true,
                 borderColor: ["blue"],
                 borderWidth: 3,
               },

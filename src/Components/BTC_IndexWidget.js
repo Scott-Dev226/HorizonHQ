@@ -79,7 +79,7 @@ const BTC_IndexWidget = (props) => {
               {
                 label: "BITCOIN",
                 data: BTCCascadeClose,
-                fill: false,
+                fill: true,
                 borderColor: ["green"],
                 backgroundColor: ["rgb(189, 218, 189)"],
                 borderWidth: 3,
