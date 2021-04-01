@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/HorizonHQ/static/css/main.8c10e65a.chunk.css",
-    "main.js": "/HorizonHQ/static/js/main.abb7e5cb.chunk.js",
-    "main.js.map": "/HorizonHQ/static/js/main.abb7e5cb.chunk.js.map",
+    "main.css": "/HorizonHQ/static/css/main.77d9dc07.chunk.css",
+    "main.js": "/HorizonHQ/static/js/main.68a3d9b8.chunk.js",
+    "main.js.map": "/HorizonHQ/static/js/main.68a3d9b8.chunk.js.map",
     "runtime-main.js": "/HorizonHQ/static/js/runtime-main.c123d044.js",
     "runtime-main.js.map": "/HorizonHQ/static/js/runtime-main.c123d044.js.map",
     "static/js/2.43d2156b.chunk.js": "/HorizonHQ/static/js/2.43d2156b.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.5048b8d3.chunk.js": "/HorizonHQ/static/js/3.5048b8d3.chunk.js",
     "static/js/3.5048b8d3.chunk.js.map": "/HorizonHQ/static/js/3.5048b8d3.chunk.js.map",
     "index.html": "/HorizonHQ/index.html",
-    "static/css/main.8c10e65a.chunk.css.map": "/HorizonHQ/static/css/main.8c10e65a.chunk.css.map",
+    "static/css/main.77d9dc07.chunk.css.map": "/HorizonHQ/static/css/main.77d9dc07.chunk.css.map",
     "static/js/2.43d2156b.chunk.js.LICENSE.txt": "/HorizonHQ/static/js/2.43d2156b.chunk.js.LICENSE.txt",
     "static/media/My Horizon.02b8d280.jpg": "/HorizonHQ/static/media/My Horizon.02b8d280.jpg",
     "static/media/VS_Spinner.1a76d308.jpg": "/HorizonHQ/static/media/VS_Spinner.1a76d308.jpg",
@@ -18,23 +18,24 @@
     "static/media/amazon-LOGO.ea2d90b4.jpg": "/HorizonHQ/static/media/amazon-LOGO.ea2d90b4.jpg",
     "static/media/apple-LOGO.7f783e2d.jpg": "/HorizonHQ/static/media/apple-LOGO.7f783e2d.jpg",
     "static/media/App.css": "/HorizonHQ/static/media/weather-back.1ce6cf8e.jpg",
-    "static/media/facebook-LOGO.4e53f6ca.png": "/HorizonHQ/static/media/facebook-LOGO.4e53f6ca.png",
     "static/media/fb-back.ccf28166.png": "/HorizonHQ/static/media/fb-back.ccf28166.png",
-    "static/media/gamestop-LOGO.940bff06.jpg": "/HorizonHQ/static/media/gamestop-LOGO.940bff06.jpg",
+    "static/media/gamestop-LOGO.c5ce9c85.jpg": "/HorizonHQ/static/media/gamestop-LOGO.c5ce9c85.jpg",
     "static/media/goog-back.03a86396.jpg": "/HorizonHQ/static/media/goog-back.03a86396.jpg",
     "static/media/google-LOGO.7462e74e.jpg": "/HorizonHQ/static/media/google-LOGO.7462e74e.jpg",
     "static/media/hendrix.8f07708c.jpg": "/HorizonHQ/static/media/hendrix.8f07708c.jpg",
+    "static/media/msft-LOGO.4427c8fb.png": "/HorizonHQ/static/media/msft-LOGO.4427c8fb.png",
     "static/media/msft-back.18d652cd.jpg": "/HorizonHQ/static/media/msft-back.18d652cd.jpg",
-    "static/media/netflix-LOGO.1412b1dd.png": "/HorizonHQ/static/media/netflix-LOGO.1412b1dd.png",
+    "static/media/netflix-LOGO.640d8b07.png": "/HorizonHQ/static/media/netflix-LOGO.640d8b07.png",
     "static/media/palm-tree.12f8ed42.jpg": "/HorizonHQ/static/media/palm-tree.12f8ed42.jpg",
     "static/media/react_spinner.fb59dfc6.png": "/HorizonHQ/static/media/react_spinner.fb59dfc6.png",
     "static/media/right-arrow.93bc410a.png": "/HorizonHQ/static/media/right-arrow.93bc410a.png",
-    "static/media/twitter-LOGO.38dc1ae7.jpg": "/HorizonHQ/static/media/twitter-LOGO.38dc1ae7.jpg"
+    "static/media/tesla-LOGO.160cf1ee.jpg": "/HorizonHQ/static/media/tesla-LOGO.160cf1ee.jpg",
+    "static/media/twitter-LOGO.81b3afaa.jpg": "/HorizonHQ/static/media/twitter-LOGO.81b3afaa.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.c123d044.js",
     "static/js/2.43d2156b.chunk.js",
-    "static/css/main.8c10e65a.chunk.css",
-    "static/js/main.abb7e5cb.chunk.js"
+    "static/css/main.77d9dc07.chunk.css",
+    "static/js/main.68a3d9b8.chunk.js"
   ]
 }
