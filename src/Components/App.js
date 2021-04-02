@@ -52,9 +52,10 @@ function Box(props) {
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [toolsEnabled, setToolsEnabled] = useState(true);
-
+  const interimInputRef = useRef(null);
   const [displayPrice, setDisplayPrice] = useState(null);
   const [displayVariance, setDisplayVariance] = useState(null);
+  const [indexGraphPeriod, setIndexGraphPeriod] = useState(60);
 
   return (
     <div
@@ -80,10 +81,32 @@ function App() {
             </div>
 
             <div id="indexChartContainer">
+              <select
+                name="selectStock"
+                id="varianceInput"
+                ref={interimInputRef}
+              >
+                <option value="60">60 Days</option>
+                <option value="30">30 Days</option>
+                <option value="14">2 Weeks</option>
+                <option value="7">1 Week</option>
+              </select>
+
+              <div id="buttonDiv">
+                <button
+                  id="btn"
+                  onClick={() => {
+                    setIndexGraphPeriod(interimInputRef.current.value);
+                  }}
+                >
+                  CLICK TO UPDATE THE INTERIM FOR THE BELOW
+                </button>
+              </div>
               {toolsEnabled && (
                 <DowIndexWidget
                   darkModeProp={isDarkMode}
                   toolsProp={toolsEnabled}
+                  interimProp={indexGraphPeriod}
                 />
               )}
 
@@ -91,12 +114,14 @@ function App() {
                 <NASDAQ_IndexWidget
                   darkModeProp={isDarkMode}
                   toolsProp={toolsEnabled}
+                  interimProp={indexGraphPeriod}
                 />
               )}
               {toolsEnabled && (
                 <BTC_IndexWidget
                   darkModeProp={isDarkMode}
                   toolsProp={toolsEnabled}
+                  interimProp={indexGraphPeriod}
                 />
               )}
             </div>

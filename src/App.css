@@ -675,6 +675,8 @@ p {
   display: block;
   flex-direction: row;
   flex-wrap: nowrap;
+  border-bottom: 3.5px solid black;
+  border-top: 3.5px solid black;
 }
 
 #gainer-results {

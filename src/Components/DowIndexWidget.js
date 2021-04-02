@@ -14,6 +14,7 @@ const DowIndexWidget = (props) => {
   });
 
   let isDarkMode = props.darkModeProp;
+  let indexGraphPeriod = props.interimProp;
 
   const today = new Date();
   let dd = today.getDate();
@@ -47,7 +48,7 @@ const DowIndexWidget = (props) => {
         let dowCascadeDate = [];
 
         let i;
-        for (i = 60; i >= 0; i--) {
+        for (i = indexGraphPeriod; i >= 0; i--) {
           dowCascadeClose.push(data.values[i].close);
           setDowCascadeClose(dowCascadeClose);
 
@@ -122,7 +123,7 @@ const DowIndexWidget = (props) => {
           },
         });
       });
-  }, []);
+  }, [indexGraphPeriod]);
 
   return (
     <>

@@ -14,6 +14,7 @@ const BTC_IndexWidget = (props) => {
   });
 
   let isDarkMode = props.darkModeProp;
+  let indexGraphPeriod = props.interimProp;
 
   const today = new Date();
   let dd = today.getDate();
@@ -50,7 +51,7 @@ const BTC_IndexWidget = (props) => {
         let BTCCascadeDate = [];
 
         let i;
-        for (i = 50; i >= 0; i--) {
+        for (i = indexGraphPeriod; i >= 0; i--) {
           BTCCascadeClose.push(data.values[i].close);
           setBTCCascadeClose(BTCCascadeClose);
 
@@ -124,7 +125,7 @@ const BTC_IndexWidget = (props) => {
           },
         });
       });
-  }, []);
+  }, [indexGraphPeriod]);
 
   return (
     <>

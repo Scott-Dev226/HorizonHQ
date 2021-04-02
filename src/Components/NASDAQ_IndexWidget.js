@@ -6,6 +6,7 @@ const NASDAQ_IndexWidget = (props) => {
   const [SPIndexValue, setSPIndexValue] = useState(null);
   const [SPCascadeClose, setSPCascadeClose] = useState(null);
   const [SPCascadeDate, setSPCascadeDate] = useState(null);
+  let indexGraphPeriod = props.interimProp;
 
   const stockAnimProps = useSpring({
     config: { duration: 2000 },
@@ -47,7 +48,7 @@ const NASDAQ_IndexWidget = (props) => {
         let SPCascadeDate = [];
 
         let i;
-        for (i = 60; i >= 0; i--) {
+        for (i = indexGraphPeriod; i >= 0; i--) {
           SPCascadeClose.push(data.values[i].close);
           setSPCascadeClose(SPCascadeClose);
 
@@ -122,7 +123,7 @@ const NASDAQ_IndexWidget = (props) => {
           },
         });
       });
-  }, []);
+  }, [indexGraphPeriod]);
 
   return (
     <>
