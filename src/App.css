@@ -561,6 +561,20 @@ p {
 
 #btn {
   opacity: 1;
+  background-color: blue;
+  color: white;
+  border: 3.5px solid black;
+  font-weight: bold;
+  width: 200px;
+  margin-top: 10px;
+  border-radius: 9999px;
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
+
+#btn:hover {
+  background-color: rgb(168, 0, 0);
 }
 
 .dynamicBackClass {
@@ -663,6 +677,15 @@ p {
   flex-wrap: nowrap;
 }
 
+#gainer-results {
+  color: black;
+  font-size: 1.15rem;
+}
+
+#landing-img {
+  width: 400px;
+}
+
 #Top-Gainers-Header {
   color: black;
   display: block;
@@ -675,16 +698,43 @@ p {
   margin-bottom: 5px;
 }
 
+#Top-Gainers-Header2 {
+  color: white;
+  display: flex;
+  font-size: 1.75rem;
+
+  font-family: "Open Sans Condensed", sans-serif;
+  margin-top: 10px;
+  border-radius: 15%;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+  text-decoration: underline;
+  margin-left: 30%;
+}
+
+#Top-Gainers-Header3 {
+  color: rgb(0, 195, 255);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.75rem;
+  margin-right: 30%;
+  font-family: "Open Sans Condensed", sans-serif;
+  margin-top: 10px;
+  border-radius: 15%;
+
+  margin-bottom: 25px;
+}
+
 #Top-Gainers-Container {
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 
   margin-top: 5%;
   border: 3px dotted black;
   background-color: black;
   border-radius: 15%;
-  opacity: 1;
+  opacity: 0;
   margin-bottom: 75px;
   overflow: hidden;
   width: 800px;
@@ -704,7 +754,7 @@ p {
   margin-bottom: 15px;
   margin-top: 15px;
   background-color: rgb(37, 37, 37);
-  transform: translateX(1200px);
+  transform: translateX(0px);
   transition-timing-function: ease-in-out;
 }
 
@@ -832,9 +882,11 @@ select {
   margin-left: 15px;
   margin-right: 15px;
   display: inline;
-  background-color: rgb(228, 211, 211);
+  background-color: white;
   color: black;
   border: 2px groove black;
+  font-size: 1.5rem;
+  font-family: "Share Tech", sans-serif;
 }
 
 #button-holder {
@@ -1141,6 +1193,15 @@ select {
 
     border-radius: 15%;
   }
+
+  #Top-Gainers-Header2 {
+    margin-left: 10%;
+  }
+
+  #Top-Gainers-Header3 {
+    margin-right: 10%;
+  }
+
   #Cube-3D-Container {
     margin-right: 45%;
     opacity: 0.65;

@@ -36,8 +36,12 @@ const TopGainers = () => {
   const [gainerVarianceDisplay, setGainerVarianceDisplay] = useState([]);
   const [gainerPriceDisplay, setGainerPriceDisplay] = useState([]);
   const [gainerObjects, setGainerObjects] = useState([]);
+  const [targetVariance, setTargetVariance] = useState(2);
+  const varianceInputRef = useRef(null);
 
   const [gainerListCount, setGainerListCount] = useState(0);
+
+  let g = 0;
 
   let Nasdaq100_List_1 = [
     "ATVI",
@@ -153,7 +157,7 @@ const TopGainers = () => {
       }) // Convert data to json
       .then(function (data) {
         for (let i = 0; i < Nasdaq100_List_1.length; i++) {
-          if (data[Nasdaq100_List_1[i]].percent_change > -3.5) {
+          if (data[Nasdaq100_List_1[i]].percent_change > targetVariance) {
             setGainerSymbolDisplay((oldArray) => [
               ...oldArray,
               data[Nasdaq100_List_1[i]].symbol,
@@ -177,23 +181,58 @@ const TopGainers = () => {
         });
         setGainerObjects(testObjects);
       });
-  }, [gainerListCount]);
-
-  setTimeout(() => {
-    setGainerListCount(2);
+    gsap.to(".gainer-container-fade", {
+      opacity: 0,
+    });
 
     gsap.to(".gainer-container-fade", {
       opacity: 1,
+      duration: 2,
+      delay: 2,
     });
-    gsap.to(".gainer-slide", { opacity: 1, x: -10000, duration: 1000 });
-  }, 2000);
+  }, [gainerListCount]);
 
-  setInterval(() => {}, 60000);
+  setTimeout(() => {
+    setGainerListCount(g + 1);
+
+    /*
+    gsap.to(".gainer-slide", { opacity: 1, x: -10000, duration: 1000 });*/
+  }, 2000);
 
   return (
     <div id="Marquee-Center-Container">
       <p id="Top-Gainers-Header">{`Top Gaining NASDAQ 100 Stocks for ${todaysGainerDate}`}</p>
+      <select name="selectStock" id="varianceInput" ref={varianceInputRef}>
+        <option value="2">2%</option>
+        <option value="3">3%</option>
+        <option value="4">4%</option>
+        <option value="5">5%</option>
+        <option value="6">6%</option>
+        <option value="7">7%</option>
+        <option value="8">8%</option>
+        <option value="9">9%</option>
+      </select>
+
+      <div id="buttonDiv">
+        <button
+          id="btn"
+          onClick={() => {
+            setGainerObjects([]);
+            setGainerSymbolDisplay([]);
+            setGainerPriceDisplay([]);
+            setGainerVarianceDisplay([]);
+            setTargetVariance(varianceInputRef.current.value);
+            setGainerListCount(g++);
+          }}
+        >
+          CLICK TO UPDATE TARGET PERCENTAGE
+        </button>
+      </div>
+
+      <p id="gainer-results">{`Current Results: ${gainerObjects.length}`} </p>
       <div id="Top-Gainers-Container" class="gainer-container-fade">
+        <p id="Top-Gainers-Header2">Current Target for Gains:</p>
+        <p id="Top-Gainers-Header3">{targetVariance}%</p>
         {gainerObjects.map((entry) => (
           <TopGainerEntries
             symbolProp={entry.Symbol}

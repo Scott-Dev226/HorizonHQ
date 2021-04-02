@@ -78,6 +78,7 @@ function App() {
             <div>
               <TopGainers />
             </div>
+
             <div id="indexChartContainer">
               {toolsEnabled && (
                 <DowIndexWidget
