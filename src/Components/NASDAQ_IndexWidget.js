@@ -123,7 +123,7 @@ const NASDAQ_IndexWidget = (props) => {
           },
         });
       });
-  }, [indexGraphPeriod]);
+  }, []);
 
   return (
     <>

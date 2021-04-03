@@ -125,7 +125,7 @@ const BTC_IndexWidget = (props) => {
           },
         });
       });
-  }, [indexGraphPeriod]);
+  }, []);
 
   return (
     <>

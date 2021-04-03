@@ -123,7 +123,7 @@ const DowIndexWidget = (props) => {
           },
         });
       });
-  }, [indexGraphPeriod]);
+  }, []);
 
   return (
     <>

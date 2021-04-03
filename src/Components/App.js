@@ -20,6 +20,7 @@ import TopGainers from "./TopGainers";
 import { PriceContext } from "./PriceContext";
 import { PriceVarianceContext } from "./PriceVarianceContext";
 import Marquee from "react-fast-marquee";
+import gsap from "gsap";
 
 function Box(props) {
   // This reference will give us direct access to the mesh
@@ -96,7 +97,23 @@ function App() {
                 <button
                   id="btn"
                   onClick={() => {
-                    setIndexGraphPeriod(interimInputRef.current.value);
+                    gsap.to(".dowChartDisplay-Light", {
+                      opacity: 0,
+                      duration: 0.5,
+                    });
+
+                    setTimeout(() => {
+                      setIndexGraphPeriod(interimInputRef.current.value);
+                      setToolsEnabled(false);
+                    }, 1500);
+
+                    setTimeout(() => {
+                      setToolsEnabled(true);
+                      gsap.to(".dowChartDisplay-Light", {
+                        opacity: 1,
+                        duration: 1.5,
+                      });
+                    }, 1600);
                   }}
                 >
                   CLICK TO UPDATE THE INTERIM FOR THE BELOW
