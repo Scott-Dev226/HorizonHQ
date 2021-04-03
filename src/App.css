@@ -279,6 +279,9 @@
 #news-img {
   height: 90px;
   border-radius: 20px;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
 }
 #news-img:hover {
   filter: brightness(75%);
@@ -319,11 +322,11 @@
 
 .home-div {
   width: 100%;
-
+  margin-top: 50px;
   justify-content: center;
   background-repeat: no-repeat;
   background-size: cover;
-
+  border-top: 3.5px solid black;
   display: flex;
   overflow: hidden;
   overflow-y: hidden;
@@ -675,7 +678,7 @@ p {
   display: block;
   flex-direction: row;
   flex-wrap: nowrap;
-  border-bottom: 3.5px solid black;
+
   border-top: 3.5px solid black;
 }
 
@@ -809,7 +812,7 @@ p {
   margin-top: 40px;
   border: 2px dotted black;
   display: flex;
-  margin-bottom: 50px;
+
   border-radius: 50px;
 }
 
@@ -1078,6 +1081,9 @@ select {
 
   #news-img {
     height: 90px;
+    transition-property: all;
+    transition-duration: 1000ms;
+    transition-timing-function: ease-in-out;
   }
 
   ul li {
