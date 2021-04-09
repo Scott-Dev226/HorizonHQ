@@ -188,7 +188,7 @@ const TopGainers = () => {
     gsap.to(".gainer-container-fade", {
       opacity: 1,
       duration: 2,
-      delay: 2,
+      delay: 2.5,
     });
   }, [gainerListCount]);
 
@@ -197,7 +197,7 @@ const TopGainers = () => {
 
     /*
     gsap.to(".gainer-slide", { opacity: 1, x: -10000, duration: 1000 });*/
-  }, 2000);
+  }, 2500);
 
   return (
     <div id="Marquee-Center-Container">

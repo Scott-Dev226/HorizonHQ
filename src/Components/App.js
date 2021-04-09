@@ -16,6 +16,7 @@ import threeDimensions from "./cubeTestComponent";
 import DowIndexWidget from "./DowIndexWidget";
 import NASDAQ_IndexWidget from "./NASDAQ_IndexWidget";
 import BTC_IndexWidget from "./BTC_IndexWidget";
+import GoldIndexWidget from "./GoldIndexWidget";
 import TopGainers from "./TopGainers";
 import { PriceContext } from "./PriceContext";
 import { PriceVarianceContext } from "./PriceVarianceContext";
@@ -81,7 +82,7 @@ function App() {
               <TopGainers />
             </div>
 
-            <div id="indexChartContainer">
+            <div id="indexVarianceSelector">
               <select
                 name="selectStock"
                 id="varianceInput"
@@ -99,26 +100,28 @@ function App() {
                   onClick={() => {
                     gsap.to(".dowChartDisplay-Light", {
                       opacity: 0,
-                      duration: 0.5,
                     });
 
                     setTimeout(() => {
                       setIndexGraphPeriod(interimInputRef.current.value);
                       setToolsEnabled(false);
-                    }, 1500);
+                    }, 750);
 
                     setTimeout(() => {
                       setToolsEnabled(true);
                       gsap.to(".dowChartDisplay-Light", {
                         opacity: 1,
-                        duration: 1.5,
+                        duration: 0.5,
                       });
-                    }, 1600);
+                    }, 750);
                   }}
                 >
                   CLICK TO UPDATE THE INTERIM FOR THE BELOW
                 </button>
               </div>
+            </div>
+
+            <div id="indexChartContainer">
               {toolsEnabled && (
                 <DowIndexWidget
                   darkModeProp={isDarkMode}
@@ -136,6 +139,13 @@ function App() {
               )}
               {toolsEnabled && (
                 <BTC_IndexWidget
+                  darkModeProp={isDarkMode}
+                  toolsProp={toolsEnabled}
+                  interimProp={indexGraphPeriod}
+                />
+              )}
+              {toolsEnabled && (
+                <GoldIndexWidget
                   darkModeProp={isDarkMode}
                   toolsProp={toolsEnabled}
                   interimProp={indexGraphPeriod}

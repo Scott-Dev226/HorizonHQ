@@ -675,10 +675,15 @@ p {
 }
 
 #indexChartContainer {
-  display: block;
+  display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  width: 100%;
 
+  justify-content: center;
+}
+
+#indexVarianceSelector {
   border-top: 3.5px solid black;
 }
 
@@ -739,7 +744,7 @@ p {
   border: 3px dotted black;
   background-color: black;
   border-radius: 15%;
-  opacity: 0;
+  opacity: 1;
   margin-bottom: 75px;
   overflow: hidden;
   width: 800px;
@@ -760,6 +765,8 @@ p {
   margin-top: 15px;
   background-color: rgb(37, 37, 37);
   transform: translateX(0px);
+  transition-property: all;
+  transition-duration: 1000ms;
   transition-timing-function: ease-in-out;
 }
 
@@ -804,13 +811,13 @@ p {
   opacity: 1;
   justify-content: center;
   background-color: white;
-  width: 600px;
-  height: 300px;
+  width: 700px;
+  height: 350px;
   transition-property: all;
   transition-duration: 1000ms;
   transition-timing-function: ease-in-out;
   margin-top: 40px;
-  border: 2px dotted black;
+  border: 2.5px groove black;
   display: flex;
 
   border-radius: 50px;
@@ -918,7 +925,7 @@ select {
 }
 
 #buttonDiv {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -1119,7 +1126,9 @@ select {
 
 @media only screen and (max-width: 700px) {
   #indexChartContainer {
+    width: 550px;
     display: block;
+    margin-left: 20px;
   }
 
   .site-logo-Dark {
@@ -1219,8 +1228,8 @@ select {
     justify-content: center;
   }
   .dowChartDisplay-Dark {
-    width: 500px;
-    height: 300px;
+    width: 550px;
+    height: 280px;
   }
 
   #news-headlines {
@@ -1229,7 +1238,7 @@ select {
   }
 
   .dowChartDisplay-Light {
-    width: 500px;
+    width: 550px;
     height: 280px;
   }
   #Header-Title {
