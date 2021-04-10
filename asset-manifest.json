@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/HorizonHQ/static/css/main.26d33dbf.chunk.css",
+    "main.css": "/HorizonHQ/static/css/main.ca9a7827.chunk.css",
     "main.js": "/HorizonHQ/static/js/main.95c73882.chunk.js",
     "main.js.map": "/HorizonHQ/static/js/main.95c73882.chunk.js.map",
     "runtime-main.js": "/HorizonHQ/static/js/runtime-main.c123d044.js",
@@ -10,7 +10,7 @@
     "static/js/3.5048b8d3.chunk.js": "/HorizonHQ/static/js/3.5048b8d3.chunk.js",
     "static/js/3.5048b8d3.chunk.js.map": "/HorizonHQ/static/js/3.5048b8d3.chunk.js.map",
     "index.html": "/HorizonHQ/index.html",
-    "static/css/main.26d33dbf.chunk.css.map": "/HorizonHQ/static/css/main.26d33dbf.chunk.css.map",
+    "static/css/main.ca9a7827.chunk.css.map": "/HorizonHQ/static/css/main.ca9a7827.chunk.css.map",
     "static/js/2.50ae6f29.chunk.js.LICENSE.txt": "/HorizonHQ/static/js/2.50ae6f29.chunk.js.LICENSE.txt",
     "static/media/My Horizon.02b8d280.jpg": "/HorizonHQ/static/media/My Horizon.02b8d280.jpg",
     "static/media/VS_Spinner.1a76d308.jpg": "/HorizonHQ/static/media/VS_Spinner.1a76d308.jpg",
@@ -35,7 +35,7 @@
   "entrypoints": [
     "static/js/runtime-main.c123d044.js",
     "static/js/2.50ae6f29.chunk.js",
-    "static/css/main.26d33dbf.chunk.css",
+    "static/css/main.ca9a7827.chunk.css",
     "static/js/main.95c73882.chunk.js"
   ]
 }
