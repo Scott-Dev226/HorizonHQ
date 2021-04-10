@@ -745,9 +745,10 @@ p {
   justify-content: center;
   flex-wrap: wrap;
 
+  margin-top: 5%;
   border: 2px dashed rgb(161, 155, 255);
   background-color: black;
-  border-radius: 15%;
+  border-radius: 5%;
   opacity: 1;
   margin-bottom: 75px;
   overflow: hidden;
@@ -1249,7 +1250,6 @@ select {
   .dowChartDisplay-Light {
     width: 475px;
     height: 260px;
-    margin-left: 30px;
   }
   #Header-Title {
     width: 15em;
