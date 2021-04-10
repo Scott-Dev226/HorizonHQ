@@ -8,7 +8,7 @@ const TopGainerEntries = (props) => {
   let Price = props.priceProp;
 
   return (
-    <div id="Top-Gainer-Entry" className="gainer-slide">
+    <div id="Top-Gainer-Entry" class="gainer-slide">
       <p id="gainer-symbol" class="gainer-symbol-slide">
         {stockSymbol}
       </p>
