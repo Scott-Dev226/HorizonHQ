@@ -89,7 +89,7 @@
   align-items: center;
   padding-top: 5px;
   margin-top: 5px;
-  width: 97%;
+  width: 100%;
   justify-content: flex-end;
   background-color: black;
 }
@@ -173,7 +173,7 @@
   font-family: "Share Tech", sans-serif;
   font-size: 1.6rem;
   display: inline;
-  margin-right: 69%;
+  margin-right: 75%;
   margin-left: 10px;
   opacity: 0.75;
   transition-property: all;
@@ -1147,13 +1147,13 @@ select {
   }
 
   .site-logo-Light {
-    margin-right: 30%;
+    margin-right: 45%;
     font-size: 1rem;
   }
 
   #nav-link-style li {
-    font-size: 1rem;
-    margin-right: 15px;
+    font-size: 0.75rem;
+    margin-right: 10px;
   }
   .home-div {
     display: block;
@@ -1206,6 +1206,10 @@ select {
 }
 
 @media only screen and (max-width: 700px) {
+  #nav-link-style {
+    width: 83%;
+  }
+
   #Top-Gainers-Container {
     width: 450px;
     margin-left: 0%;
