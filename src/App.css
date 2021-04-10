@@ -1142,15 +1142,18 @@ select {
   }
 
   .site-logo-Dark {
-    margin-right: 20%;
+    margin-right: 30%;
+    font-size: 1rem;
   }
 
   .site-logo-Light {
-    margin-right: 20%;
+    margin-right: 30%;
+    font-size: 1rem;
   }
 
   #nav-link-style li {
     font-size: 1rem;
+    margin-right: 15px;
   }
   .home-div {
     display: block;
