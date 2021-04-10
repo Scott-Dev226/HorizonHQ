@@ -1143,6 +1143,7 @@ select {
 
   #nav-link-style li {
     font-size: 1rem;
+    margin-right: 5px;
   }
   .home-div {
     display: block;
