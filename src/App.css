@@ -1207,7 +1207,7 @@ select {
 
 @media only screen and (max-width: 700px) {
   #nav-link-style {
-    width: 83%;
+    width: 8%;
   }
 
   #Top-Gainers-Container {
@@ -1255,8 +1255,9 @@ select {
   }
 
   .dowChartDisplay-Light {
-    width: 475px;
-    height: 260px;
+    width: 400px;
+    height: 200px;
+    margin-left: 20%;
   }
   #Header-Title {
     width: 15em;
