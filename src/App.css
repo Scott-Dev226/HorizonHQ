@@ -748,7 +748,7 @@ p {
   margin-top: 5%;
   border: 2px dashed rgb(161, 155, 255);
   background-color: black;
-  border-radius: 5%;
+  border-radius: 15%;
   opacity: 1;
   margin-bottom: 75px;
   overflow: hidden;
@@ -1208,7 +1208,7 @@ select {
     margin-left: 0%;
     margin-right: 0%;
 
-    margin-top: 15%;
+    margin-top: 5%;
   }
 
   #Top-Gainers-Header {
