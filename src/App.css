@@ -76,6 +76,7 @@
   background-color: white;
   background-image: url("waves.jpeg");
   background-size: contain;
+  overflow: hidden;
 }
 
 #guitar-logo {
