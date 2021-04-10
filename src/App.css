@@ -1141,14 +1141,6 @@ select {
     display: block;
   }
 
-  .site-logo-Dark {
-    margin-right: 20%;
-  }
-
-  .site-logo-Light {
-    margin-right: 20%;
-  }
-
   #nav-link-style li {
     font-size: 1rem;
   }
