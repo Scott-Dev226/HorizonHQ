@@ -8,8 +8,8 @@ const BTC_IndexWidget = (props) => {
   const [BTCCascadeDate, setBTCCascadeDate] = useState(null);
 
   const stockAnimProps = useSpring({
-    config: { duration: 2000 },
-    from: { opacity: 0, transform: "translateX(20px)" },
+    config: { duration: 1000 },
+    from: { opacity: 0, transform: "translateX(1500px)" },
     to: { opacity: 1, transform: "translateX(0px)" },
   });
 
@@ -91,7 +91,7 @@ const BTC_IndexWidget = (props) => {
             legend: {
               labels: {
                 fontColor: "black",
-                fontSize: 15,
+                fontSize: 17,
               },
             },
             title: {
@@ -109,7 +109,7 @@ const BTC_IndexWidget = (props) => {
                   ticks: {
                     beginAtZero: false,
                     fontColor: "black",
-                    fontSize: 17,
+                    fontSize: 14,
                   },
                 },
               ],

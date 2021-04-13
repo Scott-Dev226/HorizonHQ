@@ -8,8 +8,8 @@ const DowIndexWidget = (props) => {
   const [dowCascadeDate, setDowCascadeDate] = useState(null);
 
   const stockAnimProps = useSpring({
-    config: { duration: 1500 },
-    from: { opacity: 0, transform: "translateX(20px)" },
+    config: { duration: 1200 },
+    from: { opacity: 0, transform: "translateX(1500px)" },
     to: { opacity: 1, transform: "translateX(0px)" },
   });
 
@@ -107,7 +107,7 @@ const DowIndexWidget = (props) => {
                   ticks: {
                     beginAtZero: false,
                     fontColor: "black",
-                    fontSize: 17,
+                    fontSize: 14,
                   },
                 },
               ],

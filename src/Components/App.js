@@ -59,6 +59,16 @@ function App() {
   const [displayVariance, setDisplayVariance] = useState(null);
   const [indexGraphPeriod, setIndexGraphPeriod] = useState(60);
 
+  const [pageOne, setPageOne] = useState(true);
+  const [pageTwo, setPageTwo] = useState(false);
+  const [pageThree, setPageThree] = useState(false);
+
+  const props2 = useSpring({
+    config: { duration: 2500 },
+    from: { transform: "translateX(500px)" },
+    to: { transform: "translateX(0px)" },
+  });
+
   return (
     <div
       id="motherShip"
@@ -76,53 +86,77 @@ function App() {
                   ? "Dark-Mode-buttonHolder"
                   : "Light-Mode-buttonHolder"
               }
-            ></div>
-
-            <div>
-              <TopGainers />
+            >
+              <button
+                id="btn"
+                onClick={() => {
+                  if (pageOne) {
+                    setPageOne(false);
+                    setPageTwo(true);
+                  } else if (pageTwo) {
+                    setPageTwo(false);
+                    setPageThree(true);
+                  } else if (pageThree) {
+                    setPageThree(false);
+                    setPageOne(true);
+                  }
+                }}
+              >
+                {"VIEW NEXT SECTION" + ">>>"}
+              </button>
             </div>
+
+            {pageOne && (
+              <div>
+                <TopGainers />
+              </div>
+            )}
 
             <div id="indexVarianceSelector">
-              <select
-                name="selectStock"
-                id="varianceInput"
-                ref={interimInputRef}
-              >
-                <option value="60">60 Days</option>
-                <option value="30">30 Days</option>
-                <option value="14">2 Weeks</option>
-                <option value="7">1 Week</option>
-              </select>
-
-              <div id="buttonDiv">
-                <button
-                  id="btn"
-                  onClick={() => {
-                    gsap.to(".dowChartDisplay-Light", {
-                      opacity: 0,
-                    });
-
-                    setTimeout(() => {
-                      setIndexGraphPeriod(interimInputRef.current.value);
-                      setToolsEnabled(false);
-                    }, 750);
-
-                    setTimeout(() => {
-                      setToolsEnabled(true);
+              {pageTwo && (
+                <div id="buttonDiv">
+                  <select
+                    name="selectStock"
+                    id="varianceInput"
+                    ref={interimInputRef}
+                  >
+                    <option value="60">60 Days</option>
+                    <option value="30">30 Days</option>
+                    <option value="14">2 Weeks</option>
+                    <option value="7">1 Week</option>
+                  </select>
+                  <button
+                    id="btn"
+                    onClick={() => {
                       gsap.to(".dowChartDisplay-Light", {
-                        opacity: 1,
-                        duration: 0.5,
+                        opacity: 0,
                       });
-                    }, 750);
-                  }}
-                >
-                  CLICK TO UPDATE THE INTERIM FOR THE BELOW
-                </button>
-              </div>
+
+                      setTimeout(() => {
+                        setIndexGraphPeriod(interimInputRef.current.value);
+                        setToolsEnabled(false);
+                      }, 750);
+
+                      setTimeout(() => {
+                        setToolsEnabled(true);
+                        gsap.to(".dowChartDisplay-Light", {
+                          opacity: 1,
+                          duration: 0.5,
+                        });
+                      }, 750);
+                    }}
+                  >
+                    CLICK TO UPDATE THE INTERIM FOR THE BELOW
+                  </button>
+                </div>
+              )}
             </div>
 
-            <div id="indexChartContainer">
-              {toolsEnabled && (
+            <animated.div
+              id="indexChartContainer"
+              style={{ transform: props2.transform }}
+            >
+              {pageTwo && (
                 <DowIndexWidget
                   darkModeProp={isDarkMode}
                   toolsProp={toolsEnabled}
@@ -130,42 +164,38 @@ function App() {
                 />
               )}
 
-              {toolsEnabled && (
+              {pageTwo && (
                 <NASDAQ_IndexWidget
                   darkModeProp={isDarkMode}
                   toolsProp={toolsEnabled}
                   interimProp={indexGraphPeriod}
                 />
               )}
-              {toolsEnabled && (
+              {pageTwo && (
                 <BTC_IndexWidget
                   darkModeProp={isDarkMode}
                   toolsProp={toolsEnabled}
                   interimProp={indexGraphPeriod}
                 />
               )}
-              {toolsEnabled && (
+              {pageTwo && (
                 <GoldIndexWidget
                   darkModeProp={isDarkMode}
                   toolsProp={toolsEnabled}
                   interimProp={indexGraphPeriod}
                 />
               )}
-            </div>
+            </animated.div>
           </div>
           <Switch>
             <PriceVarianceContext.Provider
               value={{ displayVariance, setDisplayVariance }}
             >
               <PriceContext.Provider value={{ displayPrice, setDisplayPrice }}>
-                <Route
-                  exact
-                  path="/HorizonHQ"
-                  exact
-                  render={() => (
-                    <Home darkModeProp={isDarkMode} toolsProp={toolsEnabled} />
-                  )}
-                />
+                {pageThree && (
+                  <Home darkModeProp={isDarkMode} toolsProp={toolsEnabled} />
+                )}
+
                 <Route path="/Home" component={Home} />
                 <Route path="/Guitars" component={Guitars} />
                 <Route path="/weather" component={weather} />

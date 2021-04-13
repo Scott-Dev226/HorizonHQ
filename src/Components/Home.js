@@ -14,9 +14,9 @@ import { PriceContext } from "./PriceContext";
 
 const Home = (props) => {
   const props2 = useSpring({
-    config: { duration: 5000 },
-    from: { opacity: 0 },
-    to: { opacity: 1 },
+    config: { duration: 1500 },
+    from: { opacity: 0, transform: "translateX(2000px)" },
+    to: { opacity: 1, transform: "translateX(0px)" },
   });
 
   let isDarkMode = props.darkModeProp;

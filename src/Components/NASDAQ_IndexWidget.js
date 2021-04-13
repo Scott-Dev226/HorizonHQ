@@ -9,8 +9,8 @@ const NASDAQ_IndexWidget = (props) => {
   let indexGraphPeriod = props.interimProp;
 
   const stockAnimProps = useSpring({
-    config: { duration: 2000 },
-    from: { opacity: 0, transform: "translateX(20px)" },
+    config: { duration: 1600 },
+    from: { opacity: 0, transform: "translateX(1500px)" },
     to: { opacity: 1, transform: "translateX(0px)" },
   });
 
@@ -107,7 +107,7 @@ const NASDAQ_IndexWidget = (props) => {
                   ticks: {
                     beginAtZero: false,
                     fontColor: "black",
-                    fontSize: 17,
+                    fontSize: 14,
                   },
                 },
               ],

@@ -2,8 +2,15 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 import gsap from "gsap";
 import TopGainerEntries from "./TopGainerEntries";
 import Marquee from "react-fast-marquee";
+import { useSpring, animated } from "react-spring";
 
 const TopGainers = () => {
+  const props2 = useSpring({
+    config: { duration: 1000 },
+    from: { transform: "translateX(1500px)", opacity: 0 },
+    to: { transform: "translateX(0px)", opacity: 1 },
+  });
+
   /*
   window.setTimeout(() => {
     symbolReplacer();
@@ -188,7 +195,7 @@ const TopGainers = () => {
     gsap.to(".gainer-container-fade", {
       opacity: 1,
       duration: 2,
-      delay: 2.5,
+      delay: 1,
     });
   }, [gainerListCount]);
 
@@ -200,48 +207,53 @@ const TopGainers = () => {
   }, 2500);
 
   return (
-    <div id="Marquee-Center-Container">
-      <p id="Top-Gainers-Header">{`Top Gaining NASDAQ 100 Stocks for ${todaysGainerDate}`}</p>
-      <select name="selectStock" id="varianceInput" ref={varianceInputRef}>
-        <option value="2">2%</option>
-        <option value="3">3%</option>
-        <option value="4">4%</option>
-        <option value="5">5%</option>
-        <option value="6">6%</option>
-        <option value="7">7%</option>
-        <option value="8">8%</option>
-        <option value="9">9%</option>
-      </select>
+    <animated.div id="gainer-parent-div">
+      <animated.div
+        id="Marquee-Center-Container"
+        style={{ transform: props2.transform, opacity: props2.opacity }}
+      >
+        <p id="Top-Gainers-Header">{`Top Gaining NASDAQ 100 Stocks for ${todaysGainerDate}`}</p>
+        <select name="selectStock" id="varianceInput" ref={varianceInputRef}>
+          <option value="2">2%</option>
+          <option value="3">3%</option>
+          <option value="4">4%</option>
+          <option value="5">5%</option>
+          <option value="6">6%</option>
+          <option value="7">7%</option>
+          <option value="8">8%</option>
+          <option value="9">9%</option>
+        </select>
 
-      <div id="buttonDiv">
-        <button
-          id="btn"
-          onClick={() => {
-            setGainerObjects([]);
-            setGainerSymbolDisplay([]);
-            setGainerPriceDisplay([]);
-            setGainerVarianceDisplay([]);
-            setTargetVariance(varianceInputRef.current.value);
-            setGainerListCount(g++);
-          }}
-        >
-          CLICK TO UPDATE TARGET PERCENTAGE
-        </button>
-      </div>
+        <div id="buttonDiv">
+          <button
+            id="btn"
+            onClick={() => {
+              setGainerObjects([]);
+              setGainerSymbolDisplay([]);
+              setGainerPriceDisplay([]);
+              setGainerVarianceDisplay([]);
+              setTargetVariance(varianceInputRef.current.value);
+              setGainerListCount(g++);
+            }}
+          >
+            CLICK TO UPDATE TARGET PERCENTAGE
+          </button>
+        </div>
 
-      <p id="gainer-results">{`Current Results: ${gainerObjects.length}`} </p>
-      <div id="Top-Gainers-Container" class="gainer-container-fade">
-        <p id="Top-Gainers-Header2">Current Target for Gains:</p>
-        <p id="Top-Gainers-Header3">{targetVariance}%</p>
-        {gainerObjects.map((entry) => (
-          <TopGainerEntries
-            symbolProp={entry.Symbol}
-            varianceProp={entry.Variance}
-            priceProp={entry.Price}
-          />
-        ))}
-      </div>
-    </div>
+        <p id="gainer-results">{`Current Results: ${gainerObjects.length}`} </p>
+        <div id="Top-Gainers-Container" class="gainer-container-fade">
+          <p id="Top-Gainers-Header2">Current Target for Gains:</p>
+          <p id="Top-Gainers-Header3">{targetVariance}%</p>
+          {gainerObjects.map((entry) => (
+            <TopGainerEntries
+              symbolProp={entry.Symbol}
+              varianceProp={entry.Variance}
+              priceProp={entry.Price}
+            />
+          ))}
+        </div>
+      </animated.div>
+    </animated.div>
   );
 };
 

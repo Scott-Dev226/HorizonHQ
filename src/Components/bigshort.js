@@ -99,20 +99,12 @@ const BigShort = (props) => {
 
   const props2 = useSpring({
     config: { duration: 1500 },
-    from: { opacity: 0, width: "0%", height: "0%" },
-    to: { opacity: 0.9, width: "100%", height: "100%" },
+    from: { opacity: 0, transform: "translateX(2000px)" },
+    to: { opacity: 0.9, transform: "translateX(0px)" },
   });
 
   return (
-    <animated.div
-      id="stockBackgroundDiv"
-      style={{
-        transform: props2.transform,
-        opacity: props2.opacity,
-        width: props2.width,
-        height: props2.height,
-      }}
-    >
+    <animated.div id="stockBackgroundDiv">
       <div
         className={isDarkMode ? "stockParentDiv-Dark" : "stockParentDiv-Light"}
       >
@@ -122,10 +114,7 @@ const BigShort = (props) => {
           below (example: "GME" for the Stock Symbol, and "NYSE" for the Index):
         </p>
 
-        <animated.div
-          id="vs_back"
-          style={{ transform: props2.transform, x: props2.x }}
-        >
+        <animated.div id="vs_back">
           <select name="selectStock" id="exchangeInput" ref={exchangeInputRef}>
             <option value="NASDAQ">NASDAQ</option>
             <option value="NYSE">NYSE</option>
