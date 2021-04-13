@@ -134,11 +134,11 @@ function App() {
 
                       setTimeout(() => {
                         setIndexGraphPeriod(interimInputRef.current.value);
-                        setToolsEnabled(false);
+                        setPageTwo(false);
                       }, 750);
 
                       setTimeout(() => {
-                        setToolsEnabled(true);
+                        setPageTwo(true);
                         gsap.to(".dowChartDisplay-Light", {
                           opacity: 1,
                           duration: 0.5,
