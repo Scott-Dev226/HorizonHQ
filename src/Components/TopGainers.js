@@ -19,7 +19,7 @@ const TopGainers = () => {
  
   const symbolReplacer = () => {
     if (gainerListCount = 0){
-    Nasdaq100_List_1 = [GOOGL,HAS,HSIC,ILMN,INCY,INTC,INTU,ISRG,IDXX,JBHT,JD,KLAC,KHC,LRCX,LBTYA,LBTYK,LULU,MELI,MAR,MCHP];
+    Sommer_Rec_List = [GOOGL,HAS,HSIC,ILMN,INCY,INTC,INTU,ISRG,IDXX,JBHT,JD,KLAC,KHC,LRCX,LBTYA,LBTYK,LULU,MELI,MAR,MCHP];
     setGainerListCount(gainerListCount++);
   };
   */
@@ -50,7 +50,7 @@ const TopGainers = () => {
 
   let g = 0;
 
-  let Nasdaq100_List_1 = [
+  let NASDAQ_100_List = [
     "ATVI",
     "ADBE",
     "AMD",
@@ -153,7 +153,9 @@ const TopGainers = () => {
     "XLNX",
   ];
 
-  const gainerURL = `https://api.twelvedata.com/quote?symbol=${Nasdaq100_List_1}&apikey=f12c3d6e34d241178fae0bd392e18b07`;
+  let Sommer_Rec_List = ["AQMS", "DKNG", "PENN", "SAVA"];
+
+  const gainerURL = `https://api.twelvedata.com/quote?symbol=${Sommer_Rec_List}&apikey=f12c3d6e34d241178fae0bd392e18b07`;
 
   const topGainersFunction = (gainerSymbolDisplay, gainerVarianceDisplay) => {};
 
@@ -163,19 +165,19 @@ const TopGainers = () => {
         return resp.json();
       }) // Convert data to json
       .then(function (data) {
-        for (let i = 0; i < Nasdaq100_List_1.length; i++) {
-          if (data[Nasdaq100_List_1[i]].percent_change > targetVariance) {
+        for (let i = 0; i < Sommer_Rec_List.length; i++) {
+          if (data[Sommer_Rec_List[i]].percent_change > targetVariance) {
             setGainerSymbolDisplay((oldArray) => [
               ...oldArray,
-              data[Nasdaq100_List_1[i]].symbol,
+              data[Sommer_Rec_List[i]].symbol,
             ]);
             setGainerPriceDisplay((oldArray) => [
               ...oldArray,
-              data[Nasdaq100_List_1[i]].close,
+              data[Sommer_Rec_List[i]].close,
             ]);
             setGainerVarianceDisplay((oldArray) => [
               ...oldArray,
-              data[Nasdaq100_List_1[i]].percent_change,
+              data[Sommer_Rec_List[i]].percent_change,
             ]);
           }
         }
