@@ -153,7 +153,32 @@ const TopGainers = () => {
     "XLNX",
   ];
 
-  let Sommer_Rec_List = ["AQMS", "DKNG", "PENN", "SAVA"];
+  let Sommer_Rec_List = [
+    "AAPL",
+    "MSFT",
+    "AMZN",
+    "GOOGL",
+    "TSLA",
+    "FB",
+    "NVDA",
+    "PYPL",
+    "NFLX",
+    "CMCSA",
+    "INTC",
+    "ADBE",
+    "PEP",
+    "AVGO",
+    "QCOM",
+    "TMUS",
+    "COST",
+    "TXN",
+    "AMGN",
+    "CHTR",
+    "SBUX",
+    "ABNB",
+    "ZM",
+    "AMD",
+  ];
 
   const gainerURL = `https://api.twelvedata.com/quote?symbol=${Sommer_Rec_List}&apikey=f12c3d6e34d241178fae0bd392e18b07`;
 
@@ -214,7 +239,7 @@ const TopGainers = () => {
         id="Marquee-Center-Container"
         style={{ transform: props2.transform, opacity: props2.opacity }}
       >
-        <p id="Top-Gainers-Header">{`Top Gaining NASDAQ 100 Stocks for ${todaysGainerDate}`}</p>
+        <p id="Top-Gainers-Header">{`Gaining NASDAQ Stocks to Watch Closely on ${todaysGainerDate}`}</p>
         <select name="selectStock" id="varianceInput" ref={varianceInputRef}>
           <option value="2">2%</option>
           <option value="3">3%</option>
