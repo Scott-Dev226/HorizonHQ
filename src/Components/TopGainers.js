@@ -43,7 +43,7 @@ const TopGainers = () => {
   const [gainerVarianceDisplay, setGainerVarianceDisplay] = useState([]);
   const [gainerPriceDisplay, setGainerPriceDisplay] = useState([]);
   const [gainerObjects, setGainerObjects] = useState([]);
-  const [targetVariance, setTargetVariance] = useState(2);
+  const [targetVariance, setTargetVariance] = useState(0);
   const varianceInputRef = useRef(null);
 
   const [gainerListCount, setGainerListCount] = useState(0);
